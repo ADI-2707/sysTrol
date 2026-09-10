@@ -2,6 +2,7 @@ import React from "react";
 import { Factory, Code2, Globe2, ShieldCheck } from "lucide-react";
 import { Container } from "@/components/layout/Container/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";
+import { Reveal } from "@/components/ui/Reveal/Reveal";
 import styles from "./WhyUs.module.css";
 
 const valueProps = [
@@ -39,22 +40,26 @@ export const WhyUs: React.FC = () => {
   return (
     <section className={styles.section} aria-label="Why sysTROL">
       <Container size="wide">
-        <SectionHeading
-          eyebrow="Why Choose sysTROL"
-          eyebrowVariant="accent"
-          title="Engineering Credibility Built on Field Results"
-          subtitle="We bridge the gap between heavy mechanical process realities and modern high-speed software automation."
-          align="left"
-        />
+        <Reveal>
+          <SectionHeading
+            eyebrow="Why Choose sysTROL"
+            eyebrowVariant="accent"
+            title="Engineering Credibility Built on Field Results"
+            subtitle="We bridge the gap between heavy mechanical process realities and modern high-speed software automation."
+            align="left"
+          />
+        </Reveal>
 
         <div className={styles.grid}>
           {valueProps.map((prop, idx) => (
-            <div key={idx} className={styles.card}>
-              <div className={styles.iconBox}>{prop.icon}</div>
-              <h3 className={styles.title}>{prop.title}</h3>
-              <p className={styles.description}>{prop.description}</p>
-              <div className={styles.footerTag}>[ {prop.tag} ]</div>
-            </div>
+            <Reveal key={idx} delay={idx * 80}>
+              <div className={styles.card}>
+                <div className={styles.iconBox}>{prop.icon}</div>
+                <h3 className={styles.title}>{prop.title}</h3>
+                <p className={styles.description}>{prop.description}</p>
+                <div className={styles.footerTag}>[ {prop.tag} ]</div>
+              </div>
+            </Reveal>
           ))}
         </div>
       </Container>
