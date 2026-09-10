@@ -60,6 +60,11 @@ export const metadata: Metadata = {
       },
     ],
   },
+  icons: {
+    icon: "/images/systrol-logo.jpeg",
+    shortcut: "/images/systrol-logo.jpeg",
+    apple: "/images/systrol-logo.jpeg",
+  },
 };
 
 export default function RootLayout({
