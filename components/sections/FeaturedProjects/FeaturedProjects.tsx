@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/layout/Container/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";
@@ -8,6 +9,12 @@ import { Button } from "@/components/ui/Button/Button";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
 import { projectsData } from "@/content/projects";
 import styles from "./FeaturedProjects.module.css";
+
+const projectImages = [
+  "/images/hero-rolling-mill.jpg",
+  "/images/automation-control-room.jpg",
+  "/images/tungsten-carbide-rolls.jpg",
+];
 
 export const FeaturedProjects: React.FC = () => {
   const featured = projectsData.filter((p) => p.featured).slice(0, 3);
@@ -35,10 +42,23 @@ export const FeaturedProjects: React.FC = () => {
           {featured.map((project, idx) => (
             <Reveal key={project.id} delay={idx * 100}>
               <div className={styles.card}>
+                <div className={styles.imageWrap}>
+                  <Image
+                    src={projectImages[idx % projectImages.length]}
+                    alt={project.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 380px"
+                    className={styles.image}
+                  />
+                  <div className={styles.imageOverlay} />
+                  <div className={styles.floatingBadge}>
+                    <Badge variant="accent" size="sm">
+                      {project.industry}
+                    </Badge>
+                  </div>
+                </div>
+
                 <div className={styles.cardHeader}>
-                  <Badge variant="accent" size="sm">
-                    {project.industry}
-                  </Badge>
                   <span className={styles.clientRepresentative}>
                     {project.location} • {project.year}
                   </span>
