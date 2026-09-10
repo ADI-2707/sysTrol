@@ -202,19 +202,21 @@
 }
 
 .colorSection {
-  background: linear-gradient(135deg, #0B111E 0%, #111827 50%, #0D211A 100%);
+  background-color: #0A0F1D;
+  background-image: linear-gradient(145deg, #0A0F1D 0%, #111827 50%, #0F172A 100%);
   color: var(--color-surface-0);
-  padding-top: var(--space-8);
-  padding-bottom: var(--space-8);
+  padding-top: var(--space-12);
+  padding-bottom: var(--space-12);
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid #1E293B;
   position: relative;
+  width: 100%;
 }
 
 @media (min-width: 1024px) {
   .colorSection {
-    padding-top: var(--space-10);
-    padding-bottom: var(--space-10);
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-16);
   }
 }
 
@@ -223,6 +225,7 @@
   grid-template-columns: 1fr;
   gap: var(--space-4);
   align-items: stretch;
+  width: 100%;
 }
 
 @media (min-width: 768px) {
@@ -233,8 +236,8 @@
 }
 
 .metricCard {
-  background-color: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: #111827;
+  border: 1px solid #1F2937;
   border-radius: var(--radius-lg);
   padding: var(--space-6);
   display: flex;
@@ -242,6 +245,7 @@
   height: 100%;
   flex: 1;
   gap: var(--space-2);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
   transition: transform var(--duration-fast) var(--ease-in-out),
               box-shadow var(--duration-fast) var(--ease-in-out),
               border-color var(--duration-fast) var(--ease-in-out);
