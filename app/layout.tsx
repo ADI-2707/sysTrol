@@ -67,12 +67,46 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "sysTROL Engineering & Consultancy Pvt. Ltd.",
+    alternateName: "sysTROL",
+    url: "https://sys-trol.com",
+    logo: "https://sys-trol.com/images/systrol-logo.jpeg",
+    description:
+      "Level-2 (L2) process automation software engineered in C# for steel rolling mills and imported machinery spares trading.",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Bengaluru",
+      addressRegion: "Karnataka",
+      postalCode: "560001",
+      addressCountry: "IN",
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+91-80-2845-0000",
+      contactType: "customer service",
+      areaServed: ["IN", "OM", "AE"],
+      availableLanguage: ["English", "Hindi"],
+    },
+    sameAs: [
+      "https://www.linkedin.com/company/systrol-engineering-consultancy",
+    ],
+  };
+
   return (
     <html
       lang="en"
       className={`${headingFont.variable} ${bodyFont.variable} ${monoFont.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        {children}
+      </body>
     </html>
   );
 }
