@@ -175,7 +175,7 @@ export const Hero: React.FC = () => {
                     <span className={styles.networkTag}>50+ Mill Installations</span>
                   </div>
                   <div className={styles.networkDesc}>
-                    Proven engineering delivered to Tier-1 producers including Tata Steel, JSW, Jindal Steel & Power, and Sohar Steel.
+                    Proven engineering delivered to Tier-1 integrated producers and rolling mills across India and the GCC region.
                   </div>
                 </div>
               </div>

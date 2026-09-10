@@ -118,7 +118,7 @@ export default function ContactPage() {
                         <TextField
                           label="Plant / Company Name"
                           required
-                          placeholder="e.g. Jindal Steel / Tata Steel"
+                          placeholder="e.g. Integrated Steel Plant / Rolling Mill"
                           error={errors.company?.message}
                           {...register("company")}
                         />
