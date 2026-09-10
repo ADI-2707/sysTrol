@@ -140,6 +140,7 @@ export default function ProjectsPage() {
                         padding: "var(--space-6)",
                         boxShadow: "var(--shadow-sm)",
                         height: "100%",
+                        flex: 1,
                       }}
                     >
                       <div
@@ -237,6 +238,7 @@ export default function ProjectsPage() {
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "space-between",
+                          marginTop: "auto",
                         }}
                       >
                         <span

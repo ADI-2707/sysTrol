@@ -124,6 +124,7 @@ export default function ClientsPage() {
                       display: "grid",
                       gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
                       gap: "var(--space-6)",
+                      alignItems: "stretch",
                     }}
                   >
                     {sectorClients.map((client, idx) => (
@@ -139,6 +140,7 @@ export default function ClientsPage() {
                             flexDirection: "column",
                             justifyContent: "space-between",
                             height: "100%",
+                            flex: 1,
                           }}
                         >
                           <div>

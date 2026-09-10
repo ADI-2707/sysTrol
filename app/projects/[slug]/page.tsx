@@ -315,7 +315,7 @@ export default async function ProjectDetailPage({
                 <h3 style={{ fontSize: "var(--text-2xl)", fontWeight: 700, marginBottom: "var(--space-6)" }}>
                   Related Industrial Case Studies
                 </h3>
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "var(--space-6)" }}>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "var(--space-6)", alignItems: "stretch" }}>
                   {relatedProjects.map((rel) => (
                     <div
                       key={rel.id}
@@ -324,15 +324,19 @@ export default async function ProjectDetailPage({
                         backgroundColor: "var(--color-surface-50)",
                         border: "1px solid var(--color-border)",
                         borderRadius: "var(--radius-md)",
+                        display: "flex",
+                        flexDirection: "column",
+                        height: "100%",
+                        flex: 1,
                       }}
                     >
-                      <Badge variant="accent" size="sm" style={{ marginBottom: "8px" }}>
+                      <Badge variant="accent" size="sm" style={{ marginBottom: "8px", width: "fit-content" }}>
                         {rel.industry}
                       </Badge>
                       <h4 style={{ fontSize: "var(--text-base)", fontWeight: 700, marginBottom: "8px" }}>
                         <Link href={`/projects/${rel.slug}`}>{rel.title}</Link>
                       </h4>
-                      <p style={{ fontSize: "var(--text-xs)", color: "var(--color-ink-700)", marginBottom: "12px" }}>
+                      <p style={{ fontSize: "var(--text-xs)", color: "var(--color-ink-700)", marginBottom: "12px", flex: 1 }}>
                         {rel.shortBlurb}
                       </p>
                       <Link
@@ -344,6 +348,7 @@ export default async function ProjectDetailPage({
                           fontSize: "var(--text-xs)",
                           fontWeight: 600,
                           color: "var(--color-brand-green-600)",
+                          marginTop: "auto",
                         }}
                       >
                         <span>Read Case Study</span>

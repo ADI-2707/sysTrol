@@ -116,6 +116,7 @@ export default function AutomationConsultancyPage() {
                 display: "grid",
                 gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
                 gap: "var(--space-6)",
+                alignItems: "stretch",
                 marginBottom: "var(--space-16)",
               }}
             >
@@ -128,6 +129,9 @@ export default function AutomationConsultancyPage() {
                       borderRadius: "var(--radius-lg)",
                       padding: "var(--space-6)",
                       height: "100%",
+                      flex: 1,
+                      display: "flex",
+                      flexDirection: "column",
                     }}
                   >
                     <div
@@ -161,11 +165,12 @@ export default function AutomationConsultancyPage() {
                         color: "var(--color-ink-700)",
                         lineHeight: 1.6,
                         marginBottom: "var(--space-4)",
+                        flex: 1,
                       }}
                     >
                       {cap.description}
                     </p>
-                    <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "8px" }}>
+                    <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "8px", marginTop: "auto" }}>
                       {cap.highlights.map((item, hIdx) => (
                         <li
                           key={hIdx}

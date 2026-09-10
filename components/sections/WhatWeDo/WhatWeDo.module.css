@@ -13,6 +13,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-6);
+  align-items: stretch;
 }
 @media (min-width: 900px) {
   .grid {
@@ -23,6 +24,8 @@
 .card {
   display: flex;
   flex-direction: column;
+  height: 100%;
+  flex: 1;
   background-color: var(--color-surface-0);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
@@ -94,6 +97,7 @@
   justify-content: space-between;
   padding-top: var(--space-4);
   border-top: 1px solid var(--color-border);
+  margin-top: auto;
 }
 .learnMoreLink {
   display: inline-flex;

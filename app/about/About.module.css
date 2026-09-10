@@ -23,6 +23,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-4);
+  align-items: stretch;
 }
 @media (min-width: 640px) {
   .statsGrid {

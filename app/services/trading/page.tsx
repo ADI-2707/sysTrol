@@ -115,6 +115,7 @@ export default function TradingPage() {
                 display: "grid",
                 gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
                 gap: "var(--space-6)",
+                alignItems: "stretch",
                 marginBottom: "var(--space-16)",
               }}
             >
@@ -128,6 +129,9 @@ export default function TradingPage() {
                       padding: "var(--space-6)",
                       boxShadow: "var(--shadow-sm)",
                       height: "100%",
+                      flex: 1,
+                      display: "flex",
+                      flexDirection: "column",
                     }}
                   >
                     <div
@@ -154,7 +158,7 @@ export default function TradingPage() {
                       </div>
                     </div>
 
-                    <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "8px" }}>
+                    <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "8px", marginTop: "auto" }}>
                       {cat.items.map((item, itemIdx) => (
                         <li
                           key={itemIdx}
@@ -186,6 +190,7 @@ export default function TradingPage() {
                   display: "grid",
                   gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
                   gap: "var(--space-8)",
+                  alignItems: "stretch",
                 }}
               >
                 <div>
