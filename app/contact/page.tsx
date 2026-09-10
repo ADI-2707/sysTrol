@@ -58,16 +58,25 @@ export default function ContactPage() {
   });
 
   const onSubmit = async (data: ContactFormValues) => {
-    setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 800));
+    try {
+      setIsSubmitting(true);
+      await new Promise((resolve) => setTimeout(resolve, 800));
 
-    setIsSubmitting(false);
-    setToastData({
-      type: "success",
-      title: "Enquiry Registered Successfully",
-      message: `Thank you, ${data.name}. Your enquiry for '${data.service}' has been routed to our Bengaluru engineering desk.`,
-    });
-    reset();
+      setIsSubmitting(false);
+      setToastData({
+        type: "success",
+        title: "Enquiry Registered Successfully",
+        message: `Thank you, ${data.name}. Your enquiry for '${data.service}' has been routed to our Bengaluru engineering desk.`,
+      });
+      reset();
+    } catch {
+      setIsSubmitting(false);
+      setToastData({
+        type: "error",
+        title: "Transmission Interruption",
+        message: "Unable to route enquiry. Please retry or contact info@sys-trol.com directly.",
+      });
+    }
   };
 
   return (
@@ -118,7 +127,7 @@ export default function ContactPage() {
                         <TextField
                           label="Plant / Company Name"
                           required
-                          placeholder="e.g. Jindal Steel / Tata Steel"
+                          placeholder="e.g. Integrated Steel Plant / Rolling Mill"
                           error={errors.company?.message}
                           {...register("company")}
                         />
@@ -165,10 +174,10 @@ export default function ContactPage() {
                           type="submit"
                           variant="primary"
                           size="lg"
-                          disabled={isSubmitting}
+                          isLoading={isSubmitting}
                           rightIcon={<Send size={16} />}
                         >
-                          {isSubmitting ? "Processing Enquiry..." : "Transmit Technical Enquiry"}
+                          {isSubmitting ? "Transmitting Enquiry..." : "Transmit Technical Enquiry"}
                         </Button>
                         <div className={styles.mockNotice}>
                           * Phase 1 Client-Side Validation: Validated with Zod schema. Form is ready

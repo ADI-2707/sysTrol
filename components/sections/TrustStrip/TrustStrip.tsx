@@ -11,7 +11,7 @@ export const TrustStrip: React.FC = () => {
       <Container size="wide">
         <Reveal>
           <p className={styles.caption}>
-            Trusted by leading steel & process manufacturers in India and abroad
+            Proven Engineering & Spares Deployments Across Process Plants
           </p>
 
           <div className={styles.clientGrid}>
@@ -19,14 +19,10 @@ export const TrustStrip: React.FC = () => {
               <Link
                 key={client.id}
                 href="/clients"
-                className={styles.clientBadge}
+                className={styles.clientWordmark}
                 title={`${client.name} — ${client.engagement}`}
               >
-                <span className={styles.clientDot} />
-                <div>
-                  <span className={styles.clientName}>{client.name}</span>
-                  <span className={styles.sectorSub}> • {client.location}</span>
-                </div>
+                <span className={styles.clientName}>{client.name}</span>
               </Link>
             ))}
           </div>

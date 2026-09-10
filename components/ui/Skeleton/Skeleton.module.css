@@ -1,0 +1,76 @@
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-surface-200);
+  border-radius: var(--radius-sm);
+  display: block;
+}
+
+.skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 100%
+  );
+  animation: shimmer 1.6s infinite ease-in-out;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.text {
+  height: 16px;
+  border-radius: var(--radius-xs);
+  margin-bottom: 8px;
+}
+
+.circular {
+  border-radius: var(--radius-full);
+}
+
+.rectangular {
+  border-radius: var(--radius-sm);
+}
+
+.card {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface-0);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  box-shadow: var(--shadow-sm);
+}
+
+.projectCardSkeleton {
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface-0);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  box-shadow: var(--shadow-sm);
+  min-height: 420px;
+}
+
+.serviceCardSkeleton {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface-0);
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  box-shadow: var(--shadow-sm);
+  min-height: 520px;
+}

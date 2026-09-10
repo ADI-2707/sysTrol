@@ -81,140 +81,24 @@
   padding-top: var(--space-2);
 }
 
-.visualCard {
-  background: linear-gradient(145deg, #101726 0%, #0B101D 100%);
-  border: 1px solid #1E293B;
-  border-radius: var(--radius-xl);
-  padding: var(--space-6);
-  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.18);
-  position: relative;
-  overflow: hidden;
-}
 
-@media (min-width: 768px) {
-  .visualCard {
-    padding: var(--space-8);
-  }
-}
-
-.visualHeader {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: var(--space-6);
-  padding-bottom: var(--space-4);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.trustBadge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 11px;
-  font-family: var(--font-mono), monospace;
-  color: var(--color-brand-green-600);
-  background-color: rgba(31, 122, 77, 0.15);
-  border: 1px solid rgba(31, 122, 77, 0.3);
-  padding: 4px 10px;
-  border-radius: var(--radius-full);
-}
-
-.networkGrid {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
-}
-
-.networkCard {
-  background-color: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: var(--radius-md);
-  padding: var(--space-4);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
-  transition: all var(--duration-fast);
-}
-
-.networkCard:hover {
-  border-color: var(--color-accent-teal-500);
-  background-color: rgba(255, 255, 255, 0.06);
-}
-
-.networkCardTop {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-2);
-}
-
-.networkCardInfo {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-}
-
-.networkIcon {
-  width: 36px;
-  height: 36px;
-  border-radius: var(--radius-sm);
-  background-color: rgba(14, 165, 165, 0.15);
-  color: var(--color-accent-teal-500);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.networkTitle {
-  font-size: var(--text-sm);
-  font-weight: var(--font-semibold);
-  color: var(--color-surface-0);
-}
-
-.networkTag {
-  font-family: var(--font-mono), monospace;
-  font-size: 11px;
-  color: var(--color-accent-teal-500);
-  background-color: rgba(14, 165, 165, 0.12);
-  padding: 2px 8px;
-  border-radius: var(--radius-sm);
-  white-space: nowrap;
-}
-
-.networkDesc {
-  font-size: var(--text-xs);
-  color: var(--color-ink-400);
-  line-height: var(--leading-relaxed);
-  padding-left: 48px;
-}
-
-.networkFooter {
-  margin-top: var(--space-4);
-  padding-top: var(--space-4);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 11px;
-  color: var(--color-ink-400);
-  font-family: var(--font-mono), monospace;
-}
 
 .colorSection {
-  background: linear-gradient(135deg, #0B111E 0%, #111827 50%, #0D211A 100%);
+  background-color: #0A0F1D;
+  background-image: linear-gradient(145deg, #0A0F1D 0%, #111827 50%, #0F172A 100%);
   color: var(--color-surface-0);
-  padding-top: var(--space-8);
-  padding-bottom: var(--space-8);
+  padding-top: var(--space-12);
+  padding-bottom: var(--space-12);
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid #1E293B;
   position: relative;
+  width: 100%;
 }
 
 @media (min-width: 1024px) {
   .colorSection {
-    padding-top: var(--space-10);
-    padding-bottom: var(--space-10);
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-16);
   }
 }
 
@@ -223,6 +107,7 @@
   grid-template-columns: 1fr;
   gap: var(--space-4);
   align-items: stretch;
+  width: 100%;
 }
 
 @media (min-width: 768px) {
@@ -233,8 +118,8 @@
 }
 
 .metricCard {
-  background-color: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: #111827;
+  border: 1px solid #1F2937;
   border-radius: var(--radius-lg);
   padding: var(--space-6);
   display: flex;
@@ -242,6 +127,7 @@
   height: 100%;
   flex: 1;
   gap: var(--space-2);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
   transition: transform var(--duration-fast) var(--ease-in-out),
               box-shadow var(--duration-fast) var(--ease-in-out),
               border-color var(--duration-fast) var(--ease-in-out);
