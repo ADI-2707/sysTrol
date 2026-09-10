@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Cpu, Truck, ArrowRight } from "lucide-react";
 import { Container } from "@/components/layout/Container/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";
@@ -24,13 +25,26 @@ export const WhatWeDo: React.FC = () => {
         <div className={styles.grid}>
           <Reveal delay={100}>
             <div className={`${styles.card} ${styles.cardGreen}`}>
-              <div className={`${styles.iconWrapper} ${styles.iconGreen}`}>
-                <Cpu size={28} />
+              <div className={styles.cardImageContainer}>
+                <Image
+                  src="/images/automation-control-room.jpg"
+                  alt="Supervisory control room and mill pulpit automation"
+                  fill
+                  sizes="(max-width: 900px) 100vw, 600px"
+                  className={styles.cardImage}
+                />
+                <div className={styles.cardImageOverlay} />
+                <span className={styles.cardImageTag}>PULPIT TELEMETRY & L2 CONTROL</span>
               </div>
 
-              <Badge variant="brand" size="sm" style={{ width: "fit-content", marginBottom: "8px" }}>
-                Division 01 • Engineering & Consultancy
-              </Badge>
+              <div className={styles.cardHeaderRow}>
+                <div className={`${styles.iconWrapper} ${styles.iconGreen}`}>
+                  <Cpu size={26} />
+                </div>
+                <Badge variant="brand" size="sm">
+                  Division 01 • Engineering & Consultancy
+                </Badge>
+              </div>
 
               <h3 className={styles.cardTitle}>Level-2 Process Automation & Models</h3>
 
@@ -66,13 +80,26 @@ export const WhatWeDo: React.FC = () => {
 
           <Reveal delay={200}>
             <div className={`${styles.card} ${styles.cardTeal}`}>
-              <div className={`${styles.iconWrapper} ${styles.iconTeal}`}>
-                <Truck size={28} />
+              <div className={styles.cardImageContainer}>
+                <Image
+                  src="/images/tungsten-carbide-rolls.jpg"
+                  alt="Precision tungsten carbide roll tooling and mill spares"
+                  fill
+                  sizes="(max-width: 900px) 100vw, 600px"
+                  className={styles.cardImage}
+                />
+                <div className={styles.cardImageOverlay} />
+                <span className={styles.cardImageTag}>TC ROLLS & CRITICAL OEM SPARING</span>
               </div>
 
-              <Badge variant="accent" size="sm" style={{ width: "fit-content", marginBottom: "8px" }}>
-                Division 02 • Global Procurement & Supply
-              </Badge>
+              <div className={styles.cardHeaderRow}>
+                <div className={`${styles.iconWrapper} ${styles.iconTeal}`}>
+                  <Truck size={26} />
+                </div>
+                <Badge variant="accent" size="sm">
+                  Division 02 • Global Procurement & Supply
+                </Badge>
+              </div>
 
               <h3 className={styles.cardTitle}>Imported Machinery, Spares & Consumables</h3>
 
