@@ -82,11 +82,11 @@
 }
 
 .visualCard {
-  background: linear-gradient(145deg, #111827 0%, #0A0F1D 100%);
-  border: 1px solid #1F2937;
+  background: linear-gradient(145deg, #101726 0%, #0B101D 100%);
+  border: 1px solid #1E293B;
   border-radius: var(--radius-xl);
   padding: var(--space-6);
-  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.15);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.18);
   position: relative;
   overflow: hidden;
 }
@@ -106,53 +106,55 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.systemStatus {
+.trustBadge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-size: var(--text-xs);
+  gap: 6px;
+  font-size: 11px;
   font-family: var(--font-mono), monospace;
-  color: var(--color-success-500);
-}
-
-.pulsingDot {
-  width: 8px;
-  height: 8px;
+  color: var(--color-brand-green-600);
+  background-color: rgba(31, 122, 77, 0.15);
+  border: 1px solid rgba(31, 122, 77, 0.3);
+  padding: 4px 10px;
   border-radius: var(--radius-full);
-  background-color: var(--color-success-500);
-  box-shadow: 0 0 10px var(--color-success-500);
 }
 
-.diagramGrid {
-  display: grid;
-  grid-template-columns: 1fr;
+.networkGrid {
+  display: flex;
+  flex-direction: column;
   gap: var(--space-3);
 }
 
-.layerCard {
-  background-color: rgba(255, 255, 255, 0.04);
+.networkCard {
+  background-color: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-md);
-  padding: var(--space-3) var(--space-4);
+  padding: var(--space-4);
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-3);
+  flex-direction: column;
+  gap: var(--space-2);
   transition: all var(--duration-fast);
 }
 
-.layerCard:hover {
+.networkCard:hover {
   border-color: var(--color-accent-teal-500);
-  background-color: rgba(255, 255, 255, 0.07);
+  background-color: rgba(255, 255, 255, 0.06);
 }
 
-.layerInfo {
+.networkCardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.networkCardInfo {
   display: flex;
   align-items: center;
   gap: var(--space-3);
 }
 
-.layerIcon {
+.networkIcon {
   width: 36px;
   height: 36px;
   border-radius: var(--radius-sm);
@@ -164,25 +166,39 @@
   flex-shrink: 0;
 }
 
-.layerTitle {
+.networkTitle {
   font-size: var(--text-sm);
   font-weight: var(--font-semibold);
   color: var(--color-surface-0);
 }
 
-.layerDesc {
-  font-size: var(--text-xs);
-  color: var(--color-ink-400);
-}
-
-.layerTag {
+.networkTag {
   font-family: var(--font-mono), monospace;
   font-size: 11px;
-  color: var(--color-brand-green-600);
-  background-color: rgba(31, 122, 77, 0.15);
-  padding: 3px 8px;
+  color: var(--color-accent-teal-500);
+  background-color: rgba(14, 165, 165, 0.12);
+  padding: 2px 8px;
   border-radius: var(--radius-sm);
   white-space: nowrap;
+}
+
+.networkDesc {
+  font-size: var(--text-xs);
+  color: var(--color-ink-400);
+  line-height: var(--leading-relaxed);
+  padding-left: 48px;
+}
+
+.networkFooter {
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--color-ink-400);
+  font-family: var(--font-mono), monospace;
 }
 
 .colorSection {
