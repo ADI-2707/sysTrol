@@ -25,7 +25,6 @@ export default function AutomationConsultancyPage() {
     <>
       <Navbar />
       <main>
-        {/* Sub-page Header */}
         <section
           style={{
             backgroundColor: "var(--color-brand-navy-900)",
@@ -92,7 +91,6 @@ export default function AutomationConsultancyPage() {
           </Container>
         </section>
 
-        {/* Detailed Capabilities Grid */}
         <section
           style={{
             paddingTop: "var(--space-16)",
@@ -183,7 +181,6 @@ export default function AutomationConsultancyPage() {
               ))}
             </div>
 
-            {/* Stepper Process Flow */}
             {service.processSteps && (
               <div style={{ marginTop: "var(--space-8)" }}>
                 <SectionHeading

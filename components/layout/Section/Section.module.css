@@ -4,44 +4,36 @@
   position: relative;
   overflow: hidden;
 }
-
 @media (min-width: 1024px) {
   .section {
     padding-top: var(--space-24);
     padding-bottom: var(--space-24);
   }
 }
-
 .dense {
   padding-top: var(--space-10);
   padding-bottom: var(--space-10);
 }
-
 @media (min-width: 1024px) {
   .dense {
     padding-top: var(--space-16);
     padding-bottom: var(--space-16);
   }
 }
-
-/* Section Themes */
 .light {
   background-color: var(--color-surface-0);
   color: var(--color-ink-900);
 }
-
 .alt {
   background-color: var(--color-surface-50);
   color: var(--color-ink-900);
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
 }
-
 .dark {
   background-color: var(--color-brand-navy-800);
   color: var(--color-surface-0);
 }
-
 .navyDeep {
   background-color: var(--color-brand-navy-900);
   color: var(--color-surface-0);

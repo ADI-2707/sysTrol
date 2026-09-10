@@ -40,7 +40,6 @@ export default function ServicesPage() {
 
         <section className={styles.overviewSection}>
           <Container size="wide">
-            {/* Division 1: Automation */}
             <div className={styles.divisionCard}>
               <div className={styles.divisionLeft}>
                 <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
@@ -102,7 +101,6 @@ export default function ServicesPage() {
               </div>
             </div>
 
-            {/* Division 2: Trading */}
             <div className={styles.divisionCard}>
               <div className={styles.divisionLeft}>
                 <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>

@@ -24,7 +24,6 @@ export default function TradingPage() {
     <>
       <Navbar />
       <main>
-        {/* Header */}
         <section
           style={{
             backgroundColor: "var(--color-brand-navy-900)",
@@ -91,7 +90,6 @@ export default function TradingPage() {
           </Container>
         </section>
 
-        {/* Categories Section */}
         <section
           style={{
             paddingTop: "var(--space-16)",
@@ -172,7 +170,6 @@ export default function TradingPage() {
               ))}
             </div>
 
-            {/* Quality & Certification Block */}
             <div
               style={{
                 backgroundColor: "var(--color-surface-0)",

@@ -3,27 +3,23 @@
   padding-bottom: var(--space-16);
   background-color: var(--color-surface-0);
 }
-
 @media (min-width: 1024px) {
   .section {
     padding-top: var(--space-24);
     padding-bottom: var(--space-24);
   }
 }
-
 .grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-6);
 }
-
 @media (min-width: 900px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--space-8);
   }
 }
-
 .card {
   display: flex;
   flex-direction: column;
@@ -36,27 +32,22 @@
   transition: all var(--duration-normal) var(--ease-in-out);
   box-shadow: var(--shadow-sm);
 }
-
 @media (min-width: 768px) {
   .card {
     padding: var(--space-8);
   }
 }
-
 .card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
   border-color: rgba(31, 122, 77, 0.4);
 }
-
 .cardGreen {
   border-top: 4px solid var(--color-brand-green-600);
 }
-
 .cardTeal {
   border-top: 4px solid var(--color-accent-teal-500);
 }
-
 .iconWrapper {
   width: 52px;
   height: 52px;
@@ -67,17 +58,14 @@
   margin-bottom: var(--space-4);
   flex-shrink: 0;
 }
-
 .iconGreen {
   background-color: var(--color-brand-green-100);
   color: var(--color-brand-green-700);
 }
-
 .iconTeal {
   background-color: var(--color-accent-teal-100);
   color: var(--color-accent-teal-600);
 }
-
 .cardTitle {
   font-size: var(--text-2xl);
   font-weight: var(--font-bold);
@@ -85,7 +73,6 @@
   margin-bottom: var(--space-3);
   line-height: var(--leading-tight);
 }
-
 .cardDescription {
   font-size: var(--text-base);
   color: var(--color-ink-700);
@@ -93,7 +80,6 @@
   margin-bottom: var(--space-6);
   flex: 1;
 }
-
 .tagList {
   display: flex;
   flex-wrap: wrap;
@@ -102,7 +88,6 @@
   padding-top: var(--space-4);
   border-top: 1px solid var(--color-border);
 }
-
 .cardFooter {
   display: flex;
   align-items: center;
@@ -110,7 +95,6 @@
   padding-top: var(--space-4);
   border-top: 1px solid var(--color-border);
 }
-
 .learnMoreLink {
   display: inline-flex;
   align-items: center;
@@ -121,7 +105,6 @@
   text-decoration: none;
   transition: gap var(--duration-fast);
 }
-
 .learnMoreLink:hover {
   color: var(--color-brand-green-700);
   gap: var(--space-3);

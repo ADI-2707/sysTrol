@@ -5,7 +5,7 @@ Official web platform for **sysTROL Engineering & Consultancy Pvt. Ltd.**, a Ben
 
 ---
 
-## 🚀 Technology Stack (Locked & Production-Stable)
+## Technology Stack (Locked & Production-Stable)
 
 - **Framework:** Next.js `15.2.0` (App Router, LTS track)
 - **UI Library:** React `19.0.0` & React-DOM `19.0.0`
@@ -18,7 +18,7 @@ Official web platform for **sysTROL Engineering & Consultancy Pvt. Ltd.**, a Ben
 
 ---
 
-## 🎨 Design System & Token Architecture
+## Design System & Token Architecture
 
 The design system translates the official sysTROL brand identity—featuring industrial gear mechanics, global reach, and electric engineering intelligence—into a clean, authoritative B2B digital experience.
 
@@ -41,7 +41,7 @@ All tokens are defined in `styles/tokens.css` and consumed via CSS custom proper
 
 ---
 
-## 📁 Project Architecture & Folder Conventions
+## Project Architecture & Folder Conventions
 
 Every reusable component resides in its own isolated folder named identically to the component, containing exactly `ComponentName.tsx` and `ComponentName.module.css`:
 
@@ -77,7 +77,7 @@ sysTrol/
 
 ---
 
-## 🛠️ Getting Started & Local Development
+## Getting Started & Local Development
 
 ### Prerequisites
 - Node.js `v20+` or `v22+`
@@ -111,7 +111,7 @@ pnpm start -p 3000
 
 ---
 
-## 🗺️ Roadmap Beyond Phase 1
+## Roadmap Beyond Phase 1
 
 - **Phase 1 (Completed):** Design token system, responsive UI components, client-side routing across all 21 pages, typed dummy data layer, interactive form validation, direct contact deep links (`tel:`, `mailto:`, `wa.me`), and dynamic XML sitemap.
 - **Phase 2:** Backend API integration (Node/Nest or serverless functions), PostgreSQL database for enquiries, live SMTP email dispatch, and Headless CMS (Sanity/Strapi) integration into the existing data contracts.

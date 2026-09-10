@@ -19,7 +19,6 @@ export const WhatWeDo: React.FC = () => {
         />
 
         <div className={styles.grid}>
-          {/* Card 1: Automation Engineering & Consultancy */}
           <div className={`${styles.card} ${styles.cardGreen}`}>
             <div className={`${styles.iconWrapper} ${styles.iconGreen}`}>
               <Cpu size={28} />
@@ -60,7 +59,6 @@ export const WhatWeDo: React.FC = () => {
             </div>
           </div>
 
-          {/* Card 2: Imported Machinery & Spares Trading */}
           <div className={`${styles.card} ${styles.cardTeal}`}>
             <div className={`${styles.iconWrapper} ${styles.iconTeal}`}>
               <Truck size={28} />

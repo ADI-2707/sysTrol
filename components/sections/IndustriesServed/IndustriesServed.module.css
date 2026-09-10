@@ -5,7 +5,6 @@
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
 }
-
 .inner {
   display: flex;
   flex-direction: column;
@@ -13,7 +12,6 @@
   text-align: center;
   gap: var(--space-6);
 }
-
 .label {
   font-size: var(--text-xs);
   font-weight: var(--font-semibold);
@@ -21,7 +19,6 @@
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
-
 .chipList {
   display: flex;
   flex-wrap: wrap;
@@ -29,7 +26,6 @@
   gap: var(--space-3);
   max-width: 900px;
 }
-
 .chip {
   display: inline-flex;
   align-items: center;
@@ -44,7 +40,6 @@
   box-shadow: var(--shadow-sm);
   transition: all var(--duration-fast);
 }
-
 .chip:hover {
   border-color: var(--color-brand-green-600);
   color: var(--color-brand-green-700);

@@ -15,13 +15,11 @@
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
-
 @media (min-width: 1024px) {
   .floatingBar {
-    display: none; /* Only show on mobile/tablet */
+    display: none; 
   }
 }
-
 .actionButton {
   display: inline-flex;
   align-items: center;
@@ -34,26 +32,21 @@
   transition: all var(--duration-fast) var(--ease-in-out);
   white-space: nowrap;
 }
-
 .call {
   background-color: rgba(255, 255, 255, 0.1);
   color: var(--color-surface-0);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
-
 .call:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
-
 .whatsapp {
   background-color: #25D366;
   color: #FFFFFF;
 }
-
 .whatsapp:hover {
   background-color: #20BD5A;
 }
-
 .icon {
   display: flex;
   align-items: center;

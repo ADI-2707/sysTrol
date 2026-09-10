@@ -22,7 +22,6 @@ export default function AboutPage() {
     <>
       <Navbar />
       <main>
-        {/* Page Hero Header */}
         <section className={styles.heroHeader}>
           <Container size="wide">
             <SectionHeading
@@ -36,7 +35,6 @@ export default function AboutPage() {
           </Container>
         </section>
 
-        {/* Animated Metrics Strip */}
         <section className={styles.statsSection}>
           <Container size="wide">
             <div className={styles.statsGrid}>
@@ -53,7 +51,6 @@ export default function AboutPage() {
           </Container>
         </section>
 
-        {/* Company Story & Divisions in Prose */}
         <section className={styles.storySection}>
           <Container size="wide">
             <div className={styles.storyGrid}>
@@ -108,7 +105,6 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              {/* Right Column: Mission, Vision, Location */}
               <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-6)" }}>
                 <div className={styles.missionCard}>
                   <div className={styles.missionItem}>
@@ -154,7 +150,6 @@ export default function AboutPage() {
                   </div>
                 </div>
 
-                {/* Location Card */}
                 <div className={styles.locationCard}>
                   <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
                     <MapPin size={18} color="var(--color-accent-teal-500)" />

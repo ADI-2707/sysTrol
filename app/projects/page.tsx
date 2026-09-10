@@ -56,7 +56,6 @@ export default function ProjectsPage() {
 
         <section className={styles.filterSection}>
           <Container size="wide">
-            {/* Confidentiality Notice Banner */}
             <div className={styles.disclaimerBanner}>
               <Info size={16} style={{ flexShrink: 0 }} />
               <span>
@@ -67,9 +66,7 @@ export default function ProjectsPage() {
               </span>
             </div>
 
-            {/* Filter Bar */}
             <div className={styles.filterBar}>
-              {/* Sector Filter */}
               <div className={styles.filterGroup}>
                 <span className={styles.filterLabel}>Industry:</span>
                 {sectors.map((sec) => (
@@ -86,7 +83,6 @@ export default function ProjectsPage() {
                 ))}
               </div>
 
-              {/* Service Type Filter */}
               <div className={styles.filterGroup}>
                 <span className={styles.filterLabel}>Division:</span>
                 {serviceTypes.map((serv) => (
@@ -104,7 +100,6 @@ export default function ProjectsPage() {
               </div>
             </div>
 
-            {/* Projects Grid */}
             {filteredProjects.length === 0 ? (
               <div className={styles.emptyState}>
                 <Filter size={32} color="var(--color-ink-400)" style={{ margin: "0 auto 12px" }} />

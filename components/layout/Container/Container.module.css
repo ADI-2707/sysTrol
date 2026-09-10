@@ -5,26 +5,21 @@
   padding-left: var(--gutter-mobile);
   padding-right: var(--gutter-mobile);
 }
-
 .normal {
   max-width: var(--container-desktop);
 }
-
 .wide {
   max-width: var(--container-wide);
 }
-
 .narrow {
   max-width: 960px;
 }
-
 @media (min-width: 768px) {
   .container {
     padding-left: var(--gutter-tablet);
     padding-right: var(--gutter-tablet);
   }
 }
-
 @media (min-width: 1280px) {
   .container {
     padding-left: var(--gutter-desktop);

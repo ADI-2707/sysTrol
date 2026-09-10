@@ -60,7 +60,6 @@ export default function ContactPage() {
   const onSubmit = async (data: ContactFormValues) => {
     setIsSubmitting(true);
 
-    // Simulate network latency (Phase 1 Mock Submit Handler)
     await new Promise((resolve) => setTimeout(resolve, 800));
 
     setIsSubmitting(false);
@@ -76,7 +75,6 @@ export default function ContactPage() {
     <>
       <Navbar />
       <main>
-        {/* Header */}
         <section className={styles.heroHeader}>
           <Container size="wide">
             <SectionHeading
@@ -90,11 +88,9 @@ export default function ContactPage() {
           </Container>
         </section>
 
-        {/* Form and Contact Information Split */}
         <section className={styles.mainSection}>
           <Container size="wide">
             <div className={styles.splitGrid}>
-              {/* Left: Contact Form */}
               <div className={styles.formCard}>
                 <div className={styles.formHeader}>
                   <Badge variant="brand" size="sm" style={{ marginBottom: "8px" }}>
@@ -181,7 +177,6 @@ export default function ContactPage() {
                 </form>
               </div>
 
-              {/* Right: Contact Information */}
               <div className={styles.detailsCard}>
                 <div className={styles.infoBox}>
                   <h3 className={styles.boxTitle}>Direct Contact Channels</h3>
@@ -243,7 +238,6 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                {/* Map Embed Placeholder */}
                 <div className={styles.infoBox} style={{ padding: "var(--space-6)" }}>
                   <div className={styles.mapPlaceholder}>
                     <Building size={28} color="var(--color-accent-teal-500)" />
@@ -271,7 +265,6 @@ export default function ContactPage() {
           </Container>
         </section>
 
-        {/* Floating Toast notification */}
         {toastData && (
           <div style={{ position: "fixed", bottom: "24px", right: "24px", zIndex: 999 }}>
             <Toast

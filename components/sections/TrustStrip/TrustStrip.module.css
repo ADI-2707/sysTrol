@@ -4,7 +4,6 @@
   padding-top: var(--space-8);
   padding-bottom: var(--space-8);
 }
-
 .caption {
   text-align: center;
   font-size: var(--text-xs);
@@ -14,7 +13,6 @@
   letter-spacing: 0.08em;
   margin-bottom: var(--space-6);
 }
-
 .clientGrid {
   display: flex;
   flex-wrap: wrap;
@@ -22,13 +20,11 @@
   justify-content: center;
   gap: var(--space-4);
 }
-
 @media (min-width: 768px) {
   .clientGrid {
     gap: var(--space-6);
   }
 }
-
 .clientBadge {
   display: flex;
   align-items: center;
@@ -40,20 +36,17 @@
   box-shadow: var(--shadow-sm);
   transition: all var(--duration-fast) var(--ease-in-out);
 }
-
 .clientBadge:hover {
   border-color: var(--color-brand-green-600);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
-
 .clientDot {
   width: 8px;
   height: 8px;
   border-radius: var(--radius-full);
   background-color: var(--color-brand-green-600);
 }
-
 .clientName {
   font-family: var(--font-heading), sans-serif;
   font-size: var(--text-sm);
@@ -61,7 +54,6 @@
   color: var(--color-ink-900);
   letter-spacing: -0.01em;
 }
-
 .sectorSub {
   font-size: 11px;
   color: var(--color-ink-500);

@@ -62,7 +62,6 @@ export default async function ProjectDetailPage({
     <>
       <Navbar />
       <main>
-        {/* Detail Header */}
         <section
           style={{
             backgroundColor: "var(--color-brand-navy-900)",
@@ -124,7 +123,6 @@ export default async function ProjectDetailPage({
               {project.shortBlurb}
             </p>
 
-            {/* Meta Row */}
             <div
               style={{
                 display: "grid",
@@ -169,7 +167,6 @@ export default async function ProjectDetailPage({
           </Container>
         </section>
 
-        {/* Challenge / Solution / Outcomes Body */}
         <section
           style={{
             paddingTop: "var(--space-16)",
@@ -185,7 +182,6 @@ export default async function ProjectDetailPage({
                 gap: "var(--space-12)",
               }}
             >
-              {/* Challenge Box */}
               <div
                 style={{
                   padding: "var(--space-8)",
@@ -208,7 +204,6 @@ export default async function ProjectDetailPage({
                 </p>
               </div>
 
-              {/* Solution Box */}
               <div
                 style={{
                   padding: "var(--space-8)",
@@ -245,7 +240,6 @@ export default async function ProjectDetailPage({
                 </div>
               </div>
 
-              {/* Outcomes Box */}
               <div
                 style={{
                   padding: "var(--space-8)",
@@ -316,7 +310,6 @@ export default async function ProjectDetailPage({
               </div>
             </div>
 
-            {/* Related Projects */}
             {relatedProjects.length > 0 && (
               <div style={{ marginTop: "var(--space-20)", paddingTop: "var(--space-12)", borderTop: "1px solid var(--color-border)" }}>
                 <h3 style={{ fontSize: "var(--text-2xl)", fontWeight: 700, marginBottom: "var(--space-6)" }}>

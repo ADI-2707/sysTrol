@@ -39,7 +39,6 @@ export const StatCounter: React.FC<StatCounterProps> = ({
           const step = (timestamp: number) => {
             if (!startTime) startTime = timestamp;
             const progress = Math.min((timestamp - startTime) / duration, 1);
-            // Ease out cubic
             const easeProgress = 1 - Math.pow(1 - progress, 3);
             setCount(Math.floor(easeProgress * value));
 

@@ -7,14 +7,12 @@
   overflow: hidden;
   border-top: 1px solid var(--color-border-dark);
 }
-
 @media (min-width: 1024px) {
   .ctaSection {
     padding-top: var(--space-20);
     padding-bottom: var(--space-20);
   }
 }
-
 .inner {
   display: flex;
   flex-direction: column;
@@ -25,7 +23,6 @@
   position: relative;
   z-index: 1;
 }
-
 .title {
   font-size: var(--text-3xl);
   font-weight: var(--font-bold);
@@ -34,26 +31,22 @@
   margin-top: var(--space-4);
   margin-bottom: var(--space-4);
 }
-
 @media (min-width: 768px) {
   .title {
     font-size: var(--text-4xl);
   }
 }
-
 .description {
   font-size: var(--text-base);
   color: #CBD5E1;
   line-height: var(--leading-relaxed);
   margin-bottom: var(--space-8);
 }
-
 @media (min-width: 768px) {
   .description {
     font-size: var(--text-lg);
   }
 }
-
 .buttonGroup {
   display: flex;
   align-items: center;
@@ -62,7 +55,6 @@
   flex-wrap: wrap;
   margin-bottom: var(--space-6);
 }
-
 .directStrip {
   display: flex;
   align-items: center;
@@ -72,7 +64,6 @@
   flex-wrap: wrap;
   justify-content: center;
 }
-
 .directLink {
   color: var(--color-accent-teal-500);
   text-decoration: none;
@@ -81,7 +72,6 @@
   align-items: center;
   gap: 4px;
 }
-
 .directLink:hover {
   text-decoration: underline;
 }

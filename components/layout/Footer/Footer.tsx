@@ -19,7 +19,6 @@ export const Footer: React.FC = () => {
     <footer className={styles.footer} role="contentinfo">
       <Container size="wide">
         <div className={styles.topGrid}>
-          {/* Brand Column */}
           <div className={styles.brandCol}>
             <div className={styles.logoWrapper}>
               <Image
@@ -58,7 +57,6 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Business Divisions */}
           <div>
             <h4 className={styles.colTitle}>Business Divisions</h4>
             <ul className={styles.linkList}>
@@ -106,7 +104,6 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h4 className={styles.colTitle}>Company & Work</h4>
             <ul className={styles.linkList}>
@@ -143,7 +140,6 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Contact Details */}
           <div>
             <h4 className={styles.colTitle}>Corporate Office</h4>
             <div className={styles.contactInfoList}>
@@ -189,7 +185,6 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Bottom Bar */}
         <div className={styles.bottomBar}>
           <div>
             © {currentYear} sysTROL Engineering & Consultancy Pvt. Ltd. All rights

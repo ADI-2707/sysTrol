@@ -7,7 +7,6 @@
   overflow: hidden;
   border-bottom: 1px solid var(--color-border-dark);
 }
-
 @media (min-width: 1024px) {
   .hero {
     padding-top: var(--space-24);
@@ -17,8 +16,6 @@
     align-items: center;
   }
 }
-
-/* Abstract Industrial Circuit Motif Background */
 .backgroundPattern {
   position: absolute;
   top: 0;
@@ -35,7 +32,6 @@
   mask-image: radial-gradient(circle at 60% 40%, black 20%, transparent 80%);
   -webkit-mask-image: radial-gradient(circle at 60% 40%, black 20%, transparent 80%);
 }
-
 .circuitGlow {
   position: absolute;
   top: -10%;
@@ -47,7 +43,6 @@
   filter: blur(40px);
   pointer-events: none;
 }
-
 .gearGlow {
   position: absolute;
   bottom: -15%;
@@ -59,7 +54,6 @@
   filter: blur(50px);
   pointer-events: none;
 }
-
 .contentWrapper {
   position: relative;
   z-index: 1;
@@ -68,27 +62,23 @@
   gap: var(--space-10);
   align-items: center;
 }
-
 @media (min-width: 1024px) {
   .contentWrapper {
     grid-template-columns: 1.25fr 0.95fr;
     gap: var(--space-12);
   }
 }
-
 .textContent {
   display: flex;
   flex-direction: column;
   gap: var(--space-6);
 }
-
 .badgeRow {
   display: flex;
   align-items: center;
   gap: var(--space-2);
   flex-wrap: wrap;
 }
-
 .headline {
   font-size: var(--text-4xl);
   font-weight: var(--font-bold);
@@ -96,26 +86,22 @@
   letter-spacing: -0.03em;
   color: var(--color-surface-0);
 }
-
 @media (min-width: 768px) {
   .headline {
     font-size: var(--text-5xl);
   }
 }
-
 .gradientText {
   background: linear-gradient(135deg, #FFFFFF 30%, #34D399 70%, #0EA5A5 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
 .subheadline {
   font-size: var(--text-lg);
   color: #CBD5E1;
   line-height: var(--leading-relaxed);
   max-width: 580px;
 }
-
 .ctaGroup {
   display: flex;
   align-items: center;
@@ -123,7 +109,6 @@
   flex-wrap: wrap;
   padding-top: var(--space-2);
 }
-
 .heroMetrics {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -131,26 +116,21 @@
   padding-top: var(--space-6);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
-
 .metricItem {
   display: flex;
   flex-direction: column;
 }
-
 .metricValue {
   font-family: var(--font-heading), sans-serif;
   font-size: var(--text-xl);
   font-weight: var(--font-bold);
   color: var(--color-accent-teal-500);
 }
-
 .metricLabel {
   font-size: var(--text-xs);
   color: var(--color-ink-400);
   margin-top: 2px;
 }
-
-/* Hero Visual Box */
 .visualCard {
   background: linear-gradient(145deg, rgba(31, 41, 55, 0.7), rgba(17, 24, 39, 0.9));
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -161,13 +141,11 @@
   overflow: hidden;
   backdrop-filter: blur(16px);
 }
-
 @media (min-width: 768px) {
   .visualCard {
     padding: var(--space-8);
   }
 }
-
 .visualHeader {
   display: flex;
   align-items: center;
@@ -176,7 +154,6 @@
   padding-bottom: var(--space-4);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
-
 .systemStatus {
   display: inline-flex;
   align-items: center;
@@ -185,7 +162,6 @@
   font-family: var(--font-mono), monospace;
   color: var(--color-success-500);
 }
-
 .pulsingDot {
   width: 8px;
   height: 8px;
@@ -193,13 +169,11 @@
   background-color: var(--color-success-500);
   box-shadow: 0 0 10px var(--color-success-500);
 }
-
 .diagramGrid {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-4);
 }
-
 .layerCard {
   background-color: rgba(15, 23, 42, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -211,18 +185,15 @@
   gap: var(--space-3);
   transition: all var(--duration-fast);
 }
-
 .layerCard:hover {
   border-color: var(--color-accent-teal-500);
   background-color: rgba(15, 23, 42, 0.85);
 }
-
 .layerInfo {
   display: flex;
   align-items: center;
   gap: var(--space-3);
 }
-
 .layerIcon {
   width: 38px;
   height: 38px;
@@ -234,18 +205,15 @@
   justify-content: center;
   flex-shrink: 0;
 }
-
 .layerTitle {
   font-size: var(--text-sm);
   font-weight: var(--font-semibold);
   color: var(--color-surface-0);
 }
-
 .layerDesc {
   font-size: var(--text-xs);
   color: var(--color-ink-400);
 }
-
 .layerTag {
   font-family: var(--font-mono), monospace;
   font-size: 11px;

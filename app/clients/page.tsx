@@ -26,7 +26,6 @@ export default function ClientsPage() {
     <>
       <Navbar />
       <main>
-        {/* Header */}
         <section
           style={{
             backgroundColor: "var(--color-brand-navy-900)",
@@ -48,7 +47,6 @@ export default function ClientsPage() {
           </Container>
         </section>
 
-        {/* Clients Grouped by Sector */}
         <section
           style={{
             paddingTop: "var(--space-16)",
@@ -57,7 +55,6 @@ export default function ClientsPage() {
           }}
         >
           <Container size="wide">
-            {/* Open Item Flag Notice */}
             <div
               style={{
                 backgroundColor: "#FEF3C7",

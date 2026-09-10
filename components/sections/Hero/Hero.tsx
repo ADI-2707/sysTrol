@@ -23,7 +23,6 @@ export const Hero: React.FC = () => {
 
       <Container size="wide">
         <div className={styles.contentWrapper}>
-          {/* Left Text Content */}
           <div className={styles.textContent}>
             <div className={styles.badgeRow}>
               <Badge variant="dark" size="sm" icon={<Building2 size={12} />}>
@@ -81,7 +80,6 @@ export const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Architecture Topology Card */}
           <div className={styles.visualCard}>
             <div className={styles.visualHeader}>
               <div>
@@ -114,7 +112,6 @@ export const Hero: React.FC = () => {
             </div>
 
             <div className={styles.diagramGrid}>
-              {/* Layer 3 - ERP / MES */}
               <div className={styles.layerCard}>
                 <div className={styles.layerInfo}>
                   <div className={styles.layerIcon}>
@@ -128,7 +125,6 @@ export const Hero: React.FC = () => {
                 <span className={styles.layerTag}>Level-3</span>
               </div>
 
-              {/* Layer 2 - sysTROL Core */}
               <div
                 className={styles.layerCard}
                 style={{
@@ -169,7 +165,6 @@ export const Hero: React.FC = () => {
                 </span>
               </div>
 
-              {/* Layer 1 - PLCs */}
               <div className={styles.layerCard}>
                 <div className={styles.layerInfo}>
                   <div className={styles.layerIcon}>
@@ -183,7 +178,6 @@ export const Hero: React.FC = () => {
                 <span className={styles.layerTag}>Level-1</span>
               </div>
 
-              {/* Physical Process Tier */}
               <div className={styles.layerCard}>
                 <div className={styles.layerInfo}>
                   <div className={styles.layerIcon}>
