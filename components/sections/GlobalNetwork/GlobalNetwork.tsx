@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { Globe2, ShieldCheck, CheckCircle2, ArrowRight, Plane, MapPin } from "lucide-react";
 import { Container } from "@/components/layout/Container/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";
@@ -84,6 +85,20 @@ export const GlobalNetwork: React.FC = () => {
 
         <Reveal delay={350}>
           <div className={styles.corridorBanner}>
+            <div className={styles.corridorImageWrap}>
+              <Image
+                src="/images/global-logistics-freight.jpg"
+                alt="International industrial freight and bonded logistics corridors"
+                fill
+                sizes="(max-width: 1024px) 100vw, 1200px"
+                className={styles.corridorImage}
+              />
+              <div className={styles.corridorImageOverlay} />
+              <div className={styles.corridorImageBadge}>
+                <span>SECURED OEM PROCUREMENT CHANNELS & BONDED LOGISTICS</span>
+              </div>
+            </div>
+
             <div className={styles.corridorTitle}>
               <Plane size={18} color="var(--color-brand-green-600)" />
               <span>International Bonded Supply Chain & Engineering Pipeline</span>
