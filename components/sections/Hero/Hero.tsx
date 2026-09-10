@@ -3,19 +3,15 @@ import Link from "next/link";
 import {
   ArrowRight,
   Cpu,
-  ShieldCheck,
   Building2,
   Factory,
   Truck,
-  Globe2,
-  CheckCircle2,
-  MapPin,
 } from "lucide-react";
-import Image from "next/image";
 import { Container } from "@/components/layout/Container/Container";
 import { Button } from "@/components/ui/Button/Button";
 import { Badge } from "@/components/ui/Badge/Badge";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
+import { HeroCarousel } from "./HeroCarousel";
 import styles from "./Hero.module.css";
 
 export const Hero: React.FC = () => {
@@ -68,90 +64,7 @@ export const Hero: React.FC = () => {
           </Reveal>
 
           <Reveal delay={150}>
-            <div className={styles.visualCard}>
-              <div className={styles.visualHeader}>
-                <div>
-                  <span
-                    style={{
-                      fontSize: "var(--text-xs)",
-                      color: "var(--color-ink-400)",
-                      textTransform: "uppercase",
-                      letterSpacing: "0.06em",
-                      fontFamily: "var(--font-mono)",
-                    }}
-                  >
-                    SUPERVISORY AUTOMATION & SOURCING
-                  </span>
-                  <h3
-                    style={{
-                      fontSize: "var(--text-lg)",
-                      color: "var(--color-surface-0)",
-                      fontWeight: "600",
-                      marginTop: "2px",
-                    }}
-                  >
-                    Continuous Mill Performance
-                  </h3>
-                </div>
-                <Badge variant="accent" size="sm">
-                  ONLINE / OPERATIONAL
-                </Badge>
-              </div>
-
-              <div className={styles.visualImageWrap}>
-                <Image
-                  src="/images/hero-rolling-mill.jpg"
-                  alt="Continuous steel rolling mill supervisory operation"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 500px"
-                  className={styles.visualImage}
-                  priority
-                />
-                <div className={styles.visualImageOverlay} />
-                <div className={styles.visualImageTag}>
-                  <span>SUPERVISORY MILL PACING & AUTOMATION</span>
-                </div>
-              </div>
-
-              <div className={styles.statHighlightBox}>
-                <span className={styles.statBigNumber}>50+</span>
-                <div className={styles.statBigDetails}>
-                  <span className={styles.statBigTitle}>Rolling Mill Installations</span>
-                  <span className={styles.statBigSubtitle}>
-                    Commissioned Level-2 automation suites & critical revamps across 3 continents.
-                  </span>
-                </div>
-              </div>
-
-              <ul className={styles.proofList}>
-                <li className={styles.proofItem}>
-                  <div className={styles.proofIcon}>
-                    <CheckCircle2 size={15} />
-                  </div>
-                  <span>Deterministic C# mathematical pass scheduling & thermal pacing</span>
-                </li>
-                <li className={styles.proofItem}>
-                  <div className={styles.proofIcon}>
-                    <ShieldCheck size={15} />
-                  </div>
-                  <span>EN 10204 3.1 material test certified imported mill tooling & spares</span>
-                </li>
-                <li className={styles.proofItem}>
-                  <div className={styles.proofIcon}>
-                    <Factory size={15} />
-                  </div>
-                  <span>Full-lifecycle commissioning from FAT simulation to live hot metal roll</span>
-                </li>
-              </ul>
-
-              <div className={styles.visualFooter}>
-                <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-                  <MapPin size={13} color="var(--color-accent-teal-500)" />
-                  <span>Engineering Center: Bengaluru, India</span>
-                </div>
-                <span>ISO Standards Compliant</span>
-              </div>
-            </div>
+            <HeroCarousel />
           </Reveal>
         </div>
       </Container>
