@@ -1,0 +1,68 @@
+.trustStrip {
+  background-color: var(--color-surface-50);
+  border-bottom: 1px solid var(--color-border);
+  padding-top: var(--space-8);
+  padding-bottom: var(--space-8);
+}
+
+.caption {
+  text-align: center;
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  color: var(--color-ink-500);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--space-6);
+}
+
+.clientGrid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .clientGrid {
+    gap: var(--space-6);
+  }
+}
+
+.clientBadge {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  background-color: var(--color-surface-0);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--duration-fast) var(--ease-in-out);
+}
+
+.clientBadge:hover {
+  border-color: var(--color-brand-green-600);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.clientDot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-brand-green-600);
+}
+
+.clientName {
+  font-family: var(--font-heading), sans-serif;
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--color-ink-900);
+  letter-spacing: -0.01em;
+}
+
+.sectorSub {
+  font-size: 11px;
+  color: var(--color-ink-500);
+}
