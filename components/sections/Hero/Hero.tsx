@@ -8,6 +8,8 @@ import {
   Gauge,
   ShieldCheck,
   Building2,
+  Factory,
+  Truck,
 } from "lucide-react";
 import { Container } from "@/components/layout/Container/Container";
 import { Button } from "@/components/ui/Button/Button";
@@ -17,15 +19,11 @@ import styles from "./Hero.module.css";
 export const Hero: React.FC = () => {
   return (
     <section className={styles.hero} aria-label="Hero Section">
-      <div className={styles.backgroundPattern} aria-hidden="true" />
-      <div className={styles.circuitGlow} aria-hidden="true" />
-      <div className={styles.gearGlow} aria-hidden="true" />
-
       <Container size="wide">
-        <div className={styles.contentWrapper}>
+        <div className={styles.heroTop}>
           <div className={styles.textContent}>
             <div className={styles.badgeRow}>
-              <Badge variant="dark" size="sm" icon={<Building2 size={12} />}>
+              <Badge variant="default" size="sm" icon={<Building2 size={12} />}>
                 Bengaluru, India
               </Badge>
               <Badge variant="accent" size="sm" icon={<Cpu size={12} />}>
@@ -35,7 +33,7 @@ export const Hero: React.FC = () => {
 
             <h1 className={styles.headline}>
               Engineering Redefined.{" "}
-              <span className={styles.gradientText}>
+              <span className={styles.highlightText}>
                 Supervisory Automation & Industrial Spares.
               </span>
             </h1>
@@ -57,26 +55,11 @@ export const Hero: React.FC = () => {
               </Button>
               <Button
                 href="/projects"
-                variant="outlineDark"
+                variant="outline"
                 size="lg"
               >
                 View Case Studies
               </Button>
-            </div>
-
-            <div className={styles.heroMetrics}>
-              <div className={styles.metricItem}>
-                <span className={styles.metricValue}>Level-2</span>
-                <span className={styles.metricLabel}>C# / .NET Automation Core</span>
-              </div>
-              <div className={styles.metricItem}>
-                <span className={styles.metricValue}>Steel Mills</span>
-                <span className={styles.metricLabel}>Long, Flat & Pipe Products</span>
-              </div>
-              <div className={styles.metricItem}>
-                <span className={styles.metricValue}>OEM Sourcing</span>
-                <span className={styles.metricLabel}>Europe & Japan Sparing</span>
-              </div>
             </div>
           </div>
 
@@ -115,11 +98,11 @@ export const Hero: React.FC = () => {
               <div className={styles.layerCard}>
                 <div className={styles.layerInfo}>
                   <div className={styles.layerIcon}>
-                    <Layers size={20} />
+                    <Layers size={18} />
                   </div>
                   <div>
                     <div className={styles.layerTitle}>Enterprise Tier (MES / ERP)</div>
-                    <div className={styles.layerDesc}>Production planning, heat orders & dispatch</div>
+                    <div className={styles.layerDesc}>Production planning & scheduling</div>
                   </div>
                 </div>
                 <span className={styles.layerTag}>Level-3</span>
@@ -140,7 +123,7 @@ export const Hero: React.FC = () => {
                       color: "#FFFFFF",
                     }}
                   >
-                    <Activity size={20} />
+                    <Activity size={18} />
                   </div>
                   <div>
                     <div
@@ -150,7 +133,7 @@ export const Hero: React.FC = () => {
                       sysTROL L2 Supervisory Engine
                     </div>
                     <div className={styles.layerDesc}>
-                      C# mathematical models, roll pass scheduling & pacing
+                      C# mathematical models & pass schedule
                     </div>
                   </div>
                 </div>
@@ -168,11 +151,11 @@ export const Hero: React.FC = () => {
               <div className={styles.layerCard}>
                 <div className={styles.layerInfo}>
                   <div className={styles.layerIcon}>
-                    <Gauge size={20} />
+                    <Gauge size={18} />
                   </div>
                   <div>
-                    <div className={styles.layerTitle}>Control & Drives Tier (PLC)</div>
-                    <div className={styles.layerDesc}>Siemens S7, ABB, Rockwell drive regulators</div>
+                    <div className={styles.layerTitle}>Control Tier (PLC)</div>
+                    <div className={styles.layerDesc}>Siemens S7, ABB, Rockwell PLCs</div>
                   </div>
                 </div>
                 <span className={styles.layerTag}>Level-1</span>
@@ -181,11 +164,11 @@ export const Hero: React.FC = () => {
               <div className={styles.layerCard}>
                 <div className={styles.layerInfo}>
                   <div className={styles.layerIcon}>
-                    <ShieldCheck size={20} />
+                    <ShieldCheck size={18} />
                   </div>
                   <div>
-                    <div className={styles.layerTitle}>Mill Field Equipment & Spares</div>
-                    <div className={styles.layerDesc}>TC rolls, hydraulic AGC servos, optical HMD sensors</div>
+                    <div className={styles.layerTitle}>Field Equipment & Spares</div>
+                    <div className={styles.layerDesc}>TC rolls, AGC servos & sensors</div>
                   </div>
                 </div>
                 <span className={styles.layerTag}>Field Tier</span>
@@ -194,6 +177,54 @@ export const Hero: React.FC = () => {
           </div>
         </div>
       </Container>
+
+      <div className={styles.colorSection}>
+        <Container size="wide">
+          <div className={styles.cardsGrid}>
+            <div className={styles.metricCard}>
+              <div className={styles.metricCardHeader}>
+                <div className={styles.metricCardIcon}>
+                  <Cpu size={20} />
+                </div>
+                <span className={styles.metricCardTag}>Supervisory</span>
+              </div>
+              <div className={styles.metricCardValue}>Level-2</div>
+              <div className={styles.metricCardLabel}>C# / .NET Automation Core</div>
+              <p className={styles.metricCardDesc}>
+                High-performance supervisory services executing real-time pass schedules, roll force calculations, and mill pacing.
+              </p>
+            </div>
+
+            <div className={styles.metricCard}>
+              <div className={styles.metricCardHeader}>
+                <div className={styles.metricCardIcon} style={{ backgroundColor: "rgba(31, 122, 77, 0.2)", color: "#34D399" }}>
+                  <Factory size={20} />
+                </div>
+                <span className={styles.metricCardTag}>Process Domain</span>
+              </div>
+              <div className={styles.metricCardValue}>Steel Mills</div>
+              <div className={styles.metricCardLabel}>Long, Flat & Pipe Products</div>
+              <p className={styles.metricCardDesc}>
+                Specialized engineering for continuous bar mills, high-speed wire rod finishing blocks, and structural tube mills.
+              </p>
+            </div>
+
+            <div className={styles.metricCard}>
+              <div className={styles.metricCardHeader}>
+                <div className={styles.metricCardIcon} style={{ backgroundColor: "rgba(14, 165, 165, 0.2)", color: "#0EA5A5" }}>
+                  <Truck size={20} />
+                </div>
+                <span className={styles.metricCardTag}>Global Sourcing</span>
+              </div>
+              <div className={styles.metricCardValue}>OEM Sourcing</div>
+              <div className={styles.metricCardLabel}>Europe & Japan Sparing</div>
+              <p className={styles.metricCardDesc}>
+                Direct certified procurement of Tungsten Carbide rolls, high-response hydraulic AGC servos, and optical HMD sensors.
+              </p>
+            </div>
+          </div>
+        </Container>
+      </div>
     </section>
   );
 };
