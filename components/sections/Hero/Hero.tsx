@@ -11,6 +11,7 @@ import {
   CheckCircle2,
   MapPin,
 } from "lucide-react";
+import Image from "next/image";
 import { Container } from "@/components/layout/Container/Container";
 import { Button } from "@/components/ui/Button/Button";
 import { Badge } from "@/components/ui/Badge/Badge";
@@ -95,6 +96,21 @@ export const Hero: React.FC = () => {
                 <Badge variant="accent" size="sm">
                   ONLINE / OPERATIONAL
                 </Badge>
+              </div>
+
+              <div className={styles.visualImageWrap}>
+                <Image
+                  src="/images/hero-rolling-mill.jpg"
+                  alt="Continuous steel rolling mill supervisory operation"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 500px"
+                  className={styles.visualImage}
+                  priority
+                />
+                <div className={styles.visualImageOverlay} />
+                <div className={styles.visualImageTag}>
+                  <span>SUPERVISORY MILL PACING & AUTOMATION</span>
+                </div>
               </div>
 
               <div className={styles.statHighlightBox}>
