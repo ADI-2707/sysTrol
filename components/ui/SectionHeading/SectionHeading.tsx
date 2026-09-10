@@ -10,6 +10,7 @@ export interface SectionHeadingProps {
   align?: "left" | "center";
   theme?: "light" | "dark";
   className?: string;
+  style?: React.CSSProperties;
 }
 
 export const SectionHeading: React.FC<SectionHeadingProps> = ({
@@ -20,10 +21,12 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
   align = "left",
   theme = "light",
   className = "",
+  style,
 }) => {
   return (
     <div
       className={`${styles.wrapper} ${styles[align]} ${styles[theme]} ${className}`.trim()}
+      style={style}
     >
       {eyebrow && (
         <div className={styles.eyebrow}>
