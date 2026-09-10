@@ -1,0 +1,63 @@
+import React from "react";
+import { Factory, Code2, Globe2, ShieldCheck } from "lucide-react";
+import { Container } from "@/components/layout/Container/Container";
+import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";
+import styles from "./WhyUs.module.css";
+
+const valueProps = [
+  {
+    icon: <Factory size={22} />,
+    title: "Rolling Mill Specialists",
+    description:
+      "Deep domain knowledge in continuous bar, rod, structural, and flat rolling processes. We understand roll kinematics, tension loops, and inter-stand pacing intimately.",
+    tag: "Process Domain Mastery",
+  },
+  {
+    icon: <Code2 size={22} />,
+    title: "Level-2 Systems in C#",
+    description:
+      "Clean, maintainable, high-performance industrial C# / .NET architecture. Physics-based mathematical models replacing brittle legacy black-box code.",
+    tag: "Modern .NET Industrial Core",
+  },
+  {
+    icon: <Globe2 size={22} />,
+    title: "Domestic & Global Delivery",
+    description:
+      "Proven on-site and remote execution for Tier-1 integrated steel manufacturers in India, alongside international commissioning across the Middle East.",
+    tag: "India & International Footprint",
+  },
+  {
+    icon: <ShieldCheck size={22} />,
+    title: "Turnkey: Code to Sparing",
+    description:
+      "A unique combined capability: software engineers who calibrate mathematical models and trade OEM-grade mechanical spares with certified metallurgical integrity.",
+    tag: "Hardware & Software Synergy",
+  },
+];
+
+export const WhyUs: React.FC = () => {
+  return (
+    <section className={styles.section} aria-label="Why sysTROL">
+      <Container size="wide">
+        <SectionHeading
+          eyebrow="Why Choose sysTROL"
+          eyebrowVariant="accent"
+          title="Engineering Credibility Built on Field Results"
+          subtitle="We bridge the gap between heavy mechanical process realities and modern high-speed software automation."
+          align="left"
+        />
+
+        <div className={styles.grid}>
+          {valueProps.map((prop, idx) => (
+            <div key={idx} className={styles.card}>
+              <div className={styles.iconBox}>{prop.icon}</div>
+              <h3 className={styles.title}>{prop.title}</h3>
+              <p className={styles.description}>{prop.description}</p>
+              <div className={styles.footerTag}>[ {prop.tag} ]</div>
+            </div>
+          ))}
+        </div>
+      </Container>
+    </section>
+  );
+};
