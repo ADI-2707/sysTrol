@@ -89,6 +89,9 @@
   box-shadow: 0 20px 40px rgba(15, 23, 42, 0.18);
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
 }
 
 @media (min-width: 768px) {
@@ -101,96 +104,74 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: var(--space-6);
   padding-bottom: var(--space-4);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.trustBadge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 11px;
-  font-family: var(--font-mono), monospace;
-  color: var(--color-brand-green-600);
-  background-color: rgba(31, 122, 77, 0.15);
-  border: 1px solid rgba(31, 122, 77, 0.3);
-  padding: 4px 10px;
-  border-radius: var(--radius-full);
-}
-
-.networkGrid {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
-}
-
-.networkCard {
-  background-color: rgba(255, 255, 255, 0.03);
+.statHighlightBox {
+  background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: var(--radius-md);
-  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-4);
+}
+
+.statBigNumber {
+  font-family: var(--font-heading), sans-serif;
+  font-size: clamp(40px, 5vw, 56px);
+  font-weight: var(--font-bold);
+  color: var(--color-brand-green-600);
+  line-height: 1;
+}
+
+.statBigDetails {
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);
-  transition: all var(--duration-fast);
+  gap: 2px;
 }
 
-.networkCard:hover {
-  border-color: var(--color-accent-teal-500);
-  background-color: rgba(255, 255, 255, 0.06);
+.statBigTitle {
+  font-size: var(--text-base);
+  font-weight: var(--font-bold);
+  color: var(--color-surface-0);
 }
 
-.networkCardTop {
+.statBigSubtitle {
+  font-size: var(--text-xs);
+  color: var(--color-ink-400);
+  line-height: var(--leading-normal);
+}
+
+.proofList {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-2);
+  flex-direction: column;
+  gap: var(--space-3);
+  list-style: none;
 }
 
-.networkCardInfo {
+.proofItem {
   display: flex;
   align-items: center;
   gap: var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--color-ink-100);
 }
 
-.networkIcon {
-  width: 36px;
-  height: 36px;
-  border-radius: var(--radius-sm);
-  background-color: rgba(14, 165, 165, 0.15);
-  color: var(--color-accent-teal-500);
+.proofIcon {
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-full);
+  background-color: rgba(31, 122, 77, 0.2);
+  color: #34D399;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
 }
 
-.networkTitle {
-  font-size: var(--text-sm);
-  font-weight: var(--font-semibold);
-  color: var(--color-surface-0);
-}
-
-.networkTag {
-  font-family: var(--font-mono), monospace;
-  font-size: 11px;
-  color: var(--color-accent-teal-500);
-  background-color: rgba(14, 165, 165, 0.12);
-  padding: 2px 8px;
-  border-radius: var(--radius-sm);
-  white-space: nowrap;
-}
-
-.networkDesc {
-  font-size: var(--text-xs);
-  color: var(--color-ink-400);
-  line-height: var(--leading-relaxed);
-  padding-left: 48px;
-}
-
-.networkFooter {
-  margin-top: var(--space-4);
+.visualFooter {
   padding-top: var(--space-4);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;

@@ -79,7 +79,7 @@ export const Hero: React.FC = () => {
                       fontFamily: "var(--font-mono)",
                     }}
                   >
-                    GLOBAL INDUSTRIAL NETWORK
+                    SUPERVISORY AUTOMATION & SOURCING
                   </span>
                   <h3
                     style={{
@@ -89,98 +89,46 @@ export const Hero: React.FC = () => {
                       marginTop: "2px",
                     }}
                   >
-                    Operations & Supply Corridors
+                    Continuous Mill Performance
                   </h3>
                 </div>
-                <div className={styles.trustBadge}>
-                  <ShieldCheck size={14} />
-                  <span>VERIFIED OEM NETWORK</span>
+                <Badge variant="accent" size="sm">
+                  ONLINE / OPERATIONAL
+                </Badge>
+              </div>
+
+              <div className={styles.statHighlightBox}>
+                <span className={styles.statBigNumber}>50+</span>
+                <div className={styles.statBigDetails}>
+                  <span className={styles.statBigTitle}>Rolling Mill Installations</span>
+                  <span className={styles.statBigSubtitle}>
+                    Commissioned Level-2 automation suites & critical revamps across 3 continents.
+                  </span>
                 </div>
               </div>
 
-              <div className={styles.networkGrid}>
-                <div className={styles.networkCard}>
-                  <div className={styles.networkCardTop}>
-                    <div className={styles.networkCardInfo}>
-                      <div className={styles.networkIcon}>
-                        <Globe2 size={18} />
-                      </div>
-                      <div className={styles.networkTitle}>
-                        Global Sourcing Corridors
-                      </div>
-                    </div>
-                    <span className={styles.networkTag}>DE • IT • SE • JP → IN • GCC</span>
+              <ul className={styles.proofList}>
+                <li className={styles.proofItem}>
+                  <div className={styles.proofIcon}>
+                    <CheckCircle2 size={15} />
                   </div>
-                  <div className={styles.networkDesc}>
-                    Direct OEM procurement of Tungsten Carbide rings, hydraulic AGC servo valves, and optical sensors from Germany, Italy, Sweden, and Japan.
+                  <span>Deterministic C# mathematical pass scheduling & thermal pacing</span>
+                </li>
+                <li className={styles.proofItem}>
+                  <div className={styles.proofIcon}>
+                    <ShieldCheck size={15} />
                   </div>
-                </div>
+                  <span>EN 10204 3.1 material test certified imported mill tooling & spares</span>
+                </li>
+                <li className={styles.proofItem}>
+                  <div className={styles.proofIcon}>
+                    <Factory size={15} />
+                  </div>
+                  <span>Full-lifecycle commissioning from FAT simulation to live hot metal roll</span>
+                </li>
+              </ul>
 
-                <div
-                  className={styles.networkCard}
-                  style={{
-                    borderColor: "var(--color-accent-teal-500)",
-                    backgroundColor: "rgba(14, 165, 165, 0.06)",
-                  }}
-                >
-                  <div className={styles.networkCardTop}>
-                    <div className={styles.networkCardInfo}>
-                      <div
-                        className={styles.networkIcon}
-                        style={{
-                          backgroundColor: "rgba(31, 122, 77, 0.2)",
-                          color: "#34D399",
-                        }}
-                      >
-                        <ShieldCheck size={18} />
-                      </div>
-                      <div
-                        className={styles.networkTitle}
-                        style={{ color: "var(--color-surface-0)" }}
-                      >
-                        Material & Model Certification
-                      </div>
-                    </div>
-                    <span
-                      className={styles.networkTag}
-                      style={{
-                        backgroundColor: "rgba(31, 122, 77, 0.2)",
-                        color: "#34D399",
-                      }}
-                    >
-                      EN 10204 3.1 Certified
-                    </span>
-                  </div>
-                  <div className={styles.networkDesc}>
-                    100% material inspection test certificates on imported spares, backed by factory acceptance testing (FAT) on L2 automation models.
-                  </div>
-                </div>
-
-                <div className={styles.networkCard}>
-                  <div className={styles.networkCardTop}>
-                    <div className={styles.networkCardInfo}>
-                      <div
-                        className={styles.networkIcon}
-                        style={{
-                          backgroundColor: "rgba(59, 130, 246, 0.15)",
-                          color: "#60A5FA",
-                        }}
-                      >
-                        <CheckCircle2 size={18} />
-                      </div>
-                      <div className={styles.networkTitle}>
-                        Major Plant Engagements
-                      </div>
-                    </div>
-                    <span className={styles.networkTag}>50+ Mill Installations</span>
-                  </div>
-                  <div className={styles.networkDesc}>
-                    Proven engineering delivered to Tier-1 integrated producers and rolling mills across India and the GCC region.
-                  </div>
-                </div>
-              </div>
-
-              <div className={styles.networkFooter}>
+              <div className={styles.visualFooter}>
                 <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
                   <MapPin size={13} color="var(--color-accent-teal-500)" />
                   <span>Engineering Center: Bengaluru, India</span>

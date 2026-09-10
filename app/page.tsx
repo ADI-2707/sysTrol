@@ -4,6 +4,7 @@ import { FloatingContact } from "@/components/layout/FloatingContact/FloatingCon
 import { Hero } from "@/components/sections/Hero/Hero";
 import { TrustStrip } from "@/components/sections/TrustStrip/TrustStrip";
 import { WhatWeDo } from "@/components/sections/WhatWeDo/WhatWeDo";
+import { GlobalNetwork } from "@/components/sections/GlobalNetwork/GlobalNetwork";
 import { WhyUs } from "@/components/sections/WhyUs/WhyUs";
 import { FeaturedProjects } from "@/components/sections/FeaturedProjects/FeaturedProjects";
 import { IndustriesServed } from "@/components/sections/IndustriesServed/IndustriesServed";
@@ -17,6 +18,7 @@ export default function HomePage() {
         <Hero />
         <TrustStrip />
         <WhatWeDo />
+        <GlobalNetwork />
         <WhyUs />
         <FeaturedProjects />
         <IndustriesServed />
