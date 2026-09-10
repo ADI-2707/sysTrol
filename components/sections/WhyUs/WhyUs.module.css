@@ -1,14 +1,14 @@
 .section {
-  padding-top: var(--space-16);
-  padding-bottom: var(--space-16);
+  padding-top: var(--space-20);
+  padding-bottom: var(--space-20);
   background-color: var(--color-surface-50);
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
 }
 @media (min-width: 1024px) {
   .section {
-    padding-top: var(--space-24);
-    padding-bottom: var(--space-24);
+    padding-top: var(--space-32);
+    padding-bottom: var(--space-32);
   }
 }
 .grid {

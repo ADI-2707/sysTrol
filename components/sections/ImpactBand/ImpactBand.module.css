@@ -1,0 +1,91 @@
+.section {
+  background-color: var(--color-brand-navy-900);
+  color: var(--color-surface-0);
+  padding-top: var(--space-20);
+  padding-bottom: var(--space-20);
+  border-top: 1px solid var(--color-border-dark);
+  border-bottom: 1px solid var(--color-border-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding-top: var(--space-24);
+    padding-bottom: var(--space-24);
+  }
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.quoteMark {
+  font-family: var(--font-heading), sans-serif;
+  font-size: var(--text-5xl);
+  color: var(--color-accent-teal-500);
+  line-height: 1;
+  margin-bottom: var(--space-2);
+}
+
+.quoteText {
+  font-family: var(--font-heading), sans-serif;
+  font-size: clamp(20px, 2.4vw, 32px);
+  font-weight: var(--font-bold);
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: var(--color-surface-0);
+  margin-bottom: var(--space-6);
+}
+
+.attribution {
+  font-family: var(--font-mono), monospace;
+  font-size: var(--text-xs);
+  color: var(--color-accent-teal-500);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-12);
+}
+
+.statsRow {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  width: 100%;
+  padding-top: var(--space-8);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (min-width: 768px) {
+  .statsRow {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.statBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.statVal {
+  font-family: var(--font-heading), sans-serif;
+  font-size: clamp(32px, 3.5vw, 44px);
+  font-weight: var(--font-bold);
+  color: var(--color-brand-green-600);
+  line-height: 1;
+}
+
+.statDesc {
+  font-size: var(--text-xs);
+  color: var(--color-ink-400);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: var(--font-mono), monospace;
+}

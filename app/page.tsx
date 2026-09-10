@@ -6,6 +6,7 @@ import { TrustStrip } from "@/components/sections/TrustStrip/TrustStrip";
 import { WhatWeDo } from "@/components/sections/WhatWeDo/WhatWeDo";
 import { GlobalNetwork } from "@/components/sections/GlobalNetwork/GlobalNetwork";
 import { WhyUs } from "@/components/sections/WhyUs/WhyUs";
+import { ImpactBand } from "@/components/sections/ImpactBand/ImpactBand";
 import { FeaturedProjects } from "@/components/sections/FeaturedProjects/FeaturedProjects";
 import { IndustriesServed } from "@/components/sections/IndustriesServed/IndustriesServed";
 import { CTASection } from "@/components/sections/CTASection/CTASection";
@@ -20,6 +21,7 @@ export default function HomePage() {
         <WhatWeDo />
         <GlobalNetwork />
         <WhyUs />
+        <ImpactBand />
         <FeaturedProjects />
         <IndustriesServed />
         <CTASection />
