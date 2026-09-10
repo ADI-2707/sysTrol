@@ -5,88 +5,80 @@ import { Footer } from "@/components/layout/Footer/Footer";
 import { Container } from "@/components/layout/Container/Container";
 import { Button } from "@/components/ui/Button/Button";
 import { Badge } from "@/components/ui/Badge/Badge";
-import { Home, ArrowLeft, HelpCircle } from "lucide-react";
+import { Home, Compass, ArrowRight, Phone } from "lucide-react";
+import styles from "./NotFound.module.css";
+
+const suggestedLinks = [
+  {
+    title: "Level-2 Automation & Models",
+    subtitle: "Real-time pass schedules & C# .NET",
+    href: "/services/automation-consultancy",
+  },
+  {
+    title: "Imported Machinery & Spares",
+    subtitle: "Tungsten Carbide rolls & OEM valves",
+    href: "/services/trading",
+  },
+  {
+    title: "Case Studies & Track Record",
+    subtitle: "50+ rolling mill installations",
+    href: "/projects",
+  },
+  {
+    title: "Engineering Support Desk",
+    subtitle: "Bengaluru HQ & direct inquiries",
+    href: "/contact",
+  },
+];
 
 export default function NotFound() {
   return (
     <>
       <Navbar />
-      <main
-        style={{
-          minHeight: "70vh",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          backgroundColor: "var(--color-surface-50)",
-          padding: "var(--space-16) 0",
-        }}
-      >
-        <Container size="narrow">
-          <div
-            style={{
-              backgroundColor: "var(--color-surface-0)",
-              border: "1px solid var(--color-border)",
-              borderRadius: "var(--radius-xl)",
-              padding: "var(--space-10)",
-              textAlign: "center",
-              boxShadow: "var(--shadow-md)",
-            }}
-          >
-            <Badge variant="accent" size="sm" style={{ marginBottom: "16px" }}>
-              HTTP 404 • Resource Not Located
+      <main className={styles.container}>
+        <Container size="normal">
+          <div className={styles.card}>
+            <div className={styles.iconWrap}>
+              <Compass size={28} />
+            </div>
+
+            <Badge variant="accent" size="sm">
+              ROUTING STATUS: 404 NOT_FOUND
             </Badge>
 
-            <h1
-              style={{
-                fontFamily: "var(--font-heading)",
-                fontSize: "var(--text-5xl)",
-                fontWeight: 800,
-                color: "var(--color-ink-900)",
-                lineHeight: 1,
-                marginBottom: "12px",
-              }}
-            >
-              404
+            <div className={styles.code}>404</div>
+
+            <h1 className={styles.title}>
+              Plant Route or Specification Not Located
             </h1>
 
-            <h2
-              style={{
-                fontSize: "var(--text-xl)",
-                fontWeight: 600,
-                color: "var(--color-ink-900)",
-                marginBottom: "12px",
-              }}
-            >
-              Plant Route or Specification Not Found
-            </h2>
-
-            <p
-              style={{
-                fontSize: "var(--text-base)",
-                color: "var(--color-ink-500)",
-                maxWidth: "480px",
-                margin: "0 auto 24px",
-                lineHeight: 1.6,
-              }}
-            >
-              The link you accessed may be under maintenance, relocated, or temporarily
-              offline as part of the sysTROL corporate web architecture upgrade.
+            <p className={styles.description}>
+              The route you requested could not be resolved within the active sysTROL architecture.
+              The resource may have been relocated or updated during our system enhancement.
             </p>
 
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: "12px",
-                flexWrap: "wrap",
-              }}
-            >
+            <div className={styles.quickLinksTitle}>
+              Verified Primary Industrial Corridors
+            </div>
+
+            <div className={styles.linksGrid}>
+              {suggestedLinks.map((link) => (
+                <Link key={link.href} href={link.href} className={styles.linkCard}>
+                  <div>
+                    <div className={styles.linkCardTitle}>{link.title}</div>
+                    <div className={styles.linkCardSubtitle}>{link.subtitle}</div>
+                  </div>
+                  <ArrowRight size={14} color="var(--color-brand-green-600)" />
+                </Link>
+              ))}
+            </div>
+
+            <div className={styles.actions}>
               <Button href="/" variant="primary" size="md" leftIcon={<Home size={16} />}>
                 Return to Homepage
               </Button>
-              <Button href="/contact" variant="secondary" size="md">
-                Contact Support Desk
+              <Button href="/contact" variant="secondary" size="md" leftIcon={<Phone size={16} />}>
+                Contact Desk
               </Button>
             </div>
           </div>
