@@ -6,8 +6,6 @@ import {
   ShieldCheck,
   CheckCircle2,
   Factory,
-  ChevronLeft,
-  ChevronRight,
   MapPin,
 } from "lucide-react";
 import { Badge } from "@/components/ui/Badge/Badge";
@@ -153,19 +151,6 @@ export const HeroCarousel: React.FC = () => {
     }, 550);
   }, [currentIndex, isAnimating]);
 
-  const goToPrev = useCallback(() => {
-    if (isAnimating) return;
-    setPreviousIndex(currentIndex);
-    setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
-    setIsAnimating(true);
-
-    if (animTimeoutRef.current) clearTimeout(animTimeoutRef.current);
-    animTimeoutRef.current = setTimeout(() => {
-      setIsAnimating(false);
-      setPreviousIndex(null);
-    }, 550);
-  }, [currentIndex, isAnimating]);
-
   const goToSlide = useCallback((index: number) => {
     if (isAnimating || index === currentIndex) return;
     setPreviousIndex(currentIndex);
@@ -243,25 +228,6 @@ export const HeroCarousel: React.FC = () => {
                 aria-current={idx === currentIndex ? "true" : undefined}
               />
             ))}
-          </div>
-
-          <div className={styles.navButtons}>
-            <button
-              type="button"
-              onClick={goToPrev}
-              className={styles.navButton}
-              aria-label="Previous Slide"
-            >
-              <ChevronLeft size={16} />
-            </button>
-            <button
-              type="button"
-              onClick={goToNext}
-              className={styles.navButton}
-              aria-label="Next Slide"
-            >
-              <ChevronRight size={16} />
-            </button>
           </div>
         </div>
       </div>
