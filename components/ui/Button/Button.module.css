@@ -109,6 +109,16 @@
   justify-content: center;
   flex-shrink: 0;
 }
+.rightIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform var(--duration-fast) var(--ease-in-out);
+}
+.button:hover:not(:disabled) .rightIcon {
+  transform: translateX(4px);
+}
 .loading {
   cursor: wait;
   opacity: 0.85;
