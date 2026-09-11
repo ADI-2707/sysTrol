@@ -21,65 +21,35 @@
   pointer-events: none;
 }
 
-/* Group that holds the circular mark (left + right halves) during slide-in and rotation */
 .markWrapper {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   transform-origin: center center;
 }
 
-/* Center wordmark ("sysTROL" / "Engineering Redefined") */
-.wordmark {
-  position: absolute;
-  top: 50%;
-  left: calc(100% * (188.5 / 400));
-  transform: translate(-50%, -50%);
-  width: calc(100% * (169 / 400));
-  height: calc(100% * (210 / 400));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.wordmarkImage {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-}
-
-/* Left half: 104px of 400px = 26% width, 100% height */
 .leftIcon {
   position: absolute;
   top: 0;
-  height: 100%;
+  left: calc(100% * (84.5 / 400));
   width: calc(100% * (104 / 400));
-  /* In joined circular mark, seam is at -11.5/400 from center. Left icon right edge touches seam */
-  right: calc(50% + (11.5 / 400) * 100%);
+  height: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
-/* Right half: 127px of 400px = 31.75% width, 100% height */
 .rightIcon {
   position: absolute;
   top: 0;
-  height: 100%;
+  left: calc(100% * (188.5 / 400));
   width: calc(100% * (127 / 400));
-  /* Left edge touches seam */
-  left: calc(50% - (11.5 / 400) * 100%);
+  height: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .partImage {
@@ -89,7 +59,27 @@
   display: block;
 }
 
-/* Full official logo used for crossfade and glide to the navbar */
+.wordmark {
+  position: absolute;
+  top: calc(100% * (95 / 400));
+  left: calc(100% * (105 / 400));
+  width: calc(100% * (169 / 400));
+  height: calc(100% * (210 / 400));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transform-origin: center center;
+}
+
+.wordmarkImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
 .fullLogo {
   position: absolute;
   top: 0;

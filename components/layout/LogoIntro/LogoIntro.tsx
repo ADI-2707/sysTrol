@@ -14,18 +14,14 @@ export const LogoIntro: React.FC = () => {
   const hasStartedRef = useRef(false);
 
   useEffect(() => {
-    // 1. SSR & session check
     if (typeof window === "undefined") return;
 
     try {
       if (sessionStorage.getItem(SESSION_KEY) === "true") {
         return;
       }
-    } catch {
-      // In case storage is blocked
-    }
+    } catch {}
 
-    // 2. Accessibility: Reduced motion check
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
@@ -36,7 +32,6 @@ export const LogoIntro: React.FC = () => {
       return;
     }
 
-    // Lock scrolling during intro
     document.body.style.overflow = "hidden";
     setIsVisible(true);
 
@@ -52,7 +47,6 @@ export const LogoIntro: React.FC = () => {
     let isMounted = true;
 
     const runSequence = async () => {
-      // Wait for fonts & layout stabilization
       await new Promise((resolve) => requestAnimationFrame(resolve));
       if (!isMounted || !scope.current || !stageRef.current) return;
 
@@ -61,7 +55,6 @@ export const LogoIntro: React.FC = () => {
       const stageWidth = stageRect.width || 320;
       const initialOffset = Math.max(window.innerWidth * 0.6, 350);
 
-      // Elements
       const leftEl = stageEl.querySelector(`.${styles.leftIcon}`);
       const rightEl = stageEl.querySelector(`.${styles.rightIcon}`);
       const markWrapper = stageEl.querySelector(`.${styles.markWrapper}`);
@@ -72,7 +65,6 @@ export const LogoIntro: React.FC = () => {
         return;
       }
 
-      // 1. Slide in from off-screen left and right to touch with 0 gap / 0 overlap
       await Promise.all([
         animate(
           leftEl,
@@ -88,7 +80,6 @@ export const LogoIntro: React.FC = () => {
 
       if (!isMounted) return;
 
-      // 2. Rotate circular joined mark 360 degrees as a single disc
       await animate(
         markWrapper,
         { rotate: [0, 360] },
@@ -97,7 +88,6 @@ export const LogoIntro: React.FC = () => {
 
       if (!isMounted) return;
 
-      // 3. Ease apart symmetrically by (84.5 / 400) * stageWidth, revealing center wordmark
       const splitDistance = (84.5 / 400) * stageWidth;
       await Promise.all([
         animate(
@@ -112,27 +102,24 @@ export const LogoIntro: React.FC = () => {
         ),
         animate(
           wordmarkEl,
-          { opacity: [0, 1], scale: [0.94, 1] },
+          { opacity: [0, 1], scale: [0.95, 1] },
           { duration: 0.8, ease: [0.22, 1, 0.36, 1] }
         ),
       ]);
 
       if (!isMounted) return;
 
-      // 4. Brief hold for brand legibility
-      await new Promise((resolve) => setTimeout(resolve, 450));
+      await new Promise((resolve) => setTimeout(resolve, 500));
       if (!isMounted) return;
 
-      // 5. Crossfade 3-part assembly into the official logo
       await Promise.all([
-        animate(markWrapper, { opacity: 0 }, { duration: 0.28 }),
-        animate(wordmarkEl, { opacity: 0 }, { duration: 0.28 }),
-        animate(fullLogoEl, { opacity: 1 }, { duration: 0.28 }),
+        animate(markWrapper, { opacity: 0 }, { duration: 0.25 }),
+        animate(wordmarkEl, { opacity: 0 }, { duration: 0.25 }),
+        animate(fullLogoEl, { opacity: 1 }, { duration: 0.25 }),
       ]);
 
       if (!isMounted) return;
 
-      // 6. Measure live navbar logo target
       const target = document.getElementById("site-logo-target");
       const targetEl = target?.querySelector("img") || target;
 
@@ -154,7 +141,6 @@ export const LogoIntro: React.FC = () => {
         scale = targetRect.height / currentStageRect.height;
       }
 
-      // 7. Glide and scale logo to the navbar while fading out the overlay
       await Promise.all([
         animate(
           fullLogoEl,
@@ -168,7 +154,6 @@ export const LogoIntro: React.FC = () => {
         ),
       ]);
 
-      // 8. Completed: set session flag, restore overflow, unmount
       try {
         sessionStorage.setItem(SESSION_KEY, "true");
       } catch {}
@@ -192,7 +177,6 @@ export const LogoIntro: React.FC = () => {
   return (
     <div ref={scope} className={styles.overlay} aria-hidden="true">
       <div ref={stageRef} className={styles.stage}>
-        {/* Joined circular mark group */}
         <div className={styles.markWrapper}>
           <div className={styles.leftIcon}>
             <Image
@@ -216,7 +200,6 @@ export const LogoIntro: React.FC = () => {
           </div>
         </div>
 
-        {/* Wordmark revealed in the gap */}
         <div className={styles.wordmark}>
           <Image
             src="/images/intro/systrol-wordmark-center.png"
@@ -228,7 +211,6 @@ export const LogoIntro: React.FC = () => {
           />
         </div>
 
-        {/* Real logo for pixel-exact handoff and glide */}
         <div className={styles.fullLogo}>
           <Image
             src="/images/systrol-logo.jpeg"
