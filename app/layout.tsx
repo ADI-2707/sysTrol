@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import { LogoIntro } from "@/components/layout/LogoIntro/LogoIntro";
+import { TopProgressBar } from "@/components/layout/TopProgressBar/TopProgressBar";
 import "@/styles/globals.css";
 
 const headingFont = Space_Grotesk({
@@ -107,6 +108,7 @@ export default function RootLayout({
       className={`${headingFont.variable} ${bodyFont.variable} ${monoFont.variable}`}
     >
       <body>
+        <TopProgressBar />
         <LogoIntro />
         <script
           type="application/ld+json"
