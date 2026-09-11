@@ -15,7 +15,7 @@ import { ArrowLeft, CheckCircle2, Zap } from "lucide-react";
 export const metadata: Metadata = {
   title: "Level-2 Automation Engineering & Consultancy | sysTROL",
   description:
-    "C# based Level-2 supervisory automation systems for steel rolling mills, mathematical models, pass scheduling, and Level-1 PLC integration.",
+    "C# and Python Level-2 supervisory automation systems for steel rolling mills, deterministic calculation matrices, pass scheduling, and Level-1 PLC integration.",
 };
 
 export default function AutomationConsultancyPage() {
