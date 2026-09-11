@@ -8,6 +8,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";
 import { Badge } from "@/components/ui/Badge/Badge";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
 import { PageHero } from "@/components/sections/PageHero/PageHero";
+import { ClientLogoMarquee } from "@/components/sections/ClientLogoMarquee/ClientLogoMarquee";
 import { CTASection } from "@/components/sections/CTASection/CTASection";
 import { clientsData } from "@/content/clients";
 import { Building2, Globe, Info, CheckCircle2 } from "lucide-react";
@@ -59,6 +60,8 @@ export default function ClientsPage() {
             />
           </Reveal>
         </PageHero>
+
+        <ClientLogoMarquee />
 
         <section
           style={{
