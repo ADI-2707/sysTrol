@@ -37,6 +37,23 @@ export const projectsData: Project[] = [
       { label: "Annual Billet Throughput", value: "650k TPA" },
       { label: "Tolerances Maintained", value: "±0.5%" },
     ],
+    gallery: [
+      {
+        url: "/images/projects/gallery/bar-mill-pulpit.jpg",
+        caption: "Level-2 Supervisory Pulpit with real-time pass schedule calculation and mill floor tracking",
+        tag: "Control Room Pulpit",
+      },
+      {
+        url: "/images/hero-rolling-mill.jpg",
+        caption: "18-stand continuous bar mill train rolling high-tensile structural rebar",
+        tag: "Mill Floor Operation",
+      },
+      {
+        url: "/images/projects/gallery/bar-mill-cooling-bed.jpg",
+        caption: "Automatic flying shear transfer and rake cooling bed alignment",
+        tag: "Finishing & Cooling Bed",
+      },
+    ],
   },
   {
     id: "proj-2",
@@ -72,6 +89,23 @@ export const projectsData: Project[] = [
       { label: "Roll Force Surges", value: "-22%" },
       { label: "Billet Temp Uniformity", value: "±12°C" },
       { label: "Pacing Sync Rate", value: "99.8%" },
+    ],
+    gallery: [
+      {
+        url: "/images/projects/reheating-furnace.jpg",
+        caption: "8-zone walking beam reheating furnace discharging uniformly heated steel billets at 1150°C",
+        tag: "Furnace Discharge",
+      },
+      {
+        url: "/images/projects/gallery/furnace-pyrometer.jpg",
+        caption: "Optical pyrometer array and FLIR thermal imaging for cross-billet temperature uniformity",
+        tag: "Thermal Instrumentation",
+      },
+      {
+        url: "/images/projects/gallery/furnace-combustion-skid.jpg",
+        caption: "Automated natural gas combustion regulation skid and zone burner valves",
+        tag: "Combustion Control Skid",
+      },
     ],
   },
   {
@@ -109,6 +143,23 @@ export const projectsData: Project[] = [
       { label: "Tail Cobbles", value: "-30%" },
       { label: "Groove Life Tracking", value: "100%" },
     ],
+    gallery: [
+      {
+        url: "/images/projects/wire-rod-mill.jpg",
+        caption: "High-speed 10-stand wire rod finishing block operating at 110 m/s delivery speed",
+        tag: "High-Speed Block",
+      },
+      {
+        url: "/images/projects/gallery/wirerod-cooling-conveyor.jpg",
+        caption: "Stelmor controlled cooling conveyor with precision ring lap distribution",
+        tag: "Stelmor Line",
+      },
+      {
+        url: "/images/projects/gallery/wirerod-control-console.jpg",
+        caption: "Speed cascade coordination console capturing 5ms mill motor current and tension trends",
+        tag: "Speed Cascade Desk",
+      },
+    ],
   },
   {
     id: "proj-4",
@@ -142,6 +193,23 @@ export const projectsData: Project[] = [
       { label: "Lead Time Slashed", value: "9 days vs 16 wks" },
       { label: "Strip Gauge Deviation", value: "±0.008 mm" },
       { label: "Certification", value: "EN 10204 3.1" },
+    ],
+    gallery: [
+      {
+        url: "/images/projects/gallery/agc-cylinder-stand.jpg",
+        caption: "Heavy cold rolling mill stand equipped with retrofitted hydraulic AGC cylinders",
+        tag: "Mill Housing Retrofit",
+      },
+      {
+        url: "/images/hydraulic-agc-system.jpg",
+        caption: "German high-frequency Moog/Rexroth servo valve manifold and stainless hydraulic lines",
+        tag: "Servo Valve Manifold",
+      },
+      {
+        url: "/images/projects/gallery/agc-laser-gauge.jpg",
+        caption: "Non-contact laser thickness sensor confirming continuous strip gauge within ±0.008 mm",
+        tag: "Laser Gauge Metrology",
+      },
     ],
   },
   {
@@ -177,6 +245,23 @@ export const projectsData: Project[] = [
       { label: "Binder Matrix", value: "15% Co-Ni-Cr" },
       { label: "Surface Rejection Rate", value: "< 0.05%" },
     ],
+    gallery: [
+      {
+        url: "/images/tungsten-carbide-rolls.jpg",
+        caption: "15% Co-Ni-Cr matrix Tungsten Carbide roll rings engineered for high fracture toughness",
+        tag: "Tungsten Carbide Spares",
+      },
+      {
+        url: "/images/global-logistics-freight.jpg",
+        caption: "International air freight and protective moisture-barrier packaging for urgent plant delivery",
+        tag: "Expedited Logistics",
+      },
+      {
+        url: "/images/about/engineering-facility.jpg",
+        caption: "Quality assurance laboratory testing dimensional tolerances and EN 10204 3.1 compliance",
+        tag: "Inspection & NDT Lab",
+      },
+    ],
   },
   {
     id: "proj-6",
@@ -209,6 +294,23 @@ export const projectsData: Project[] = [
       { label: "Changeover Scrap Cut", value: "-78%" },
       { label: "Dimensional Standard", value: "ASTM A500" },
       { label: "Flying Saw Sync Accuracy", value: "±1.5 mm" },
+    ],
+    gallery: [
+      {
+        url: "/images/projects/erw-tube-mill.jpg",
+        caption: "ERW structural tube breakdown and fin-pass forming roll stands",
+        tag: "Tube Forming Stands",
+      },
+      {
+        url: "/images/automation-control-room.jpg",
+        caption: "Level-2 sizing and pass schedule calculation supervisory engineering console",
+        tag: "Pass Schedule Console",
+      },
+      {
+        url: "/images/hero-rolling-mill.jpg",
+        caption: "Synchronized flying cold saw cutoff section and automated tube bundle transfer",
+        tag: "Flying Cold Saw Line",
+      },
     ],
   },
 ];

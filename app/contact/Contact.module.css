@@ -151,6 +151,34 @@
   text-align: center;
   padding: var(--space-4);
 }
+.mapContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--color-border-dark);
+  box-shadow: var(--shadow-sm);
+}
+.mapImage {
+  object-fit: cover;
+}
+.mapBadge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background-color: rgba(10, 15, 29, 0.88);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-surface-0);
+  font-size: var(--text-xs);
+  z-index: 2;
+}
 .hoursStrip {
   padding: var(--space-4);
   background-color: var(--color-surface-50);

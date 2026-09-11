@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Navbar } from "@/components/layout/Navbar/Navbar";
 import { Footer } from "@/components/layout/Footer/Footer";
 import { FloatingContact } from "@/components/layout/FloatingContact/FloatingContact";
@@ -8,7 +9,9 @@ import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";
 import { Badge } from "@/components/ui/Badge/Badge";
 import { Button } from "@/components/ui/Button/Button";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
+import { PageHero } from "@/components/sections/PageHero/PageHero";
 import { CTASection } from "@/components/sections/CTASection/CTASection";
+import { CapabilitiesTimeline } from "@/components/sections/CapabilitiesTimeline/CapabilitiesTimeline";
 import { servicesData } from "@/content/services";
 import { ArrowRight, Cpu, Truck } from "lucide-react";
 import styles from "./Services.module.css";
@@ -19,33 +22,67 @@ export const metadata: Metadata = {
     "Explore sysTROL's two divisions: Level-2 Process Automation software for steel rolling mills and Global Machinery Spares Trading.",
 };
 
+const automationFlowSteps: Record<number, string[]> = {
+  0: ["L1 Field PLC", "C# Mill Service", "Real-Time Tracking", "Supervisory HMI / MES"],
+  1: ["Roll Force & Torque", "Pass Deformation Model", "Thermal Rundown Pacing", "Adaptive Feedback"],
+  2: ["Shopfloor PLCs", "OPC UA / Modbus Broker", "Billet Genealogy", "Enterprise MES"],
+  3: ["Kinematics Audit", "FAT Shadow Run", "Cold / Hot Trials", "24/7 Remote Telemetry"],
+};
+
+const tradingFlowSteps: Record<number, string[]> = {
+  0: ["Tungsten Carbide Ring", "Precision Roller Guide", "Universal Drive Spindle", "Mill Stand Assembly"],
+  1: ["Fiber-Optic HMD", "Laser Velocimeter", "High-Precision Load Cell", "L1 Automation Rack"],
+  2: ["Proportional Servo Valve", "3μm Micro-Filtration", "Hydraulic AGC Cylinder", "Looper Actuation"],
+  3: ["EN 10204 3.1 Cert", "Pre-Shipment Metrology", "Export Freight", "Plant Site Delivery"],
+};
+
 export default function ServicesPage() {
   const [automation, trading] = servicesData;
+
+  const automationCapabilities = automation.capabilities.map((cap, idx) => ({
+    ...cap,
+    flowSteps: automationFlowSteps[idx],
+  }));
+
+  const tradingCapabilities = trading.capabilities.map((cap, idx) => ({
+    ...cap,
+    flowSteps: tradingFlowSteps[idx],
+  }));
 
   return (
     <>
       <Navbar />
       <main>
-        <section className={styles.hero}>
-          <Container size="wide">
-            <Reveal>
-              <SectionHeading
-                eyebrow="Specialized Capabilities"
-                eyebrowVariant="dark"
-                theme="dark"
-                title="End-to-End Industrial Process Solutions"
-                subtitle="From custom Level-2 supervisory algorithms and thermal pacing models to the urgent air-freight of certified European servo valves, we support the operational heartbeat of steel manufacturing plants."
-                align="left"
-              />
-            </Reveal>
-          </Container>
-        </section>
+        <PageHero
+          image="/images/automation-control-room.jpg"
+          imageAlt="Level-2 automation control room"
+        >
+          <Reveal>
+            <SectionHeading
+              eyebrow="Specialized Capabilities"
+              eyebrowVariant="dark"
+              theme="dark"
+              title="End-to-End Industrial Process Solutions"
+              subtitle="From custom Level-2 supervisory algorithms and thermal pacing models to the urgent air-freight of certified European servo valves, we support the operational heartbeat of steel manufacturing plants."
+              align="left"
+            />
+          </Reveal>
+        </PageHero>
 
         <section className={styles.overviewSection}>
           <Container size="wide">
             <Reveal delay={100}>
               <div className={styles.divisionCard}>
                 <div className={styles.divisionLeft}>
+                  <div className={styles.cardBanner}>
+                    <Image
+                      src="/images/automation-control-room.jpg"
+                      alt="Level-2 Automation Control Room"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className={styles.cardBannerImage}
+                    />
+                  </div>
                   <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
                     <div
                       style={{
@@ -89,26 +126,26 @@ export default function ServicesPage() {
                   </div>
                 </div>
 
-                <div className={styles.capabilitiesGrid}>
-                  <h4 style={{ fontSize: "var(--text-sm)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em", color: "var(--color-ink-900)" }}>
-                    Key Engineering Capabilities
-                  </h4>
-                  {automation.capabilities.map((cap, idx) => (
-                    <div key={idx} className={styles.capabilityItem}>
-                      <div className={styles.capBullet} />
-                      <div>
-                        <div className={styles.capTitle}>{cap.title}</div>
-                        <div className={styles.capDesc}>{cap.description}</div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                <CapabilitiesTimeline
+                  title="Key Engineering Capabilities"
+                  theme="brand"
+                  items={automationCapabilities}
+                />
               </div>
             </Reveal>
 
             <Reveal delay={200}>
               <div className={styles.divisionCard}>
                 <div className={styles.divisionLeft}>
+                  <div className={styles.cardBanner}>
+                    <Image
+                      src="/images/hydraulic-agc-system.jpg"
+                      alt="Precision Hydraulic AGC System and Spares"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className={styles.cardBannerImage}
+                    />
+                  </div>
                   <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
                     <div
                       style={{
@@ -152,20 +189,11 @@ export default function ServicesPage() {
                   </div>
                 </div>
 
-                <div className={styles.capabilitiesGrid}>
-                  <h4 style={{ fontSize: "var(--text-sm)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em", color: "var(--color-ink-900)" }}>
-                    Sourcing & Inspection Guarantees
-                  </h4>
-                  {trading.capabilities.map((cap, idx) => (
-                    <div key={idx} className={styles.capabilityItem}>
-                      <div className={styles.capBullet} style={{ backgroundColor: "var(--color-accent-teal-500)" }} />
-                      <div>
-                        <div className={styles.capTitle}>{cap.title}</div>
-                        <div className={styles.capDesc}>{cap.description}</div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                <CapabilitiesTimeline
+                  title="Sourcing & Inspection Guarantees"
+                  theme="accent"
+                  items={tradingCapabilities}
+                />
               </div>
             </Reveal>
           </Container>

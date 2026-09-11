@@ -1,0 +1,105 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-brand-navy-900);
+  color: var(--color-surface-0);
+  min-height: clamp(320px, 40vw, 440px);
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--color-border-dark);
+}
+
+.imageLayer {
+  position: absolute;
+  inset: 0;
+  animation: kenBurns 24s ease-in-out infinite alternate;
+  will-change: transform;
+  z-index: 0;
+}
+
+@keyframes kenBurns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(10, 15, 29, 0.88) 0%,
+    rgba(10, 15, 29, 0.78) 50%,
+    rgba(10, 15, 29, 0.7) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+.circuitTexture {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.16;
+}
+
+.circuitLine {
+  stroke: var(--color-brand-green-600);
+  stroke-width: 1.5;
+  stroke-dasharray: 8 12;
+  fill: none;
+  animation: circuitFlow 40s linear infinite;
+}
+
+.circuitNode {
+  fill: var(--color-brand-green-600);
+}
+
+.outerLine {
+  display: block;
+}
+
+@media (max-width: 640px) {
+  .outerLine {
+    display: none;
+  }
+}
+
+@keyframes circuitFlow {
+  from {
+    stroke-dashoffset: 400;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  padding-top: var(--space-16);
+  padding-bottom: var(--space-16);
+}
+
+@media (min-width: 1024px) {
+  .content {
+    padding-top: var(--space-20);
+    padding-bottom: var(--space-20);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .imageLayer {
+    animation: none;
+  }
+  .circuitLine {
+    animation: none;
+  }
+}

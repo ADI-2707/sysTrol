@@ -105,3 +105,38 @@
   padding: var(--space-8);
   border: 1px solid var(--color-border-dark);
 }
+
+.facilitySection {
+  padding-top: var(--space-16);
+  padding-bottom: var(--space-16);
+  background-color: var(--color-surface-0);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.facilityGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .facilityGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-12);
+  }
+}
+
+.facilityImageContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border);
+}
+
+.facilityImage {
+  object-fit: cover;
+}

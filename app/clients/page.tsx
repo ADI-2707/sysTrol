@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Navbar } from "@/components/layout/Navbar/Navbar";
 import { Footer } from "@/components/layout/Footer/Footer";
 import { FloatingContact } from "@/components/layout/FloatingContact/FloatingContact";
@@ -6,6 +7,7 @@ import { Container } from "@/components/layout/Container/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";
 import { Badge } from "@/components/ui/Badge/Badge";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
+import { PageHero } from "@/components/sections/PageHero/PageHero";
 import { CTASection } from "@/components/sections/CTASection/CTASection";
 import { clientsData } from "@/content/clients";
 import { Building2, Globe, Info, CheckCircle2 } from "lucide-react";
@@ -22,33 +24,41 @@ const sectors: Array<"Steel & Integrated Plants" | "Process Industries" | "Inter
   "International",
 ];
 
+const sectorBanners: Record<string, { image: string; alt: string }> = {
+  "Steel & Integrated Plants": {
+    image: "/images/tungsten-carbide-rolls.jpg",
+    alt: "Precision rolling mill rolls and heavy steel plant equipment",
+  },
+  "Process Industries": {
+    image: "/images/hydraulic-agc-system.jpg",
+    alt: "Hydraulic gauge control systems and industrial process automation",
+  },
+  "International": {
+    image: "/images/global-logistics-freight.jpg",
+    alt: "Global machinery and spares air-freight logistics",
+  },
+};
+
 export default function ClientsPage() {
   return (
     <>
       <Navbar />
       <main>
-        <section
-          style={{
-            backgroundColor: "var(--color-brand-navy-900)",
-            color: "var(--color-surface-0)",
-            paddingTop: "var(--space-16)",
-            paddingBottom: "var(--space-20)",
-            borderBottom: "1px solid var(--color-border-dark)",
-          }}
+        <PageHero
+          image="/images/global-logistics-freight.jpg"
+          imageAlt="International freight logistics for mill spares"
         >
-          <Container size="wide">
-            <Reveal>
-              <SectionHeading
-                eyebrow="Industrial Relationships"
-                eyebrowVariant="dark"
-                theme="dark"
-                title="Trusted by Premier Steel & Process Manufacturers"
-                subtitle="sysTROL has delivered mission-critical Level-2 automation engineering and specialized machinery spares to leading integrated plants in India and abroad."
-                align="left"
-              />
-            </Reveal>
-          </Container>
-        </section>
+          <Reveal>
+            <SectionHeading
+              eyebrow="Industrial Relationships"
+              eyebrowVariant="dark"
+              theme="dark"
+              title="Trusted by Premier Steel & Process Manufacturers"
+              subtitle="sysTROL has delivered mission-critical Level-2 automation engineering and specialized machinery spares to leading integrated plants in India and abroad."
+              align="left"
+            />
+          </Reveal>
+        </PageHero>
 
         <section
           style={{
@@ -117,6 +127,29 @@ export default function ClientsPage() {
                         {sectorClients.length} Engagements
                       </Badge>
                     </div>
+
+                    {sectorBanners[sector] && (
+                      <div
+                        style={{
+                          position: "relative",
+                          width: "100%",
+                          aspectRatio: "21 / 9",
+                          borderRadius: "var(--radius-lg)",
+                          overflow: "hidden",
+                          marginBottom: "var(--space-6)",
+                          border: "1px solid var(--color-border)",
+                          boxShadow: "var(--shadow-sm)",
+                        }}
+                      >
+                        <Image
+                          src={sectorBanners[sector].image}
+                          alt={sectorBanners[sector].alt}
+                          fill
+                          sizes="(max-width: 1024px) 100vw, 1200px"
+                          style={{ objectFit: "cover" }}
+                        />
+                      </div>
+                    )}
                   </Reveal>
 
                   <div

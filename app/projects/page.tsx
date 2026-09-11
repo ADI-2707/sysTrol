@@ -2,6 +2,7 @@
 
 import React, { useState, useMemo } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Navbar } from "@/components/layout/Navbar/Navbar";
 import { Footer } from "@/components/layout/Footer/Footer";
 import { FloatingContact } from "@/components/layout/FloatingContact/FloatingContact";
@@ -9,10 +10,20 @@ import { Container } from "@/components/layout/Container/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";
 import { Badge } from "@/components/ui/Badge/Badge";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
+import { PageHero } from "@/components/sections/PageHero/PageHero";
 import { CTASection } from "@/components/sections/CTASection/CTASection";
 import { projectsData } from "@/content/projects";
 import { ArrowRight, Info, Filter } from "lucide-react";
 import styles from "./Projects.module.css";
+
+const projectThumbnails: Record<string, string> = {
+  "proj-1": "/images/hero-rolling-mill.jpg",
+  "proj-2": "/images/projects/reheating-furnace.jpg",
+  "proj-3": "/images/projects/wire-rod-mill.jpg",
+  "proj-4": "/images/hydraulic-agc-system.jpg",
+  "proj-5": "/images/tungsten-carbide-rolls.jpg",
+  "proj-6": "/images/projects/erw-tube-mill.jpg",
+};
 
 const sectors = [
   "All",
@@ -42,20 +53,21 @@ export default function ProjectsPage() {
     <>
       <Navbar />
       <main>
-        <section className={styles.heroHeader}>
-          <Container size="wide">
-            <Reveal>
-              <SectionHeading
-                eyebrow="Case Studies & Technical Deliverables"
-                eyebrowVariant="dark"
-                theme="dark"
-                title="Industrial Automation & Mill Modernization Track Record"
-                subtitle="Browse our representative project portfolio across bar mills, wire rod blocks, reheating furnaces, and precision spares turnarounds."
-                align="left"
-              />
-            </Reveal>
-          </Container>
-        </section>
+        <PageHero
+          image="/images/tungsten-carbide-rolls.jpg"
+          imageAlt="Tungsten carbide roll rings in production"
+        >
+          <Reveal>
+            <SectionHeading
+              eyebrow="Case Studies & Technical Deliverables"
+              eyebrowVariant="dark"
+              theme="dark"
+              title="Industrial Automation & Mill Modernization Track Record"
+              subtitle="Browse our representative project portfolio across bar mills, wire rod blocks, reheating furnaces, and precision spares turnarounds."
+              align="left"
+            />
+          </Reveal>
+        </PageHero>
 
         <section className={styles.filterSection}>
           <Container size="wide">
@@ -143,6 +155,16 @@ export default function ProjectsPage() {
                         flex: 1,
                       }}
                     >
+                      <div className={styles.cardThumbnail}>
+                        <Image
+                          src={projectThumbnails[project.id] || "/images/hero-rolling-mill.jpg"}
+                          alt={project.title}
+                          fill
+                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          className={styles.cardThumbnailImage}
+                        />
+                      </div>
+
                       <div
                         style={{
                           display: "flex",
@@ -252,18 +274,10 @@ export default function ProjectsPage() {
                         </span>
                         <Link
                           href={`/projects/${project.slug}`}
-                          style={{
-                            display: "inline-flex",
-                            alignItems: "center",
-                            gap: "4px",
-                            fontSize: "var(--text-xs)",
-                            fontWeight: 600,
-                            color: "var(--color-brand-green-600)",
-                            textDecoration: "none",
-                          }}
+                          className={styles.viewDetailsLink}
                         >
                           <span>View Details</span>
-                          <ArrowRight size={14} />
+                          <ArrowRight size={14} className={styles.viewDetailsArrow} />
                         </Link>
                       </div>
                     </div>

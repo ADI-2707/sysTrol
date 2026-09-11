@@ -101,3 +101,45 @@
   border: 1px dashed var(--color-border);
   border-radius: var(--radius-lg);
 }
+
+.cardThumbnail {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: var(--space-4);
+  background-color: var(--color-surface-100);
+}
+
+.cardThumbnailImage {
+  object-fit: cover;
+  transition: transform var(--duration-normal) var(--ease-out-expo);
+}
+
+.cardThumbnail:hover .cardThumbnailImage {
+  transform: scale(1.05);
+}
+
+.viewDetailsLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-brand-green-600);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-in-out);
+}
+
+.viewDetailsLink:hover {
+  color: var(--color-brand-green-700);
+}
+
+.viewDetailsArrow {
+  transition: transform var(--duration-fast) var(--ease-in-out);
+}
+
+.viewDetailsLink:hover .viewDetailsArrow {
+  transform: translateX(4px);
+}
