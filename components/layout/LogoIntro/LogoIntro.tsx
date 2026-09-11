@@ -112,15 +112,30 @@ export const LogoIntro: React.FC = () => {
 
       if (!isMounted) return;
 
-      await new Promise((resolve) => setTimeout(resolve, 500));
+      await new Promise((resolve) => setTimeout(resolve, 400));
       if (!isMounted) return;
 
       await Promise.all([
-        animate(markWrapper, { opacity: 0 }, { duration: 0.25 }),
-        animate(wordmarkEl, { opacity: 0 }, { duration: 0.25 }),
-        animate(fullLogoEl, { opacity: 1 }, { duration: 0.25 }),
+        animate(markWrapper, { scale: 0.9 }, { duration: 0.13, ease: [0.4, 0, 0.2, 1] }),
+        animate(wordmarkEl, { scale: 0.9 }, { duration: 0.13, ease: [0.4, 0, 0.2, 1] }),
       ]);
+      if (!isMounted) return;
 
+      await Promise.all([
+        animate(markWrapper, { opacity: 0 }, { duration: 0.01 }),
+        animate(wordmarkEl, { opacity: 0 }, { duration: 0.01 }),
+        animate(fullLogoEl, { opacity: 1, scale: 0.9 }, { duration: 0.01 }),
+      ]);
+      if (!isMounted) return;
+
+      await animate(
+        fullLogoEl,
+        { scale: [0.9, 1.04, 1] },
+        { duration: 0.24, ease: [0.22, 1, 0.36, 1] }
+      );
+      if (!isMounted) return;
+
+      await new Promise((resolve) => setTimeout(resolve, 200));
       if (!isMounted) return;
 
       const target = document.getElementById("site-logo-target");
