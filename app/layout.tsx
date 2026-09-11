@@ -107,6 +107,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${headingFont.variable} ${bodyFont.variable} ${monoFont.variable}`}
+      suppressHydrationWarning
     >
       <head>
         <script
