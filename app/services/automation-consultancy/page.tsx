@@ -8,6 +8,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";
 import { Stepper } from "@/components/ui/Stepper/Stepper";
 import { Badge } from "@/components/ui/Badge/Badge";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
+import { PageHero } from "@/components/sections/PageHero/PageHero";
 import { CTASection } from "@/components/sections/CTASection/CTASection";
 import { servicesData } from "@/content/services";
 import { ArrowLeft, CheckCircle2, Zap } from "lucide-react";
@@ -25,73 +26,66 @@ export default function AutomationConsultancyPage() {
     <>
       <Navbar />
       <main>
-        <section
-          style={{
-            backgroundColor: "var(--color-brand-navy-900)",
-            color: "var(--color-surface-0)",
-            paddingTop: "var(--space-16)",
-            paddingBottom: "var(--space-20)",
-            borderBottom: "1px solid var(--color-border-dark)",
-          }}
+        <PageHero
+          image="/images/automation-control-room.jpg"
+          imageAlt="Level-2 automation engineering and process control pulpit"
         >
-          <Container size="wide">
-            <Reveal>
-              <div style={{ marginBottom: "var(--space-4)" }}>
-                <Link
-                  href="/services"
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "6px",
-                    fontSize: "var(--text-xs)",
-                    color: "var(--color-ink-400)",
-                    textDecoration: "none",
-                  }}
-                >
-                  <ArrowLeft size={14} />
-                  <span>Back to Services Overview</span>
-                </Link>
-              </div>
-
-              <Badge variant="brand" size="md" style={{ marginBottom: "var(--space-3)" }}>
-                Specialist Engineering Division
-              </Badge>
-
-              <h1
+          <Reveal>
+            <div style={{ marginBottom: "var(--space-4)" }}>
+              <Link
+                href="/services"
                 style={{
-                  fontSize: "var(--text-4xl)",
-                  fontWeight: 700,
-                  color: "var(--color-surface-0)",
-                  maxWidth: "840px",
-                  lineHeight: 1.15,
-                  marginBottom: "var(--space-4)",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "6px",
+                  fontSize: "var(--text-xs)",
+                  color: "var(--color-ink-300)",
+                  textDecoration: "none",
                 }}
               >
-                {service.heroTagline}
-              </h1>
+                <ArrowLeft size={14} />
+                <span>Back to Services Overview</span>
+              </Link>
+            </div>
 
-              <p
-                style={{
-                  fontSize: "var(--text-lg)",
-                  color: "#CBD5E1",
-                  maxWidth: "760px",
-                  lineHeight: 1.6,
-                  marginBottom: "var(--space-6)",
-                }}
-              >
-                {service.fullOverview}
-              </p>
+            <Badge variant="brand" size="md" style={{ marginBottom: "var(--space-3)" }}>
+              Specialist Engineering Division
+            </Badge>
 
-              <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
-                {service.domainTags.map((tag, idx) => (
-                  <Badge key={idx} variant="dark" size="sm">
-                    {tag}
-                  </Badge>
-                ))}
-              </div>
-            </Reveal>
-          </Container>
-        </section>
+            <h1
+              style={{
+                fontSize: "clamp(2rem, 3.5vw, 2.75rem)",
+                fontWeight: 700,
+                color: "var(--color-surface-0)",
+                maxWidth: "840px",
+                lineHeight: 1.15,
+                marginBottom: "var(--space-4)",
+              }}
+            >
+              {service.heroTagline}
+            </h1>
+
+            <p
+              style={{
+                fontSize: "var(--text-lg)",
+                color: "#CBD5E1",
+                maxWidth: "760px",
+                lineHeight: 1.6,
+                marginBottom: "var(--space-6)",
+              }}
+            >
+              {service.fullOverview}
+            </p>
+
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
+              {service.domainTags.map((tag, idx) => (
+                <Badge key={idx} variant="dark" size="sm">
+                  {tag}
+                </Badge>
+              ))}
+            </div>
+          </Reveal>
+        </PageHero>
 
         <section
           style={{
