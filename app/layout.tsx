@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import { LogoIntro } from "@/components/layout/LogoIntro/LogoIntro";
 import { TopProgressBar } from "@/components/layout/TopProgressBar/TopProgressBar";
+import { ScrollGears } from "@/components/layout/ScrollGears/ScrollGears";
 import "@/styles/globals.css";
 
 const headingFont = Space_Grotesk({
@@ -110,6 +111,7 @@ export default function RootLayout({
       <body>
         <TopProgressBar />
         <LogoIntro />
+        <ScrollGears />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
