@@ -1,6 +1,6 @@
 .hero {
   position: relative;
-  background-color: var(--color-surface-0);
+  background-color: transparent;
   color: var(--color-ink-900);
   padding-top: var(--space-12);
   overflow: hidden;

@@ -1,7 +1,7 @@
 .section {
   padding-top: var(--space-20);
   padding-bottom: var(--space-20);
-  background-color: var(--color-surface-0);
+  background-color: transparent;
 }
 @media (min-width: 1024px) {
   .section {
