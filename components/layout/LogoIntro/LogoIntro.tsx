@@ -58,15 +58,23 @@ export const LogoIntro: React.FC = () => {
       const stageWidth = stageRect.width || 320;
       const initialOffset = Math.max(window.innerWidth * 0.6, 350);
 
-      const leftEl = stageEl.querySelector(`.${styles.leftIcon}`);
-      const rightEl = stageEl.querySelector(`.${styles.rightIcon}`);
-      const markWrapper = stageEl.querySelector(`.${styles.markWrapper}`);
-      const wordmarkEl = stageEl.querySelector(`.${styles.wordmark}`);
-      const fullLogoEl = stageEl.querySelector(`.${styles.fullLogo}`);
+      const leftEl = stageEl.querySelector<HTMLElement>(`.${styles.leftIcon}`);
+      const rightEl = stageEl.querySelector<HTMLElement>(`.${styles.rightIcon}`);
+      const markWrapper = stageEl.querySelector<HTMLElement>(`.${styles.markWrapper}`);
+      const wordmarkEl = stageEl.querySelector<HTMLElement>(`.${styles.wordmark}`);
+      const fullLogoEl = stageEl.querySelector<HTMLElement>(`.${styles.fullLogo}`);
 
       if (!leftEl || !rightEl || !markWrapper || !wordmarkEl || !fullLogoEl) {
         return;
       }
+
+      await new Promise((resolve) => setTimeout(resolve, 150));
+      if (!isMounted) return;
+
+      leftEl.style.transform = `translateX(-${initialOffset}px)`;
+      rightEl.style.transform = `translateX(${initialOffset}px)`;
+      leftEl.style.opacity = "1";
+      rightEl.style.opacity = "1";
 
       await Promise.all([
         animate(
