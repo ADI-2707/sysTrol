@@ -63,11 +63,7 @@
 .navLink:hover {
   color: var(--color-brand-green-600);
 }
-.activeNavLink {
-  color: var(--color-brand-green-600);
-  font-weight: var(--font-semibold);
-}
-.activeNavLink::after {
+.navLink::after {
   content: "";
   position: absolute;
   bottom: -4px;
@@ -76,6 +72,21 @@
   height: 2px;
   background-color: var(--color-brand-green-600);
   border-radius: var(--radius-full);
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.navLink:hover::after {
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+.activeNavLink {
+  color: var(--color-brand-green-600);
+  font-weight: var(--font-semibold);
+}
+.activeNavLink::after {
+  transform: scaleX(1);
+  transform-origin: left center;
 }
 .actions {
   display: none;
