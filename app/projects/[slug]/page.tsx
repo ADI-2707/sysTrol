@@ -8,6 +8,7 @@ import { Container } from "@/components/layout/Container/Container";
 import { Badge } from "@/components/ui/Badge/Badge";
 import { Button } from "@/components/ui/Button/Button";
 import { CTASection } from "@/components/sections/CTASection/CTASection";
+import { ProjectGallery } from "@/components/sections/ProjectGallery/ProjectGallery";
 import { projectsData } from "@/content/projects";
 import {
   ArrowLeft,
@@ -239,6 +240,11 @@ export default async function ProjectDetailPage({
                   </div>
                 </div>
               </div>
+
+              <ProjectGallery
+                gallery={project.gallery}
+                projectTitle={project.title}
+              />
 
               <div
                 style={{
