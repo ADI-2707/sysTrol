@@ -8,7 +8,7 @@ import styles from "./LogoIntro.module.css";
 const SESSION_KEY = "systrol-intro-played";
 
 export const LogoIntro: React.FC = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const [scope, animate] = useAnimate();
   const stageRef = useRef<HTMLDivElement>(null);
   const hasStartedRef = useRef(false);
@@ -18,6 +18,8 @@ export const LogoIntro: React.FC = () => {
 
     try {
       if (sessionStorage.getItem(SESSION_KEY) === "true") {
+        document.documentElement.classList.add("intro-done");
+        setIsVisible(false);
         return;
       }
     } catch {}
@@ -29,11 +31,12 @@ export const LogoIntro: React.FC = () => {
       try {
         sessionStorage.setItem(SESSION_KEY, "true");
       } catch {}
+      document.documentElement.classList.add("intro-done");
+      setIsVisible(false);
       return;
     }
 
     document.body.style.overflow = "hidden";
-    setIsVisible(true);
 
     return () => {
       document.body.style.overflow = "";
@@ -157,6 +160,7 @@ export const LogoIntro: React.FC = () => {
       try {
         sessionStorage.setItem(SESSION_KEY, "true");
       } catch {}
+      document.documentElement.classList.add("intro-done");
       document.body.style.overflow = "";
       if (isMounted) {
         setIsVisible(false);

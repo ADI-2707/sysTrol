@@ -108,6 +108,13 @@ export default function RootLayout({
       lang="en"
       className={`${headingFont.variable} ${bodyFont.variable} ${monoFont.variable}`}
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{if(sessionStorage.getItem('systrol-intro-played')==='true'||window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('intro-done');}}catch(e){}})();`,
+          }}
+        />
+      </head>
       <body>
         <TopProgressBar />
         <LogoIntro />
