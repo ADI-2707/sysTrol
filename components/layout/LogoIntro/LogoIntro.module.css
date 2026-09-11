@@ -21,6 +21,68 @@
   pointer-events: none;
 }
 
+.rippleContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 30;
+}
+
+.ripple {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(0.3);
+}
+
+.ripple1 {
+  border: 2.5px solid var(--color-accent-teal-500);
+  box-shadow: 0 0 16px rgba(14, 165, 165, 0.65), inset 0 0 8px rgba(14, 165, 165, 0.25);
+}
+
+.ripple2 {
+  border: 2px solid var(--color-brand-green-600);
+  box-shadow: 0 0 20px rgba(31, 122, 77, 0.55), inset 0 0 8px rgba(31, 122, 77, 0.2);
+}
+
+.ripple3 {
+  border: 1.5px dashed var(--color-accent-teal-500);
+  box-shadow: 0 0 14px rgba(14, 165, 165, 0.45);
+}
+
+.active .ripple1 {
+  animation: rippleSpread 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.active .ripple2 {
+  animation: rippleSpread 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.08s forwards;
+}
+
+.active .ripple3 {
+  animation: rippleSpread 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.16s forwards;
+}
+
+@keyframes rippleSpread {
+  0% {
+    opacity: 0.95;
+    transform: scale(0.3);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(3.2);
+  }
+}
+
 .markWrapper {
   position: absolute;
   top: 0;

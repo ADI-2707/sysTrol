@@ -63,6 +63,7 @@ export const LogoIntro: React.FC = () => {
       const markWrapper = stageEl.querySelector<HTMLElement>(`.${styles.markWrapper}`);
       const wordmarkEl = stageEl.querySelector<HTMLElement>(`.${styles.wordmark}`);
       const fullLogoEl = stageEl.querySelector<HTMLElement>(`.${styles.fullLogo}`);
+      const rippleContainer = stageEl.querySelector<HTMLElement>(`.${styles.rippleContainer}`);
 
       if (!leftEl || !rightEl || !markWrapper || !wordmarkEl || !fullLogoEl) {
         return;
@@ -135,6 +136,8 @@ export const LogoIntro: React.FC = () => {
         animate(fullLogoEl, { opacity: 1, scale: 0.9 }, { duration: 0.01 }),
       ]);
       if (!isMounted) return;
+
+      rippleContainer?.classList.add(styles.active);
 
       await animate(
         fullLogoEl,
@@ -247,6 +250,12 @@ export const LogoIntro: React.FC = () => {
             priority
             className={styles.fullLogoImage}
           />
+        </div>
+
+        <div className={styles.rippleContainer}>
+          <div className={`${styles.ripple} ${styles.ripple1}`} />
+          <div className={`${styles.ripple} ${styles.ripple2}`} />
+          <div className={`${styles.ripple} ${styles.ripple3}`} />
         </div>
       </div>
     </div>
