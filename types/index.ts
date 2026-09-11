@@ -36,6 +36,12 @@ export interface ServiceDetail {
   }[];
 }
 
+export interface ProjectGalleryItem {
+  url: string;
+  caption: string;
+  tag: string;
+}
+
 export interface Project {
   id: string;
   slug: string;
@@ -55,6 +61,7 @@ export interface Project {
     label: string;
     value: string;
   }[];
+  gallery?: ProjectGalleryItem[];
 }
 
 export interface ClientItem {
