@@ -36,8 +36,24 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    transparent clamp(60px, 6vw, 100px),
+    black clamp(150px, 14vw, 240px),
+    black calc(100% - clamp(150px, 14vw, 240px)),
+    transparent calc(100% - clamp(60px, 6vw, 100px)),
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    transparent clamp(60px, 6vw, 100px),
+    black clamp(150px, 14vw, 240px),
+    black calc(100% - clamp(150px, 14vw, 240px)),
+    transparent calc(100% - clamp(60px, 6vw, 100px)),
+    transparent 100%
+  );
   padding-top: var(--space-2);
   padding-bottom: var(--space-4);
 }
@@ -127,6 +143,13 @@
   color: var(--color-ink-500);
   margin-top: 3px;
   line-height: 1.35;
+}
+
+@media (max-width: 767px) {
+  .marqueeWrapper {
+    mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

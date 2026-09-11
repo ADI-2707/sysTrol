@@ -20,8 +20,24 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    transparent clamp(60px, 6vw, 100px),
+    black clamp(150px, 14vw, 240px),
+    black calc(100% - clamp(150px, 14vw, 240px)),
+    transparent calc(100% - clamp(60px, 6vw, 100px)),
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    transparent clamp(60px, 6vw, 100px),
+    black clamp(150px, 14vw, 240px),
+    black calc(100% - clamp(150px, 14vw, 240px)),
+    transparent calc(100% - clamp(60px, 6vw, 100px)),
+    transparent 100%
+  );
   padding-top: var(--space-2);
   padding-bottom: var(--space-4);
 }
@@ -104,6 +120,13 @@
   color: var(--color-ink-600);
   line-height: 1.4;
   white-space: normal;
+}
+
+@media (max-width: 767px) {
+  .marqueeWrapper {
+    mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
