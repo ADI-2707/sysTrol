@@ -45,7 +45,7 @@
 .nav {
   display: none;
   align-items: center;
-  gap: var(--space-6);
+  gap: clamp(12px, 1.6vw, 24px);
 }
 @media (min-width: 1024px) {
   .nav {
