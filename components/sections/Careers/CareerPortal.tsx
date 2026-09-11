@@ -7,13 +7,12 @@ import {
   Briefcase,
   MapPin,
   Clock,
-  ChevronDown,
-  ChevronUp,
   CheckCircle2,
   Mail,
   X,
   Send,
   Sparkles,
+  ArrowUpRight,
 } from "lucide-react";
 import styles from "./CareerPortal.module.css";
 
@@ -56,14 +55,14 @@ const VACANCIES: Vacancy[] = [
     id: "commissioning-specialist",
     title: "Rolling Mill Level-1 & Level-2 Commissioning Specialist",
     department: "Field Engineering & Commissioning",
-    location: "Bengaluru HQ (Overseas & Domestic Travel ~40%)",
+    location: "Bengaluru HQ (Travel ~40%)",
     type: "Full-time",
     experience: "3 - 7 Years",
     description:
       "Direct on-site hot metal trials, finishing block speed cascade tuning, looper control calibration, and hydraulic AGC integration during high-speed bar and wire rod mill revamps.",
     responsibilities: [
       "Calibrate finishing block speed cascades, hydraulic roll gaps, and flying shear synchronization during live rolling.",
-      "Conduct site acceptance testing (SAT) protocols directly with plant chief engineers and mechanical leads.",
+      "Conduct site acceptance testing (SAT) protocols directly with plant chief engineers and mechanical heads.",
       "Diagnose mill cobbles, tracking mismatches, and drive trip telemetry using high-speed data loggers.",
     ],
     requirements: [
@@ -170,8 +169,8 @@ const DEPARTMENTS = [
 
 export const CareerPortal: React.FC = () => {
   const [selectedDept, setSelectedDept] = useState("All Roles");
-  const [expandedId, setExpandedId] = useState<string | null>("l2-lead-engineer");
-  const [activeModalRole, setActiveModalRole] = useState<Vacancy | null>(null);
+  const [activeDetailsRole, setActiveDetailsRole] = useState<Vacancy | null>(null);
+  const [activeApplyRole, setActiveApplyRole] = useState<Vacancy | null>(null);
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
@@ -189,17 +188,22 @@ export const CareerPortal: React.FC = () => {
       ? VACANCIES
       : VACANCIES.filter((v) => v.department === selectedDept);
 
-  const toggleExpand = (id: string) => {
-    setExpandedId((prev) => (prev === id ? null : id));
+  const openDetailsModal = (role: Vacancy) => {
+    setActiveDetailsRole(role);
+  };
+
+  const closeDetailsModal = () => {
+    setActiveDetailsRole(null);
   };
 
   const openApplyModal = (role: Vacancy) => {
-    setActiveModalRole(role);
+    setActiveDetailsRole(null);
+    setActiveApplyRole(role);
     setSubmitted(false);
   };
 
   const closeApplyModal = () => {
-    setActiveModalRole(null);
+    setActiveApplyRole(null);
     setSubmitted(false);
     setFormData({
       name: "",
@@ -244,134 +248,175 @@ export const CareerPortal: React.FC = () => {
       </div>
 
       <div className={styles.jobsGrid}>
-        {filteredVacancies.map((vacancy) => {
-          const isExpanded = expandedId === vacancy.id;
-          return (
-            <article key={vacancy.id} className={styles.jobCard}>
-              <div className={styles.cardHeader}>
-                <div>
-                  <h3 className={styles.jobTitle}>{vacancy.title}</h3>
-                </div>
-                <div className={styles.badgesRow}>
-                  <Badge variant="brand" size="sm">
-                    {vacancy.department}
-                  </Badge>
-                  <Badge variant="default" size="sm">
-                    {vacancy.type}
-                  </Badge>
-                </div>
+        {filteredVacancies.map((vacancy) => (
+          <article key={vacancy.id} className={styles.jobCard}>
+            <div className={styles.cardTop}>
+              <div className={styles.badgesRow}>
+                <Badge variant="brand" size="sm">
+                  {vacancy.department}
+                </Badge>
+                <Badge variant="default" size="sm">
+                  {vacancy.type}
+                </Badge>
               </div>
+
+              <h3 className={styles.jobTitle}>{vacancy.title}</h3>
 
               <div className={styles.metaRow}>
                 <span className={styles.metaItem}>
-                  <MapPin size={15} />
+                  <MapPin size={13} />
                   {vacancy.location}
                 </span>
                 <span className={styles.metaItem}>
-                  <Briefcase size={15} />
+                  <Briefcase size={13} />
                   {vacancy.experience}
                 </span>
-                <span className={styles.metaItem}>
-                  <Clock size={15} />
-                  Immediate Opening
-                </span>
               </div>
+            </div>
 
-              <p className={styles.jobDesc}>{vacancy.description}</p>
+            <p className={styles.jobDesc}>{vacancy.description}</p>
 
+            <div className={styles.skillsRow}>
+              {vacancy.skills.slice(0, 3).map((skill, sIdx) => (
+                <Badge key={sIdx} variant="mono" size="sm">
+                  {skill}
+                </Badge>
+              ))}
+              {vacancy.skills.length > 3 && (
+                <Badge variant="default" size="sm">
+                  +{vacancy.skills.length - 3}
+                </Badge>
+              )}
+            </div>
+
+            <div className={styles.cardFooter}>
               <button
                 type="button"
-                className={styles.detailsToggle}
-                onClick={() => toggleExpand(vacancy.id)}
-                aria-expanded={isExpanded}
+                className={styles.viewDetailsBtn}
+                onClick={() => openDetailsModal(vacancy)}
               >
-                {isExpanded ? (
-                  <>
-                    <span>Hide Role Details</span>
-                    <ChevronUp size={16} />
-                  </>
-                ) : (
-                  <>
-                    <span>View Responsibilities & Qualifications</span>
-                    <ChevronDown size={16} />
-                  </>
-                )}
+                <span>View Details</span>
+                <ArrowUpRight size={14} />
               </button>
-
-              {isExpanded && (
-                <div className={styles.expandedDetails}>
-                  <div className={styles.detailColumn}>
-                    <h4 className={styles.columnHeading}>Core Responsibilities</h4>
-                    <ul className={styles.checkList}>
-                      {vacancy.responsibilities.map((resp, rIdx) => (
-                        <li key={rIdx} className={styles.checkItem}>
-                          <CheckCircle2 size={16} className={styles.checkIcon} />
-                          <span>{resp}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className={styles.detailColumn}>
-                    <h4 className={styles.columnHeading}>Required Qualifications</h4>
-                    <ul className={styles.checkList}>
-                      {vacancy.requirements.map((req, qIdx) => (
-                        <li key={qIdx} className={styles.checkItem}>
-                          <CheckCircle2 size={16} className={styles.checkIcon} />
-                          <span>{req}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              )}
-
-              <div className={styles.skillsRow}>
-                {vacancy.skills.map((skill, sIdx) => (
-                  <Badge key={sIdx} variant="mono" size="sm">
-                    {skill}
-                  </Badge>
-                ))}
-              </div>
-
-              <div className={styles.cardFooter}>
-                <span className={styles.applyHint}>
-                  Ref: #{vacancy.id.toUpperCase()} • Direct application reviewed by engineering leadership
-                </span>
-                <div className={styles.applyActions}>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    href={`mailto:careers@sys-trol.com?subject=Application%20for%20${encodeURIComponent(
-                      vacancy.title
-                    )}%20[${vacancy.id}]`}
-                    leftIcon={<Mail size={14} />}
-                  >
-                    Apply via Email
-                  </Button>
-                  <Button
-                    variant="primary"
-                    size="sm"
-                    onClick={() => openApplyModal(vacancy)}
-                    leftIcon={<Send size={14} />}
-                  >
-                    Quick Apply
-                  </Button>
-                </div>
-              </div>
-            </article>
-          );
-        })}
+              <Button
+                variant="primary"
+                size="sm"
+                onClick={() => openApplyModal(vacancy)}
+                leftIcon={<Send size={13} />}
+              >
+                Apply
+              </Button>
+            </div>
+          </article>
+        ))}
       </div>
 
-      {activeModalRole && (
-        <div className={styles.modalOverlay} onClick={closeApplyModal} role="dialog" aria-modal="true">
+      {activeDetailsRole && (
+        <div
+          className={styles.modalOverlay}
+          onClick={closeDetailsModal}
+          role="dialog"
+          aria-modal="true"
+        >
           <div className={styles.modalContainer} onClick={(e) => e.stopPropagation()}>
             <div className={styles.modalHeader}>
               <div>
-                <h3 className={styles.modalTitle}>Apply: {activeModalRole.title}</h3>
+                <h3 className={styles.modalTitle}>{activeDetailsRole.title}</h3>
                 <p className={styles.modalSubtitle}>
-                  {activeModalRole.department} • {activeModalRole.location}
+                  {activeDetailsRole.department} • {activeDetailsRole.location} • {activeDetailsRole.experience}
+                </p>
+              </div>
+              <button
+                type="button"
+                className={styles.closeBtn}
+                onClick={closeDetailsModal}
+                aria-label="Close modal"
+              >
+                <X size={20} />
+              </button>
+            </div>
+
+            <div className={styles.modalBody}>
+              <div className={styles.detailSection}>
+                <h4 className={styles.detailHeading}>About This Position</h4>
+                <p style={{ fontSize: "var(--text-sm)", color: "var(--color-ink-700)", lineHeight: 1.6 }}>
+                  {activeDetailsRole.description}
+                </p>
+              </div>
+
+              <div className={styles.detailSection}>
+                <h4 className={styles.detailHeading}>Core Responsibilities</h4>
+                <ul className={styles.checkList}>
+                  {activeDetailsRole.responsibilities.map((resp, rIdx) => (
+                    <li key={rIdx} className={styles.checkItem}>
+                      <CheckCircle2 size={16} className={styles.checkIcon} />
+                      <span>{resp}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className={styles.detailSection}>
+                <h4 className={styles.detailHeading}>Required Qualifications</h4>
+                <ul className={styles.checkList}>
+                  {activeDetailsRole.requirements.map((req, qIdx) => (
+                    <li key={qIdx} className={styles.checkItem}>
+                      <CheckCircle2 size={16} className={styles.checkIcon} />
+                      <span>{req}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className={styles.detailSection}>
+                <h4 className={styles.detailHeading}>Technical Skills & Protocols</h4>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
+                  {activeDetailsRole.skills.map((skill, sIdx) => (
+                    <Badge key={sIdx} variant="mono" size="sm">
+                      {skill}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className={styles.modalFooter}>
+              <Button
+                variant="outline"
+                size="sm"
+                href={`mailto:careers@sys-trol.com?subject=Application%20for%20${encodeURIComponent(
+                  activeDetailsRole.title
+                )}%20[${activeDetailsRole.id}]`}
+                leftIcon={<Mail size={14} />}
+              >
+                Apply via Email
+              </Button>
+              <Button
+                variant="primary"
+                size="sm"
+                onClick={() => openApplyModal(activeDetailsRole)}
+                leftIcon={<Send size={14} />}
+              >
+                Apply for this Role
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {activeApplyRole && (
+        <div
+          className={styles.modalOverlay}
+          onClick={closeApplyModal}
+          role="dialog"
+          aria-modal="true"
+        >
+          <div className={styles.modalContainer} onClick={(e) => e.stopPropagation()}>
+            <div className={styles.modalHeader}>
+              <div>
+                <h3 className={styles.modalTitle}>Apply: {activeApplyRole.title}</h3>
+                <p className={styles.modalSubtitle}>
+                  {activeApplyRole.department} • {activeApplyRole.location}
                 </p>
               </div>
               <button
@@ -393,7 +438,7 @@ export const CareerPortal: React.FC = () => {
                   Application Received
                 </h4>
                 <p style={{ fontSize: "var(--text-sm)", color: "var(--color-ink-700)", maxWidth: "440px" }}>
-                  Thank you for applying for the <strong>{activeModalRole.title}</strong> role. Our engineering recruitment team will review your profile and contact you within 3 business days.
+                  Thank you for applying for the <strong>{activeApplyRole.title}</strong> role. Our engineering recruitment team will review your profile and contact you within 3 business days.
                 </p>
                 <Button variant="primary" size="md" onClick={closeApplyModal}>
                   Close Window
