@@ -37,7 +37,12 @@ export const Navbar: React.FC = () => {
       <header className={`${styles.header} ${isScrolled ? styles.scrolled : ""}`}>
         <Container size="wide">
           <div className={styles.inner}>
-            <Link href="/" className={styles.brand} aria-label="sysTROL Home">
+            <Link
+              href="/"
+              className={styles.brand}
+              aria-label="sysTROL Home"
+              id="site-logo-target"
+            >
               <Image
                 src="/images/systrol-logo.jpeg"
                 alt="sysTROL Engineering & Consultancy Pvt. Ltd."
