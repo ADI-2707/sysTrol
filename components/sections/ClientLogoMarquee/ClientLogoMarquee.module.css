@@ -39,30 +39,32 @@
   mask-image: linear-gradient(
     to right,
     transparent 0%,
-    transparent clamp(60px, 6vw, 100px),
-    black clamp(150px, 14vw, 240px),
-    black calc(100% - clamp(150px, 14vw, 240px)),
-    transparent calc(100% - clamp(60px, 6vw, 100px)),
+    transparent clamp(40px, 5vw, 80px),
+    black clamp(140px, 12vw, 220px),
+    black calc(100% - clamp(140px, 12vw, 220px)),
+    transparent calc(100% - clamp(40px, 5vw, 80px)),
     transparent 100%
   );
   -webkit-mask-image: linear-gradient(
     to right,
     transparent 0%,
-    transparent clamp(60px, 6vw, 100px),
-    black clamp(150px, 14vw, 240px),
-    black calc(100% - clamp(150px, 14vw, 240px)),
-    transparent calc(100% - clamp(60px, 6vw, 100px)),
+    transparent clamp(40px, 5vw, 80px),
+    black clamp(140px, 12vw, 220px),
+    black calc(100% - clamp(140px, 12vw, 220px)),
+    transparent calc(100% - clamp(40px, 5vw, 80px)),
     transparent 100%
   );
   padding-top: var(--space-2);
   padding-bottom: var(--space-4);
+  perspective: 1000px;
 }
 
 .marqueeTrack {
   display: flex;
   gap: var(--space-5);
   width: max-content;
-  animation: logoMarqueeScroll 34s linear infinite;
+  animation: logoMarqueeScroll 38s linear infinite;
+  align-items: center;
 }
 
 .marqueeWrapper:hover .marqueeTrack {
@@ -78,77 +80,115 @@
   }
 }
 
-.card3d {
+/* 3D Sculpted Corporate Trademark Emblem */
+.logoEmblem3d {
+  position: relative;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: space-between;
-  width: 260px;
-  min-height: 104px;
-  padding: var(--space-4);
-  background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
-  border: 1px solid rgba(226, 232, 240, 0.95);
+  width: 245px;
+  height: 78px;
+  padding: 10px 14px;
+  background: linear-gradient(145deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%);
+  border: 1px solid rgba(203, 213, 225, 0.85);
   border-radius: var(--radius-lg);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 10px 18px -3px rgba(15, 23, 42, 0.07), inset 0 1px 0 rgba(255, 255, 255, 0.95);
-  transition: transform var(--duration-fast) var(--ease-in-out), box-shadow var(--duration-fast) var(--ease-in-out), border-color var(--duration-fast);
+  box-shadow: 
+    0 4px 10px -2px rgba(15, 23, 42, 0.07),
+    0 1px 3px 0 rgba(0, 0, 0, 0.04),
+    inset 0 1px 1px 0 #ffffff,
+    inset 0 -1.5px 2px 0 rgba(148, 163, 184, 0.25);
+  transition: 
+    transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.25s ease;
   flex-shrink: 0;
-  cursor: default;
+  cursor: pointer;
+  overflow: hidden;
 }
 
-.card3d:hover {
-  transform: translateY(-5px) scale(1.03);
-  box-shadow: 0 14px 28px -4px rgba(15, 23, 42, 0.12), 0 6px 12px -2px rgba(0, 0, 0, 0.06), inset 0 1px 0 #ffffff;
-  border-color: rgba(31, 122, 77, 0.45);
+/* 3D Elevation & Specular Catch on Hover */
+.logoEmblem3d:hover {
+  transform: translateY(-5px) scale(1.04) rotateX(3deg);
+  box-shadow: 
+    0 16px 28px -4px rgba(15, 23, 42, 0.13),
+    0 6px 12px -2px rgba(0, 0, 0, 0.06),
+    inset 0 1.5px 2px 0 #ffffff,
+    inset 0 -2px 3px 0 rgba(148, 163, 184, 0.35);
+  border-color: rgba(31, 122, 77, 0.4);
 }
 
-.cardHeader {
+/* Specular Reflection Gleam */
+.emblemBadgeGleam {
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 70%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    transparent 100%
+  );
+  transform: skewX(-25deg);
+  pointer-events: none;
+  transition: left 0.6s ease;
+}
+
+.logoEmblem3d:hover .emblemBadgeGleam {
+  left: 170%;
+}
+
+.emblemContent {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: var(--space-2);
+  flex: 1;
 }
 
-.logoBadge {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  border-radius: var(--radius-sm);
-  background-color: var(--color-brand-green-100);
-  color: var(--color-brand-green-700);
+.brandSvg {
+  width: 165px;
+  height: 42px;
+  filter: drop-shadow(0 2px 4px rgba(15, 23, 42, 0.08));
+  transition: filter 0.25s ease;
+}
+
+.logoEmblem3d:hover .brandSvg {
+  filter: drop-shadow(0 3px 6px rgba(15, 23, 42, 0.14));
 }
 
 .sectorTag {
-  font-size: 10px;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 8.5px;
   font-family: var(--font-mono, monospace);
   color: var(--color-ink-500);
-  font-weight: 500;
-}
-
-.companyName {
-  font-family: var(--font-heading), sans-serif;
-  font-size: var(--text-sm);
-  font-weight: 800;
-  color: var(--color-ink-900);
-  letter-spacing: 0.04em;
-  line-height: var(--leading-tight);
-}
-
-.card3d:hover .companyName {
-  color: var(--color-brand-green-700);
-}
-
-.divisionSubtitle {
-  font-size: 11px;
-  color: var(--color-ink-500);
-  margin-top: 3px;
-  line-height: 1.35;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding-left: 6px;
+  border-left: 1px solid rgba(226, 232, 240, 0.9);
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 @media (max-width: 767px) {
-  .marqueeWrapper {
-    mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+  .logoEmblem3d {
+    width: 220px;
+    height: 72px;
+    padding: 8px 10px;
+  }
+
+  .brandSvg {
+    width: 145px;
+    height: 38px;
+  }
+
+  .sectorTag {
+    font-size: 7.5px;
+    height: 44px;
   }
 }
 
@@ -156,5 +196,9 @@
   .marqueeTrack {
     animation: none;
     overflow-x: auto;
+  }
+
+  .logoEmblem3d:hover {
+    transform: none;
   }
 }
