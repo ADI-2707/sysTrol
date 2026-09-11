@@ -144,10 +144,25 @@ const WireframeGear: React.FC<GearSvgProps> = ({
 
 function isPointOverDark(x: number, y: number): boolean {
   if (typeof document === "undefined") return false;
+  const clientWidth = document.documentElement.clientWidth || window.innerWidth;
+  if (x < 0 || y < 0 || x >= clientWidth || y >= window.innerHeight) {
+    return false;
+  }
   const el = document.elementFromPoint(x, y);
   if (!el) return false;
   let curr: Element | null = el;
   while (curr && curr !== document.documentElement && curr !== document.body) {
+    const cls = typeof curr.className === "string" ? curr.className.toLowerCase() : "";
+    if (
+      cls.includes("dark") ||
+      cls.includes("navydeep") ||
+      cls.includes("ctasection") ||
+      cls.includes("impactband") ||
+      cls.includes("footer") ||
+      cls.includes("pagehero")
+    ) {
+      return true;
+    }
     const style = window.getComputedStyle(curr);
     const color = style.color;
     if (color) {
@@ -156,7 +171,7 @@ function isPointOverDark(x: number, y: number): boolean {
         const tr = parseInt(matchText[1], 10);
         const tg = parseInt(matchText[2], 10);
         const tb = parseInt(matchText[3], 10);
-        if (tr > 230 && tg > 230 && tb > 230) {
+        if (tr > 220 && tg > 220 && tb > 220) {
           return true;
         }
       }
@@ -169,12 +184,23 @@ function isPointOverDark(x: number, y: number): boolean {
         const g = parseInt(match[2], 10);
         const b = parseInt(match[3], 10);
         const brightness = (r * 299 + g * 587 + b * 114) / 1000;
-        return brightness < 128;
+        if (brightness < 128) {
+          return true;
+        }
       }
     }
     curr = curr.parentElement;
   }
   return false;
+}
+
+function checkWrapperDark(wrapper: HTMLDivElement | null, x: number): boolean {
+  if (!wrapper) return false;
+  const rect = wrapper.getBoundingClientRect();
+  const y1 = rect.top + rect.height * 0.25;
+  const y2 = rect.top + rect.height * 0.5;
+  const y3 = rect.top + rect.height * 0.75;
+  return isPointOverDark(x, y1) || isPointOverDark(x, y2) || isPointOverDark(x, y3);
 }
 
 export const ScrollGears: React.FC = () => {
@@ -199,19 +225,19 @@ export const ScrollGears: React.FC = () => {
         rightGearRef.current.style.transform = `rotate(${rightDeg}deg)`;
       }
 
+      const clientWidth = document.documentElement.clientWidth || window.innerWidth;
+      const leftX = Math.min(50, clientWidth / 4);
+      const rightX = Math.max(clientWidth - 50, clientWidth * 0.75);
+
+      const isLeftDark = checkWrapperDark(leftWrapperRef.current, leftX);
+      const isRightDark = checkWrapperDark(rightWrapperRef.current, rightX);
+      const isDark = isLeftDark || isRightDark;
+
       if (leftWrapperRef.current) {
-        const rect = leftWrapperRef.current.getBoundingClientRect();
-        const testX = Math.min(Math.max(10, rect.right / 2), 60);
-        const testY = rect.top + rect.height / 2;
-        const isDark = isPointOverDark(testX, testY);
         leftWrapperRef.current.classList.toggle(styles.darkBg, isDark);
       }
 
       if (rightWrapperRef.current) {
-        const rect = rightWrapperRef.current.getBoundingClientRect();
-        const testX = Math.max(Math.min(window.innerWidth - 10, rect.left + rect.width / 2), window.innerWidth - 60);
-        const testY = rect.top + rect.height / 2;
-        const isDark = isPointOverDark(testX, testY);
         rightWrapperRef.current.classList.toggle(styles.darkBg, isDark);
       }
 
