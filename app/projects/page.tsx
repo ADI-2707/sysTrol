@@ -274,18 +274,10 @@ export default function ProjectsPage() {
                         </span>
                         <Link
                           href={`/projects/${project.slug}`}
-                          style={{
-                            display: "inline-flex",
-                            alignItems: "center",
-                            gap: "4px",
-                            fontSize: "var(--text-xs)",
-                            fontWeight: 600,
-                            color: "var(--color-brand-green-600)",
-                            textDecoration: "none",
-                          }}
+                          className={styles.viewDetailsLink}
                         >
                           <span>View Details</span>
-                          <ArrowRight size={14} />
+                          <ArrowRight size={14} className={styles.viewDetailsArrow} />
                         </Link>
                       </div>
                     </div>
