@@ -17,6 +17,7 @@
   user-select: none;
   -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.85) 45%, rgba(0, 0, 0, 0) 92%);
   mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.85) 45%, rgba(0, 0, 0, 0) 92%);
+  animation: leftGearFloat 8s ease-in-out infinite alternate;
 }
 
 .rightGearWrapper {
@@ -30,6 +31,7 @@
   user-select: none;
   -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.85) 45%, rgba(0, 0, 0, 0) 92%);
   mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.85) 45%, rgba(0, 0, 0, 0) 92%);
+  animation: rightGearFloat 9s ease-in-out infinite alternate;
 }
 
 .gearSvg {
@@ -111,8 +113,30 @@
   }
 }
 
+@keyframes leftGearFloat {
+  0% {
+    transform: translate(-68%, -50%);
+  }
+  100% {
+    transform: translate(-64%, -48%);
+  }
+}
+
+@keyframes rightGearFloat {
+  0% {
+    transform: translate(68%, -50%);
+  }
+  100% {
+    transform: translate(64%, -52%);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .gearSvg {
     transform: none !important;
+  }
+  .leftGearWrapper,
+  .rightGearWrapper {
+    animation: none !important;
   }
 }
