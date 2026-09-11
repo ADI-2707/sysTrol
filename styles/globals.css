@@ -25,6 +25,8 @@ body {
 }
 main {
   flex: 1 0 auto;
+  position: relative;
+  z-index: 1;
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -66,12 +68,49 @@ code, kbd, samp, pre {
   font-family: var(--font-mono), monospace;
   font-size: 0.9em;
 }
+a svg.lucide-arrow-right,
+button svg.lucide-arrow-right,
+[role="button"] svg.lucide-arrow-right,
+a svg.lucide-move-right,
+button svg.lucide-move-right,
+[role="button"] svg.lucide-move-right {
+  transition: transform var(--duration-fast) var(--ease-in-out);
+}
+a:hover svg.lucide-arrow-right,
+button:hover svg.lucide-arrow-right,
+[role="button"]:hover svg.lucide-arrow-right,
+a:hover svg.lucide-move-right,
+button:hover svg.lucide-move-right,
+[role="button"]:hover svg.lucide-move-right {
+  transform: translateX(4px);
+}
+a svg.lucide-arrow-up-right,
+button svg.lucide-arrow-up-right,
+[role="button"] svg.lucide-arrow-up-right {
+  transition: transform var(--duration-fast) var(--ease-in-out);
+}
+a:hover svg.lucide-arrow-up-right,
+button:hover svg.lucide-arrow-up-right,
+[role="button"]:hover svg.lucide-arrow-up-right {
+  transform: translate(3px, -3px);
+}
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+  a:hover svg.lucide-arrow-right,
+  button:hover svg.lucide-arrow-right,
+  [role="button"]:hover svg.lucide-arrow-right,
+  a:hover svg.lucide-move-right,
+  button:hover svg.lucide-move-right,
+  [role="button"]:hover svg.lucide-move-right,
+  a:hover svg.lucide-arrow-up-right,
+  button:hover svg.lucide-arrow-up-right,
+  [role="button"]:hover svg.lucide-arrow-up-right {
+    transform: none !important;
   }
 }
 ::selection {

@@ -46,18 +46,19 @@ export const WhatWeDo: React.FC = () => {
                 </Badge>
               </div>
 
-              <h3 className={styles.cardTitle}>Level-2 Process Automation & Models</h3>
+              <h3 className={styles.cardTitle}>Level-2 Automation & Python Math Models</h3>
 
               <p className={styles.cardDescription}>
-                High-performance supervisory Level-2 software engineered in C# specifically for
-                continuous bar, wire rod, and strip mills. We implement real-time pass schedule
-                calculations, billet tracking, thermal pacing, and seamless integration with
-                Level-1 PLCs and enterprise MES.
+                High-performance supervisory Level-2 software in C# coupled with deterministic Python
+                mathematical models (calculation matrices and grade-based calculation rules, not AI/ML).
+                We implement real-time pass schedule algorithms, billet tracking, thermal pacing, and
+                Level-1 PLC to enterprise MES integration.
               </p>
 
               <div className={styles.tagList}>
                 <Badge variant="mono" size="sm">C# / .NET Core</Badge>
-                <Badge variant="mono" size="sm">Level-2 Supervisory</Badge>
+                <Badge variant="mono" size="sm">Python Math Models</Badge>
+                <Badge variant="mono" size="sm">Grade Calculation Matrix</Badge>
                 <Badge variant="mono" size="sm">Roll Force Modeling</Badge>
                 <Badge variant="mono" size="sm">OPC UA / Siemens / ABB</Badge>
                 <Badge variant="mono" size="sm">Billet Pacing</Badge>

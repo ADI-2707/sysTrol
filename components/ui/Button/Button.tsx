@@ -30,8 +30,8 @@ export const Button: React.FC<ButtonProps> = ({
     isLoading ? styles.loading : ""
   } ${className}`.trim();
 
-  const renderIcon = (icon: React.ReactNode) => (
-    <span className={styles.icon}>{icon}</span>
+  const renderIcon = (icon: React.ReactNode, isRight = false) => (
+    <span className={`${styles.icon} ${isRight ? styles.rightIcon : ""}`}>{icon}</span>
   );
 
   const activeLeftIcon = isLoading ? (
@@ -53,7 +53,7 @@ export const Button: React.FC<ButtonProps> = ({
         >
           {activeLeftIcon}
           <span>{children}</span>
-          {rightIcon && renderIcon(rightIcon)}
+          {rightIcon && renderIcon(rightIcon, true)}
         </a>
       );
     }
@@ -61,7 +61,7 @@ export const Button: React.FC<ButtonProps> = ({
       <Link href={href} className={combinedClassName}>
         {activeLeftIcon}
         <span>{children}</span>
-        {rightIcon && renderIcon(rightIcon)}
+        {rightIcon && renderIcon(rightIcon, true)}
       </Link>
     );
   }
@@ -75,7 +75,7 @@ export const Button: React.FC<ButtonProps> = ({
     >
       {activeLeftIcon}
       <span>{children}</span>
-      {rightIcon && !isLoading && renderIcon(rightIcon)}
+      {rightIcon && !isLoading && renderIcon(rightIcon, true)}
     </button>
   );
 };

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import { LogoIntro } from "@/components/layout/LogoIntro/LogoIntro";
 import { TopProgressBar } from "@/components/layout/TopProgressBar/TopProgressBar";
+import { ScrollGears } from "@/components/layout/ScrollGears/ScrollGears";
 import "@/styles/globals.css";
 
 const headingFont = Space_Grotesk({
@@ -107,9 +108,17 @@ export default function RootLayout({
       lang="en"
       className={`${headingFont.variable} ${bodyFont.variable} ${monoFont.variable}`}
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{if(sessionStorage.getItem('systrol-intro-played')==='true'||window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('intro-done');}}catch(e){}})();`,
+          }}
+        />
+      </head>
       <body>
         <TopProgressBar />
         <LogoIntro />
+        <ScrollGears />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}

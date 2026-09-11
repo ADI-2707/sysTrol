@@ -8,7 +8,7 @@ import styles from "./LogoIntro.module.css";
 const SESSION_KEY = "systrol-intro-played";
 
 export const LogoIntro: React.FC = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const [scope, animate] = useAnimate();
   const stageRef = useRef<HTMLDivElement>(null);
   const hasStartedRef = useRef(false);
@@ -18,6 +18,8 @@ export const LogoIntro: React.FC = () => {
 
     try {
       if (sessionStorage.getItem(SESSION_KEY) === "true") {
+        document.documentElement.classList.add("intro-done");
+        setIsVisible(false);
         return;
       }
     } catch {}
@@ -29,11 +31,12 @@ export const LogoIntro: React.FC = () => {
       try {
         sessionStorage.setItem(SESSION_KEY, "true");
       } catch {}
+      document.documentElement.classList.add("intro-done");
+      setIsVisible(false);
       return;
     }
 
     document.body.style.overflow = "hidden";
-    setIsVisible(true);
 
     return () => {
       document.body.style.overflow = "";
@@ -55,15 +58,24 @@ export const LogoIntro: React.FC = () => {
       const stageWidth = stageRect.width || 320;
       const initialOffset = Math.max(window.innerWidth * 0.6, 350);
 
-      const leftEl = stageEl.querySelector(`.${styles.leftIcon}`);
-      const rightEl = stageEl.querySelector(`.${styles.rightIcon}`);
-      const markWrapper = stageEl.querySelector(`.${styles.markWrapper}`);
-      const wordmarkEl = stageEl.querySelector(`.${styles.wordmark}`);
-      const fullLogoEl = stageEl.querySelector(`.${styles.fullLogo}`);
+      const leftEl = stageEl.querySelector<HTMLElement>(`.${styles.leftIcon}`);
+      const rightEl = stageEl.querySelector<HTMLElement>(`.${styles.rightIcon}`);
+      const markWrapper = stageEl.querySelector<HTMLElement>(`.${styles.markWrapper}`);
+      const wordmarkEl = stageEl.querySelector<HTMLElement>(`.${styles.wordmark}`);
+      const fullLogoEl = stageEl.querySelector<HTMLElement>(`.${styles.fullLogo}`);
+      const rippleContainer = stageEl.querySelector<HTMLElement>(`.${styles.rippleContainer}`);
 
       if (!leftEl || !rightEl || !markWrapper || !wordmarkEl || !fullLogoEl) {
         return;
       }
+
+      await new Promise((resolve) => setTimeout(resolve, 150));
+      if (!isMounted) return;
+
+      leftEl.style.transform = `translateX(-${initialOffset}px)`;
+      rightEl.style.transform = `translateX(${initialOffset}px)`;
+      leftEl.style.opacity = "1";
+      rightEl.style.opacity = "1";
 
       await Promise.all([
         animate(
@@ -109,15 +121,32 @@ export const LogoIntro: React.FC = () => {
 
       if (!isMounted) return;
 
-      await new Promise((resolve) => setTimeout(resolve, 500));
+      await new Promise((resolve) => setTimeout(resolve, 400));
       if (!isMounted) return;
 
       await Promise.all([
-        animate(markWrapper, { opacity: 0 }, { duration: 0.25 }),
-        animate(wordmarkEl, { opacity: 0 }, { duration: 0.25 }),
-        animate(fullLogoEl, { opacity: 1 }, { duration: 0.25 }),
+        animate(markWrapper, { scale: 0.9 }, { duration: 0.13, ease: [0.4, 0, 0.2, 1] }),
+        animate(wordmarkEl, { scale: 0.9 }, { duration: 0.13, ease: [0.4, 0, 0.2, 1] }),
       ]);
+      if (!isMounted) return;
 
+      await Promise.all([
+        animate(markWrapper, { opacity: 0 }, { duration: 0.01 }),
+        animate(wordmarkEl, { opacity: 0 }, { duration: 0.01 }),
+        animate(fullLogoEl, { opacity: 1, scale: 0.9 }, { duration: 0.01 }),
+      ]);
+      if (!isMounted) return;
+
+      rippleContainer?.classList.add(styles.active);
+
+      await animate(
+        fullLogoEl,
+        { scale: [0.9, 1.04, 1] },
+        { duration: 0.24, ease: [0.22, 1, 0.36, 1] }
+      );
+      if (!isMounted) return;
+
+      await new Promise((resolve) => setTimeout(resolve, 200));
       if (!isMounted) return;
 
       const target = document.getElementById("site-logo-target");
@@ -157,6 +186,7 @@ export const LogoIntro: React.FC = () => {
       try {
         sessionStorage.setItem(SESSION_KEY, "true");
       } catch {}
+      document.documentElement.classList.add("intro-done");
       document.body.style.overflow = "";
       if (isMounted) {
         setIsVisible(false);
@@ -220,6 +250,12 @@ export const LogoIntro: React.FC = () => {
             priority
             className={styles.fullLogoImage}
           />
+        </div>
+
+        <div className={styles.rippleContainer}>
+          <div className={`${styles.ripple} ${styles.ripple1}`} />
+          <div className={`${styles.ripple} ${styles.ripple2}`} />
+          <div className={`${styles.ripple} ${styles.ripple3}`} />
         </div>
       </div>
     </div>

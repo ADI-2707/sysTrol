@@ -6,14 +6,17 @@ export const servicesData: ServiceDetail[] = [
     slug: "automation-consultancy",
     title: "Automation Engineering & Consultancy",
     shortDescription:
-      "Level-2 (L2) process automation software, mathematical modeling, and supervisory control systems engineered in C# specifically for steel rolling mills.",
+      "Level-2 (L2) process automation software, Python & C# mathematical models (deterministic calculation matrices and grade-based calculation rules, not AI/ML), and supervisory control systems engineered specifically for steel rolling mills.",
     heroTagline: "Precision Level-2 Automation Architectures for High-Speed Mill Environments",
     fullOverview:
-      "sysTROL delivers end-to-end Level-2 (L2) supervisory automation software, custom process models, and SCADA/HMI integrations. Our engineering core is built around high-performance C# / .NET industrial services that bridge Level-1 PLCs/drives with plant-wide ERP and MES tiers. With decades of hands-on commissioning experience in long product, flat product, and tube rolling mills, we optimize inter-stand tension, thermal pacing, roll wear calculation, and pass-schedule execution to maximize yield and eliminate cobbles.",
+      "sysTROL delivers end-to-end Level-2 (L2) supervisory automation software, deterministic Python & C# calculation matrix models, and SCADA/HMI integrations. Our engineering core is built around high-performance C# services and rigorous Python calculation matrices that bridge Level-1 PLCs/drives with plant-wide ERP and MES tiers. By deploying physics-based calculation matrices and steel grade calculation rules (pure deterministic metallurgy, not black-box AI/ML), we optimize inter-stand tension, thermal pacing, roll wear calculation, and pass-schedule execution to maximize yield and eliminate cobbles.",
     iconName: "Cpu",
     domainTags: [
       "Level-2 Systems",
       "C# / .NET Industrial Core",
+      "Python Mathematical Models",
+      "Calculation Matrix Engines",
+      "Grade Calculation Rules",
       "Steel Rolling Mills",
       "Pass Schedule Calculation",
       "Thermal Pacing Models",
@@ -32,13 +35,13 @@ export const servicesData: ServiceDetail[] = [
         ],
       },
       {
-        title: "Mathematical Process Modeling & Optimization",
+        title: "Mathematical Process Modeling (Python & C#)",
         description:
-          "Physics-based and empirical roll force, roll torque, and temperature rundown models calibrated for carbon, alloy, and special steel grades.",
+          "Physics-based calculation matrices, roll torque equations, and temperature rundown models calibrated for carbon, alloy, and special steel grades (deterministic calculation rules, not AI/ML).",
         highlights: [
+          "Python calculation matrix engines executing grade-specific metallurgy rules",
           "Adaptive model feedback adjusting mill stiffness coefficients after every pass",
           "Reheating furnace discharge pacing based on mill absorption capacity",
-          "Minimization of dimensional tolerances (section size and ovality control)",
         ],
       },
       {

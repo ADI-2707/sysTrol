@@ -1,7 +1,7 @@
 .section {
   padding-top: var(--space-20);
   padding-bottom: var(--space-20);
-  background-color: var(--color-surface-0);
+  background-color: transparent;
 }
 @media (min-width: 1024px) {
   .section {
@@ -141,9 +141,8 @@
   font-weight: var(--font-semibold);
   color: var(--color-brand-green-600);
   text-decoration: none;
-  transition: gap var(--duration-fast);
+  transition: color var(--duration-fast) var(--ease-in-out);
 }
 .viewDetailsLink:hover {
-  gap: var(--space-2);
   color: var(--color-brand-green-700);
 }

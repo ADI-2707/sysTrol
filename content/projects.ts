@@ -25,6 +25,8 @@ export const projectsData: Project[] = [
     ],
     technologies: [
       "C# / .NET 8 Industrial Service",
+      "Python Mathematical Models",
+      "Grade Calculation Matrices",
       "OPC UA Client/Server",
       "Pass Schedule Mathematical Model",
       "Siemens S7-400 Integration",
@@ -79,6 +81,7 @@ export const projectsData: Project[] = [
     ],
     technologies: [
       "C# Mathematical Engine",
+      "Python Calculation Matrices",
       "2D Heat Conduction Models",
       "Modbus TCP / ABB Freelance Integration",
       "WPF / Avalonia Engineering Terminal",

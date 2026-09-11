@@ -1,0 +1,196 @@
+.container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.leftGearWrapper {
+  position: absolute;
+  left: 0;
+  top: 22%;
+  transform: translate(-68%, -50%);
+  width: clamp(200px, 16vw, 300px);
+  height: clamp(200px, 16vw, 300px);
+  pointer-events: none;
+  user-select: none;
+  -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.85) 45%, rgba(0, 0, 0, 0) 92%);
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.85) 45%, rgba(0, 0, 0, 0) 92%);
+  animation: leftGearFloat 8s ease-in-out infinite alternate;
+  transition: filter 0.35s ease;
+}
+
+.rightGearWrapper {
+  position: absolute;
+  right: 0;
+  top: 62%;
+  transform: translate(68%, -50%);
+  width: clamp(160px, 13vw, 240px);
+  height: clamp(160px, 13vw, 240px);
+  pointer-events: none;
+  user-select: none;
+  -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.85) 45%, rgba(0, 0, 0, 0) 92%);
+  mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.85) 45%, rgba(0, 0, 0, 0) 92%);
+  animation: rightGearFloat 9s ease-in-out infinite alternate;
+  transition: filter 0.35s ease;
+}
+
+.gearSvg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  will-change: transform;
+  transform-origin: center center;
+  pointer-events: none;
+}
+
+.outerTeeth {
+  fill: none;
+  stroke: var(--color-brand-green-600);
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+  opacity: 0.52;
+  transition: opacity 0.35s ease, stroke 0.35s ease;
+}
+
+.pitchCircle {
+  fill: none;
+  stroke: var(--color-accent-teal-500);
+  stroke-width: 1.25;
+  stroke-dasharray: 4 4;
+  opacity: 0.58;
+  transition: opacity 0.35s ease, stroke 0.35s ease;
+}
+
+.rootCircle {
+  fill: none;
+  stroke: var(--color-brand-green-700);
+  stroke-width: 1;
+  opacity: 0.42;
+  transition: opacity 0.35s ease;
+}
+
+.innerRim {
+  fill: none;
+  stroke: var(--color-brand-green-600);
+  stroke-width: 1.25;
+  opacity: 0.48;
+  transition: opacity 0.35s ease;
+}
+
+.spokeCutout {
+  fill: none;
+  stroke: var(--color-brand-green-600);
+  stroke-width: 1;
+  opacity: 0.45;
+  transition: opacity 0.35s ease;
+}
+
+.spokeAxis {
+  stroke: var(--color-brand-green-700);
+  stroke-width: 0.75;
+  stroke-dasharray: 6 3;
+  opacity: 0.40;
+  transition: opacity 0.35s ease;
+}
+
+.hubOuter {
+  fill: none;
+  stroke: var(--color-brand-green-600);
+  stroke-width: 1.5;
+  opacity: 0.52;
+  transition: opacity 0.35s ease;
+}
+
+.hubInner {
+  fill: none;
+  stroke: var(--color-brand-green-700);
+  stroke-width: 1;
+  opacity: 0.45;
+  transition: opacity 0.35s ease;
+}
+
+.keyway {
+  fill: none;
+  stroke: var(--color-brand-green-600);
+  stroke-width: 1;
+  opacity: 0.50;
+  transition: opacity 0.35s ease;
+}
+
+.darkBg {
+  filter: brightness(1.75) contrast(1.1) drop-shadow(0 0 10px rgba(14, 165, 165, 0.4));
+}
+
+.darkBg .outerTeeth {
+  opacity: 0.88;
+  stroke: var(--color-accent-teal-500);
+}
+
+.darkBg .pitchCircle {
+  opacity: 0.92;
+  stroke: #2DD4BF;
+}
+
+.darkBg .rootCircle {
+  opacity: 0.75;
+}
+
+.darkBg .innerRim {
+  opacity: 0.82;
+}
+
+.darkBg .spokeCutout {
+  opacity: 0.78;
+}
+
+.darkBg .spokeAxis {
+  opacity: 0.7;
+}
+
+.darkBg .hubOuter {
+  opacity: 0.88;
+}
+
+.darkBg .hubInner {
+  opacity: 0.82;
+}
+
+.darkBg .keyway {
+  opacity: 0.88;
+}
+
+@media (max-width: 767px) {
+  .container {
+    display: none;
+  }
+}
+
+@keyframes leftGearFloat {
+  0% {
+    transform: translate(-68%, -50%);
+  }
+  100% {
+    transform: translate(-64%, -48%);
+  }
+}
+
+@keyframes rightGearFloat {
+  0% {
+    transform: translate(68%, -50%);
+  }
+  100% {
+    transform: translate(64%, -52%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gearSvg {
+    transform: none !important;
+  }
+  .leftGearWrapper,
+  .rightGearWrapper {
+    animation: none !important;
+  }
+}

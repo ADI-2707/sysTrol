@@ -15,10 +15,10 @@ const valueProps = [
   },
   {
     icon: <Code2 size={22} />,
-    title: "Level-2 Systems in C#",
+    title: "C# & Python Math Models",
     description:
-      "Clean, maintainable, high-performance industrial C# / .NET architecture. Physics-based mathematical models replacing brittle legacy black-box code.",
-    tag: "Modern .NET Industrial Core",
+      "High-performance C# services and deterministic Python mathematical models. Rigorous calculation matrices and grade-based calculation rules (pure physics, non-AI/ML) replacing brittle legacy code.",
+    tag: "Deterministic Calculation Matrices",
   },
   {
     icon: <Globe2 size={22} />,

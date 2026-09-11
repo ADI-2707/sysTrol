@@ -68,11 +68,11 @@
   --duration-fast: 150ms;
   --duration-normal: 250ms;
   --duration-slow: 400ms;
-  --container-desktop: 1200px;
-  --container-wide: 1320px;
+  --container-desktop: 1140px;
+  --container-wide: 1280px;
   --gutter-mobile: 16px;
   --gutter-tablet: 24px;
-  --gutter-desktop: 32px;
+  --gutter-desktop: 48px;
   --z-base: 0;
   --z-card: 1;
   --z-sticky: 100;

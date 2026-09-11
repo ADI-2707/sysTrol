@@ -55,13 +55,13 @@
 .navLink {
   font-size: var(--text-sm);
   font-weight: var(--font-medium);
-  color: var(--color-ink-700);
+  color: var(--color-ink-900);
   padding: var(--space-2) 0;
   position: relative;
   transition: color var(--duration-fast) var(--ease-in-out);
 }
 .navLink:hover {
-  color: var(--color-brand-green-600);
+  color: var(--color-ink-900);
 }
 .navLink::after {
   content: "";
@@ -83,6 +83,9 @@
 .activeNavLink {
   color: var(--color-brand-green-600);
   font-weight: var(--font-semibold);
+}
+.activeNavLink:hover {
+  color: var(--color-brand-green-600);
 }
 .activeNavLink::after {
   transform: scaleX(1);

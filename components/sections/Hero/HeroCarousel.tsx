@@ -42,7 +42,7 @@ const slides: SlideData[] = [
     statTitle: "Rolling Mill Installations",
     statSubtitle: "Commissioned Level-2 automation suites & critical revamps across 3 continents.",
     proofPoints: [
-      "Deterministic C# mathematical pass scheduling & thermal pacing",
+      "Deterministic C# & Python calculation matrices, pass scheduling & thermal pacing",
       "EN 10204 3.1 material test certified imported mill tooling & spares",
       "Full-lifecycle commissioning from FAT simulation to live hot metal roll",
     ],
@@ -60,7 +60,7 @@ const slides: SlideData[] = [
     imageTag: "OPERATOR PULPIT & L2 TELEMETRY",
     statValue: "38%",
     statTitle: "Cobble Rate Reduction",
-    statSubtitle: "Microsecond PLC synchronization with C# .NET physics-based models.",
+    statSubtitle: "Microsecond PLC synchronization with C# and Python grade calculation rules (physics-based, non-AI).",
     proofPoints: [
       "OPC UA gateway interface for Siemens S7-400 / S7-1500 & ABB systems",
       "Automated roll wear tracking & dynamic inter-stand tension control",
