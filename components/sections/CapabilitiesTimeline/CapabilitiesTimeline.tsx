@@ -25,14 +25,30 @@ export const CapabilitiesTimeline: React.FC<CapabilitiesTimelineProps> = ({
   const [revealed, setRevealed] = useState<boolean[]>(() =>
     new Array(items.length).fill(false)
   );
+  const [spineBounds, setSpineBounds] = useState<{ top: number; height: number } | null>(null);
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
 
+    const updateSpine = () => {
+      const first = itemRefs.current[0];
+      const last = itemRefs.current[items.length - 1];
+      if (first && last) {
+        const top = first.offsetTop + 11;
+        const height = last.offsetTop - first.offsetTop;
+        if (height > 0) {
+          setSpineBounds({ top, height });
+        }
+      }
+    };
+
+    updateSpine();
+    window.addEventListener("resize", updateSpine);
+
     if (!("IntersectionObserver" in window)) {
       setRevealed(new Array(items.length).fill(true));
-      return;
+      return () => window.removeEventListener("resize", updateSpine);
     }
 
     const observers: IntersectionObserver[] = [];
@@ -63,6 +79,7 @@ export const CapabilitiesTimeline: React.FC<CapabilitiesTimelineProps> = ({
     });
 
     return () => {
+      window.removeEventListener("resize", updateSpine);
       observers.forEach((obs) => obs.disconnect());
     };
   }, [items.length]);
@@ -76,6 +93,11 @@ export const CapabilitiesTimeline: React.FC<CapabilitiesTimelineProps> = ({
       <div className={styles.timeline}>
         <div
           className={`${styles.spine} ${isAccent ? styles.spineAccent : ""}`.trim()}
+          style={
+            spineBounds
+              ? { top: `${spineBounds.top}px`, height: `${spineBounds.height}px`, bottom: "auto" }
+              : undefined
+          }
           aria-hidden="true"
         />
 

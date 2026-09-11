@@ -27,16 +27,19 @@
 
 .spine {
   position: absolute;
-  top: 10px;
+  top: 11px;
   bottom: 24px;
   left: 8px;
   width: 2px;
-  background: linear-gradient(180deg, var(--color-brand-green-500) 0%, var(--color-brand-green-300) 70%, var(--color-brand-green-100) 100%);
+  background-color: rgba(31, 122, 77, 0.45);
+  background: linear-gradient(180deg, var(--color-brand-green-600) 0%, rgba(31, 122, 77, 0.45) 75%, rgba(31, 122, 77, 0.2) 100%);
+  z-index: 1;
   pointer-events: none;
 }
 
 .spineAccent {
-  background: linear-gradient(180deg, var(--color-accent-teal-500) 0%, var(--color-accent-teal-300) 70%, var(--color-accent-teal-100) 100%);
+  background-color: rgba(14, 165, 165, 0.45);
+  background: linear-gradient(180deg, var(--color-accent-teal-500) 0%, rgba(14, 165, 165, 0.45) 75%, rgba(14, 165, 165, 0.2) 100%);
 }
 
 .item {
@@ -83,11 +86,11 @@
 
 .item:hover .bullet {
   transform: scale(1.25);
-  box-shadow: 0 0 0 3px var(--color-surface-50), 0 0 0 6px var(--color-brand-green-200);
+  box-shadow: 0 0 0 3px var(--color-surface-50), 0 0 0 6px rgba(31, 122, 77, 0.25);
 }
 
 .item:hover .bulletAccent {
-  box-shadow: 0 0 0 3px var(--color-surface-50), 0 0 0 6px var(--color-accent-teal-200);
+  box-shadow: 0 0 0 3px var(--color-surface-50), 0 0 0 6px rgba(14, 165, 165, 0.25);
 }
 
 .content {
