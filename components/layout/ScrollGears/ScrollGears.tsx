@@ -142,14 +142,51 @@ const WireframeGear: React.FC<GearSvgProps> = ({
   );
 };
 
+function isPointOverDark(x: number, y: number): boolean {
+  if (typeof document === "undefined") return false;
+  const el = document.elementFromPoint(x, y);
+  if (!el) return false;
+  let curr: Element | null = el;
+  while (curr && curr !== document.documentElement && curr !== document.body) {
+    const style = window.getComputedStyle(curr);
+    const color = style.color;
+    if (color) {
+      const matchText = color.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
+      if (matchText) {
+        const tr = parseInt(matchText[1], 10);
+        const tg = parseInt(matchText[2], 10);
+        const tb = parseInt(matchText[3], 10);
+        if (tr > 230 && tg > 230 && tb > 230) {
+          return true;
+        }
+      }
+    }
+    const bg = style.backgroundColor;
+    if (bg && bg !== "transparent" && bg !== "rgba(0, 0, 0, 0)") {
+      const match = bg.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
+      if (match) {
+        const r = parseInt(match[1], 10);
+        const g = parseInt(match[2], 10);
+        const b = parseInt(match[3], 10);
+        const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+        return brightness < 128;
+      }
+    }
+    curr = curr.parentElement;
+  }
+  return false;
+}
+
 export const ScrollGears: React.FC = () => {
   const leftGearRef = useRef<SVGSVGElement | null>(null);
   const rightGearRef = useRef<SVGSVGElement | null>(null);
+  const leftWrapperRef = useRef<HTMLDivElement | null>(null);
+  const rightWrapperRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     let animFrameId: number | null = null;
 
-    const updateRotation = () => {
+    const updateRotationAndTheme = () => {
       const scrollY = window.scrollY || 0;
 
       if (leftGearRef.current) {
@@ -162,20 +199,38 @@ export const ScrollGears: React.FC = () => {
         rightGearRef.current.style.transform = `rotate(${rightDeg}deg)`;
       }
 
+      if (leftWrapperRef.current) {
+        const rect = leftWrapperRef.current.getBoundingClientRect();
+        const testX = Math.min(Math.max(10, rect.right / 2), 60);
+        const testY = rect.top + rect.height / 2;
+        const isDark = isPointOverDark(testX, testY);
+        leftWrapperRef.current.classList.toggle(styles.darkBg, isDark);
+      }
+
+      if (rightWrapperRef.current) {
+        const rect = rightWrapperRef.current.getBoundingClientRect();
+        const testX = Math.max(Math.min(window.innerWidth - 10, rect.left + rect.width / 2), window.innerWidth - 60);
+        const testY = rect.top + rect.height / 2;
+        const isDark = isPointOverDark(testX, testY);
+        rightWrapperRef.current.classList.toggle(styles.darkBg, isDark);
+      }
+
       animFrameId = null;
     };
 
     const handleScroll = () => {
       if (animFrameId === null) {
-        animFrameId = window.requestAnimationFrame(updateRotation);
+        animFrameId = window.requestAnimationFrame(updateRotationAndTheme);
       }
     };
 
-    updateRotation();
+    updateRotationAndTheme();
 
     window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll, { passive: true });
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
       if (animFrameId !== null) {
         window.cancelAnimationFrame(animFrameId);
       }
@@ -184,7 +239,7 @@ export const ScrollGears: React.FC = () => {
 
   return (
     <div className={styles.container} aria-hidden="true">
-      <div className={styles.leftGearWrapper}>
+      <div ref={leftWrapperRef} className={styles.leftGearWrapper}>
         <WireframeGear
           teeth={20}
           rRoot={150}
@@ -200,7 +255,7 @@ export const ScrollGears: React.FC = () => {
         />
       </div>
 
-      <div className={styles.rightGearWrapper}>
+      <div ref={rightWrapperRef} className={styles.rightGearWrapper}>
         <WireframeGear
           teeth={14}
           rRoot={138}

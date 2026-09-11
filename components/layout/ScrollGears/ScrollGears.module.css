@@ -18,6 +18,7 @@
   -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.85) 45%, rgba(0, 0, 0, 0) 92%);
   mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.85) 45%, rgba(0, 0, 0, 0) 92%);
   animation: leftGearFloat 8s ease-in-out infinite alternate;
+  transition: filter 0.35s ease;
 }
 
 .rightGearWrapper {
@@ -32,6 +33,7 @@
   -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.85) 45%, rgba(0, 0, 0, 0) 92%);
   mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.85) 45%, rgba(0, 0, 0, 0) 92%);
   animation: rightGearFloat 9s ease-in-out infinite alternate;
+  transition: filter 0.35s ease;
 }
 
 .gearSvg {
@@ -40,6 +42,7 @@
   overflow: visible;
   will-change: transform;
   transform-origin: center center;
+  pointer-events: none;
 }
 
 .outerTeeth {
@@ -48,6 +51,7 @@
   stroke-width: 1.5;
   stroke-linejoin: round;
   opacity: 0.32;
+  transition: opacity 0.35s ease, stroke 0.35s ease;
 }
 
 .pitchCircle {
@@ -56,6 +60,7 @@
   stroke-width: 1;
   stroke-dasharray: 4 4;
   opacity: 0.38;
+  transition: opacity 0.35s ease, stroke 0.35s ease;
 }
 
 .rootCircle {
@@ -63,6 +68,7 @@
   stroke: var(--color-brand-green-700);
   stroke-width: 1;
   opacity: 0.25;
+  transition: opacity 0.35s ease;
 }
 
 .innerRim {
@@ -70,6 +76,7 @@
   stroke: var(--color-brand-green-600);
   stroke-width: 1.25;
   opacity: 0.3;
+  transition: opacity 0.35s ease;
 }
 
 .spokeCutout {
@@ -77,6 +84,7 @@
   stroke: var(--color-brand-green-600);
   stroke-width: 1;
   opacity: 0.28;
+  transition: opacity 0.35s ease;
 }
 
 .spokeAxis {
@@ -84,6 +92,7 @@
   stroke-width: 0.75;
   stroke-dasharray: 6 3;
   opacity: 0.25;
+  transition: opacity 0.35s ease;
 }
 
 .hubOuter {
@@ -91,6 +100,7 @@
   stroke: var(--color-brand-green-600);
   stroke-width: 1.5;
   opacity: 0.35;
+  transition: opacity 0.35s ease;
 }
 
 .hubInner {
@@ -98,6 +108,7 @@
   stroke: var(--color-brand-green-700);
   stroke-width: 1;
   opacity: 0.3;
+  transition: opacity 0.35s ease;
 }
 
 .keyway {
@@ -105,6 +116,49 @@
   stroke: var(--color-brand-green-600);
   stroke-width: 1;
   opacity: 0.35;
+  transition: opacity 0.35s ease;
+}
+
+.darkBg {
+  filter: brightness(1.75) contrast(1.1) drop-shadow(0 0 10px rgba(14, 165, 165, 0.4));
+}
+
+.darkBg .outerTeeth {
+  opacity: 0.88;
+  stroke: var(--color-accent-teal-500);
+}
+
+.darkBg .pitchCircle {
+  opacity: 0.92;
+  stroke: #2DD4BF;
+}
+
+.darkBg .rootCircle {
+  opacity: 0.75;
+}
+
+.darkBg .innerRim {
+  opacity: 0.82;
+}
+
+.darkBg .spokeCutout {
+  opacity: 0.78;
+}
+
+.darkBg .spokeAxis {
+  opacity: 0.7;
+}
+
+.darkBg .hubOuter {
+  opacity: 0.88;
+}
+
+.darkBg .hubInner {
+  opacity: 0.82;
+}
+
+.darkBg .keyway {
+  opacity: 0.88;
 }
 
 @media (max-width: 767px) {
