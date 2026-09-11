@@ -6,6 +6,7 @@ import { FloatingContact } from "@/components/layout/FloatingContact/FloatingCon
 import { Container } from "@/components/layout/Container/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";
 import { Button } from "@/components/ui/Button/Button";
+import { PageHero } from "@/components/sections/PageHero/PageHero";
 import { CTASection } from "@/components/sections/CTASection/CTASection";
 import { CareerPortal } from "@/components/sections/Careers/CareerPortal";
 import {
@@ -53,26 +54,27 @@ export default function CareersPage() {
     <>
       <Navbar />
       <main>
-        <section className={styles.heroHeader}>
-          <Container size="wide">
-            <nav className={styles.breadcrumb} aria-label="Breadcrumb">
-              <Link href="/" className={styles.breadcrumbLink}>
-                Home
-              </Link>
-              <ChevronRight size={12} />
-              <span className={styles.breadcrumbCurrent}>Careers</span>
-            </nav>
+        <PageHero
+          image="/images/automation-control-room.jpg"
+          imageAlt="Engineers at the automation control room"
+        >
+          <nav className={styles.breadcrumb} aria-label="Breadcrumb">
+            <Link href="/" className={styles.breadcrumbLink}>
+              Home
+            </Link>
+            <ChevronRight size={12} />
+            <span className={styles.breadcrumbCurrent}>Careers</span>
+          </nav>
 
-            <SectionHeading
-              eyebrow="Join Our Core Engineering Team"
-              eyebrowVariant="dark"
-              theme="dark"
-              title="Build the Brains Behind Modern Industrial Steel Mills"
-              subtitle="At sysTROL, our engineers solve complex physical problems in high-speed bar, section, and wire rod rolling mills. We write deterministic C# software that orchestrates mill speed cascades, hydraulic roll gaps, and continuous billet tracking."
-              align="left"
-            />
-          </Container>
-        </section>
+          <SectionHeading
+            eyebrow="Join Our Core Engineering Team"
+            eyebrowVariant="dark"
+            theme="dark"
+            title="Build the Brains Behind Modern Industrial Steel Mills"
+            subtitle="At sysTROL, our engineers solve complex physical problems in high-speed bar, section, and wire rod rolling mills. We write deterministic C# software that orchestrates mill speed cascades, hydraulic roll gaps, and continuous billet tracking."
+            align="left"
+          />
+        </PageHero>
 
         <section className={styles.statsStrip}>
           <Container size="wide">

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Navbar } from "@/components/layout/Navbar/Navbar";
 import { Footer } from "@/components/layout/Footer/Footer";
 import { FloatingContact } from "@/components/layout/FloatingContact/FloatingContact";
@@ -7,6 +8,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";
 import { StatCounter } from "@/components/ui/StatCounter/StatCounter";
 import { Badge } from "@/components/ui/Badge/Badge";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
+import { PageHero } from "@/components/sections/PageHero/PageHero";
 import { CTASection } from "@/components/sections/CTASection/CTASection";
 import { companyStats } from "@/content/clients";
 import { Target, Compass, MapPin, ShieldCheck } from "lucide-react";
@@ -23,20 +25,21 @@ export default function AboutPage() {
     <>
       <Navbar />
       <main>
-        <section className={styles.heroHeader}>
-          <Container size="wide">
-            <Reveal>
-              <SectionHeading
-                eyebrow="Company Overview & Heritage"
-                eyebrowVariant="dark"
-                theme="dark"
-                title="Engineering Redefined: Process Precision & Industrial Reliability"
-                subtitle="sysTROL Engineering & Consultancy Pvt. Ltd. was founded on a singular premise: heavy industrial manufacturing requires software automation designed by engineers who respect physical process kinetics."
-                align="left"
-              />
-            </Reveal>
-          </Container>
-        </section>
+        <PageHero
+          image="/images/hero-rolling-mill.jpg"
+          imageAlt="Steel rolling mill supervisory floor"
+        >
+          <Reveal>
+            <SectionHeading
+              eyebrow="Company Overview & Heritage"
+              eyebrowVariant="dark"
+              theme="dark"
+              title="Engineering Redefined: Process Precision & Industrial Reliability"
+              subtitle="sysTROL Engineering & Consultancy Pvt. Ltd. was founded on a singular premise: heavy industrial manufacturing requires software automation designed by engineers who respect physical process kinetics."
+              align="left"
+            />
+          </Reveal>
+        </PageHero>
 
         <section className={styles.statsSection}>
           <Container size="wide">
@@ -51,6 +54,41 @@ export default function AboutPage() {
                   />
                 </Reveal>
               ))}
+            </div>
+          </Container>
+        </section>
+
+        <section className={styles.facilitySection}>
+          <Container size="wide">
+            <div className={styles.facilityGrid}>
+              <Reveal>
+                <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-4)" }}>
+                  <Badge variant="brand" size="md" style={{ width: "fit-content" }}>
+                    Engineering Excellence
+                  </Badge>
+                  <h2 style={{ fontSize: "var(--text-3xl)", fontWeight: 700, color: "var(--color-ink-900)", lineHeight: "var(--leading-tight)" }}>
+                    Purpose-Built Simulation & Automation Testing Labs
+                  </h2>
+                  <p style={{ fontSize: "var(--text-base)", color: "var(--color-ink-700)", lineHeight: "var(--leading-relaxed)" }}>
+                    Before any Level-2 code touches live hot metal, our mathematical models undergo rigorous hardware-in-the-loop (HIL) simulation at our Bengaluru technical center. Stand-by-stand speed cascades, hydraulic AGC null adjustments, and OPC UA telemetry gateways are tested against simulated high-tonnage rolling environments.
+                  </p>
+                  <p style={{ fontSize: "var(--text-base)", color: "var(--color-ink-700)", lineHeight: "var(--leading-relaxed)" }}>
+                    This deterministic verification protocol guarantees seamless shadow commissioning and zero unplanned downtime during plant changeovers.
+                  </p>
+                </div>
+              </Reveal>
+
+              <Reveal delay={150}>
+                <div className={styles.facilityImageContainer}>
+                  <Image
+                    src="/images/about/engineering-facility.jpg"
+                    alt="sysTROL engineers testing rolling mill digital twin in automation lab"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className={styles.facilityImage}
+                  />
+                </div>
+              </Reveal>
             </div>
           </Container>
         </section>

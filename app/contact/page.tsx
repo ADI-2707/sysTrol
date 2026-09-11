@@ -1,12 +1,14 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Navbar } from "@/components/layout/Navbar/Navbar";
 import { Footer } from "@/components/layout/Footer/Footer";
 import { FloatingContact } from "@/components/layout/FloatingContact/FloatingContact";
 import { Container } from "@/components/layout/Container/Container";
+import { PageHero } from "@/components/sections/PageHero/PageHero";
 import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";
 import { Badge } from "@/components/ui/Badge/Badge";
 import { Button } from "@/components/ui/Button/Button";
@@ -83,20 +85,21 @@ export default function ContactPage() {
     <>
       <Navbar />
       <main>
-        <section className={styles.heroHeader}>
-          <Container size="wide">
-            <Reveal>
-              <SectionHeading
-                eyebrow="Direct Engineering Desk"
-                eyebrowVariant="dark"
-                theme="dark"
-                title="Connect with sysTROL Engineering"
-                subtitle="Whether you require emergency replacement of imported mill spares or wish to audit your Level-2 rolling schedule algorithms, our Bengaluru team is ready to assist."
-                align="left"
-              />
-            </Reveal>
-          </Container>
-        </section>
+        <PageHero
+          image="/images/hero-rolling-mill.jpg"
+          imageAlt="sysTROL engineering team on the mill floor"
+        >
+          <Reveal>
+            <SectionHeading
+              eyebrow="Direct Engineering Desk"
+              eyebrowVariant="dark"
+              theme="dark"
+              title="Connect with sysTROL Engineering"
+              subtitle="Whether you require emergency replacement of imported mill spares or wish to audit your Level-2 rolling schedule algorithms, our Bengaluru team is ready to assist."
+              align="left"
+            />
+          </Reveal>
+        </PageHero>
 
         <section className={styles.mainSection}>
           <Container size="wide">
@@ -252,13 +255,22 @@ export default function ContactPage() {
                   </div>
 
                   <div className={styles.infoBox} style={{ padding: "var(--space-6)" }}>
-                    <div className={styles.mapPlaceholder}>
-                      <Building size={28} color="var(--color-accent-teal-500)" />
-                      <div style={{ fontWeight: 600, fontSize: "var(--text-sm)" }}>
-                        Bengaluru Engineering Center
-                      </div>
-                      <div style={{ fontSize: "11px", color: "var(--color-ink-400)" }}>
-                        Latitude: 12.9716° N • Longitude: 77.5946° E
+                    <div className={styles.mapContainer}>
+                      <Image
+                        src="/images/contact/bengaluru-tech-map.jpg"
+                        alt="Bengaluru Engineering Center Geographic Location"
+                        fill
+                        className={styles.mapImage}
+                        sizes="(max-width: 1024px) 100vw, 450px"
+                      />
+                      <div className={styles.mapBadge}>
+                        <Building size={16} color="var(--color-accent-teal-500)" />
+                        <div>
+                          <div style={{ fontWeight: 600 }}>Bengaluru Engineering Center</div>
+                          <div style={{ fontSize: "10px", color: "var(--color-ink-300)" }}>
+                            12.9716° N • 77.5946° E • Whitefield Tech Corridor
+                          </div>
+                        </div>
                       </div>
                     </div>
 

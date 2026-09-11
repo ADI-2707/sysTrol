@@ -101,3 +101,22 @@
   border: 1px dashed var(--color-border);
   border-radius: var(--radius-lg);
 }
+
+.cardThumbnail {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: var(--space-4);
+  background-color: var(--color-surface-100);
+}
+
+.cardThumbnailImage {
+  object-fit: cover;
+  transition: transform var(--duration-normal) var(--ease-out-expo);
+}
+
+.cardThumbnail:hover .cardThumbnailImage {
+  transform: scale(1.05);
+}
