@@ -33,6 +33,61 @@ export const Navbar: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const scrollToTop = () => {
+    const startPosition = window.scrollY;
+    if (startPosition <= 0) return;
+
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (prefersReducedMotion) {
+      window.scrollTo(0, 0);
+      return;
+    }
+
+    const htmlEl = document.documentElement;
+    const originalScrollBehavior = htmlEl.style.scrollBehavior;
+    htmlEl.style.scrollBehavior = "auto";
+
+    const duration = Math.min(400, Math.max(260, Math.sqrt(startPosition) * 7.5));
+    const startTime = performance.now();
+    const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
+
+    const step = (currentTime: number) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const ease = easeOutCubic(progress);
+
+      window.scrollTo(0, Math.round(startPosition * (1 - ease)));
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        htmlEl.style.scrollBehavior = originalScrollBehavior;
+      }
+    };
+
+    requestAnimationFrame(step);
+  };
+
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (pathname === "/") {
+      e.preventDefault();
+      scrollToTop();
+    }
+  };
+
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    if (href === "/" && pathname === "/") {
+      e.preventDefault();
+      scrollToTop();
+    }
+  };
+
   return (
     <>
       <header className={`${styles.header} ${isScrolled ? styles.scrolled : ""}`}>
@@ -43,6 +98,7 @@ export const Navbar: React.FC = () => {
               className={styles.brand}
               aria-label="sysTROL Home"
               id="site-logo-target"
+              onClick={handleLogoClick}
             >
               <Image
                 src="/images/systrol-logo.jpeg"
@@ -66,6 +122,7 @@ export const Navbar: React.FC = () => {
                     key={item.href}
                     href={item.href}
                     className={`${styles.navLink} ${isActive ? styles.activeNavLink : ""}`}
+                    onClick={(e) => handleNavClick(e, item.href)}
                   >
                     {item.label}
                   </Link>
