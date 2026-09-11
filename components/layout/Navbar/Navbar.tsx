@@ -50,7 +50,6 @@ export const Navbar: React.FC = () => {
     const originalScrollBehavior = htmlEl.style.scrollBehavior;
     htmlEl.style.scrollBehavior = "auto";
 
-    // Start slow -> accelerate in the middle -> slow down gently at the top
     const duration = Math.min(520, Math.max(340, Math.sqrt(startPosition) * 9.5));
     const startTime = performance.now();
     const easeInOutCubic = (t: number) =>
@@ -74,17 +73,15 @@ export const Navbar: React.FC = () => {
   };
 
   const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (pathname === "/") {
-      e.preventDefault();
-      scrollToTop();
-    }
+    e.preventDefault();
+    scrollToTop();
   };
 
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string
   ) => {
-    if (href === "/" && pathname === "/") {
+    if (href === pathname) {
       e.preventDefault();
       scrollToTop();
     }

@@ -80,7 +80,6 @@
   }
 }
 
-/* 3D Sculpted Plaque for Official Logos */
 .logoPlaque3d {
   position: relative;
   display: flex;
@@ -107,7 +106,6 @@
   transform-style: preserve-3d;
 }
 
-/* 3D Elevation & Perspective on Hover */
 .logoPlaque3d:hover {
   transform: translateY(-6px) scale(1.04) rotateX(3deg);
   box-shadow: 
@@ -118,7 +116,6 @@
   border-color: rgba(31, 122, 77, 0.45);
 }
 
-/* Light Gleam Sweep Across Real Logo */
 .gleamEffect {
   position: absolute;
   top: 0;
@@ -150,7 +147,6 @@
   height: 100%;
 }
 
-/* 3D Floating Logo Container */
 .logoWrapper3d {
   display: flex;
   align-items: center;
@@ -175,7 +171,6 @@
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.05));
 }
 
-/* Lockup Labels for Emblems (SAIL / RINL) */
 .sailLabelLockup,
 .rinlLabelLockup {
   display: flex;
@@ -203,12 +198,11 @@
   margin-top: 2px;
 }
 
-/* Vertical Engraved Sector Badge */
 .sectorTag {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
   font-size: 8px;
-  font-family: var(--font-mono), monospace;
+  font-family: var(--font-mono, monospace);
   color: var(--color-ink-500);
   letter-spacing: 0.06em;
   text-transform: uppercase;
