@@ -50,14 +50,16 @@ export const Navbar: React.FC = () => {
     const originalScrollBehavior = htmlEl.style.scrollBehavior;
     htmlEl.style.scrollBehavior = "auto";
 
-    const duration = Math.min(400, Math.max(260, Math.sqrt(startPosition) * 7.5));
+    // Start slow -> accelerate in the middle -> slow down gently at the top
+    const duration = Math.min(520, Math.max(340, Math.sqrt(startPosition) * 9.5));
     const startTime = performance.now();
-    const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
+    const easeInOutCubic = (t: number) =>
+      t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
 
     const step = (currentTime: number) => {
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      const ease = easeOutCubic(progress);
+      const ease = easeInOutCubic(progress);
 
       window.scrollTo(0, Math.round(startPosition * (1 - ease)));
 
