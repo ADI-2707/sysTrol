@@ -56,19 +56,28 @@ export const WhyUs: React.FC = () => {
               <div className={styles.card}>
                 {idx === 0 && (
                   <svg
-                    className={styles.rollStandWatermark}
-                    viewBox="0 0 120 120"
+                    className={styles.rollMillWatermark}
+                    viewBox="0 0 110 36"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                     aria-hidden="true"
                   >
-                    <rect x="20" y="8" width="80" height="104" rx="4" stroke="currentColor" strokeWidth="1.5" strokeDasharray="3 3" />
-                    <circle cx="60" cy="28" r="16" stroke="currentColor" strokeWidth="1.5" />
-                    <circle cx="60" cy="53" r="8" stroke="currentColor" strokeWidth="1.5" />
-                    <circle cx="60" cy="67" r="8" stroke="currentColor" strokeWidth="1.5" />
-                    <circle cx="60" cy="92" r="16" stroke="currentColor" strokeWidth="1.5" />
-                    <path d="M10 60h100" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-                    <path d="M60 4v112" stroke="currentColor" strokeWidth="1" strokeDasharray="2 2" />
+                    <path
+                      className={styles.rollingBelt}
+                      d="M 18 8 L 92 8 A 10 10 0 0 1 92 28 L 18 28 A 10 10 0 0 1 18 8 Z"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    />
+                    <g className={styles.rollerLeft}>
+                      <circle cx="18" cy="18" r="9" stroke="currentColor" strokeWidth="1.5" />
+                      <circle cx="18" cy="18" r="2.5" fill="currentColor" />
+                      <path d="M 18 9 v 18 M 9 18 h 18" stroke="currentColor" strokeWidth="1" strokeDasharray="2 2" />
+                    </g>
+                    <g className={styles.rollerRight}>
+                      <circle cx="92" cy="18" r="9" stroke="currentColor" strokeWidth="1.5" />
+                      <circle cx="92" cy="18" r="2.5" fill="currentColor" />
+                      <path d="M 92 9 v 18 M 83 18 h 18" stroke="currentColor" strokeWidth="1" strokeDasharray="2 2" />
+                    </g>
                   </svg>
                 )}
                 {idx === 1 && (
