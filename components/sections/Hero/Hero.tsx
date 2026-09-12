@@ -1,22 +1,37 @@
-import React from "react";
-import Link from "next/link";
-import {
-  ArrowRight,
-  Cpu,
-  Building2,
-  Factory,
-  Truck,
-} from "lucide-react";
+"use client";
+
+import React, { useState, useEffect, useRef } from "react";
+import { ArrowRight, Cpu, Building2, Factory, Truck } from "lucide-react";
 import { Container } from "@/components/layout/Container/Container";
 import { Button } from "@/components/ui/Button/Button";
 import { Badge } from "@/components/ui/Badge/Badge";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
 import { HeroCarousel } from "./HeroCarousel";
+import { useTypewriter } from "./useTypewriter";
 import styles from "./Hero.module.css";
 
+const TYPEWRITER_WORDS = ["Supervisory", "Industrial Spare", "Automation"];
+
 export const Hero: React.FC = () => {
+  const [isInView, setIsInView] = useState(true);
+  const sectionRef = useRef<HTMLElement>(null);
+  const { displayText } = useTypewriter(TYPEWRITER_WORDS, { isActive: isInView });
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsInView(entry.isIntersecting),
+      { threshold: 0.1 }
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className={styles.hero} aria-label="Hero Section">
+    <section ref={sectionRef} className={styles.hero} aria-label="Hero Section">
       <Container size="wide">
         <div className={styles.heroTop}>
           <Reveal>
@@ -31,9 +46,10 @@ export const Hero: React.FC = () => {
               </div>
 
               <h1 className={styles.headline}>
-                Engineering Redefined.{" "}
+                Engineering Redefined.
                 <span className={styles.highlightText}>
-                  Supervisory Automation & Industrial Spares.
+                  {displayText}
+                  <span className={styles.cursor} aria-hidden="true" />
                 </span>
               </h1>
 
@@ -41,6 +57,8 @@ export const Hero: React.FC = () => {
                 High-performance Level-2 (L2) process automation software engineered in
                 C# for steel rolling mills, coupled with verified international trading
                 of critical mill machinery, sensors, and wear parts.
+                Backed by Python mathematical models for physics-based pass schedule
+                computation, thermal tracking, and real-time grade calculation.
               </p>
 
               <div className={styles.ctaGroup}>
@@ -52,11 +70,7 @@ export const Hero: React.FC = () => {
                 >
                   Get in Touch
                 </Button>
-                <Button
-                  href="/projects"
-                  variant="outline"
-                  size="lg"
-                >
+                <Button href="/projects" variant="outline" size="lg">
                   View Case Studies
                 </Button>
               </div>
@@ -97,7 +111,7 @@ export const Hero: React.FC = () => {
                   <span className={styles.metricCardTag}>Process Domain</span>
                 </div>
                 <div className={styles.metricCardValue}>Steel Mills</div>
-                <div className={styles.metricCardLabel}>Long, Flat & Pipe Products</div>
+                <div className={styles.metricCardLabel}>Long, Flat &amp; Pipe Products</div>
                 <p className={styles.metricCardDesc}>
                   Specialized engineering for continuous bar mills, high-speed wire rod finishing blocks, and structural tube mills.
                 </p>
@@ -113,7 +127,7 @@ export const Hero: React.FC = () => {
                   <span className={styles.metricCardTag}>Global Sourcing</span>
                 </div>
                 <div className={styles.metricCardValue}>OEM Sourcing</div>
-                <div className={styles.metricCardLabel}>Europe & Japan Sparing</div>
+                <div className={styles.metricCardLabel}>Europe &amp; Japan Sparing</div>
                 <p className={styles.metricCardDesc}>
                   Direct certified procurement of Tungsten Carbide rolls, high-response hydraulic AGC servos, and optical HMD sensors.
                 </p>
