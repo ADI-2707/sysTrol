@@ -1,5 +1,5 @@
 import React from "react";
-import { Factory, Code2, Globe2, ShieldCheck } from "lucide-react";
+import { Factory, Code2, Globe2 } from "lucide-react";
 import { Container } from "@/components/layout/Container/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
@@ -28,7 +28,21 @@ const valueProps = [
     tag: "India & Global Footprint",
   },
   {
-    icon: <ShieldCheck size={22} />,
+    icon: (
+      <svg
+        className={styles.shieldLockSvg}
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        <path className={styles.shieldCheckmark} d="M9 12l2 2 4-4" />
+      </svg>
+    ),
     title: "Turnkey: Code to Sparing",
     description:
       "A unique combined capability: software engineers who calibrate mathematical models and trade OEM-grade mechanical spares with certified metallurgical integrity.",
@@ -188,29 +202,7 @@ export const WhyUs: React.FC = () => {
                       </svg>
                     </div>
                   )}
-                  {idx === 3 ? (
-                    <svg
-                      className={styles.shieldLockSvg}
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      aria-hidden="true"
-                    >
-                      <path
-                        className={styles.shieldBody}
-                        d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
-                      />
-                      <path
-                        className={styles.shieldCheckmark}
-                        d="M9 12l2 2 4-4"
-                      />
-                    </svg>
-                  ) : (
-                    prop.icon
-                  )}
+                  {prop.icon}
                 </div>
                 <h3 className={styles.title}>{prop.title}</h3>
                 <p className={styles.description}>{prop.description}</p>
