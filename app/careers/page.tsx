@@ -18,6 +18,7 @@ import {
   Mail,
   Send,
 } from "lucide-react";
+import { CountUp } from "@/components/ui/CountUp/CountUp";
 import styles from "./Careers.module.css";
 
 export const metadata: Metadata = {
@@ -80,19 +81,27 @@ export default function CareersPage() {
           <Container size="wide">
             <div className={styles.statsGrid}>
               <div className={styles.statItem}>
-                <span className={styles.statValue}>5+</span>
+                <span className={styles.statValue}>
+                  <CountUp value="5+" />
+                </span>
                 <span className={styles.statLabel}>Global Deployment Hubs</span>
               </div>
               <div className={styles.statItem}>
-                <span className={styles.statValue}>100%</span>
+                <span className={styles.statValue}>
+                  <CountUp value="100%" />
+                </span>
                 <span className={styles.statLabel}>Physical Plant Impact</span>
               </div>
               <div className={styles.statItem}>
-                <span className={styles.statValue}>.NET 8</span>
+                <span className={styles.statValue}>
+                  <CountUp value=".NET 8" />
+                </span>
                 <span className={styles.statLabel}>Modern Industrial Stack</span>
               </div>
               <div className={styles.statItem}>
-                <span className={styles.statValue}>6</span>
+                <span className={styles.statValue}>
+                  <CountUp value="6" />
+                </span>
                 <span className={styles.statLabel}>Active Vacancies</span>
               </div>
             </div>

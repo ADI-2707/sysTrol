@@ -7,6 +7,7 @@ import { FloatingContact } from "@/components/layout/FloatingContact/FloatingCon
 import { Container } from "@/components/layout/Container/Container";
 import { Badge } from "@/components/ui/Badge/Badge";
 import { Button } from "@/components/ui/Button/Button";
+import { CountUp } from "@/components/ui/CountUp/CountUp";
 import { CTASection } from "@/components/sections/CTASection/CTASection";
 import { ProjectGallery } from "@/components/sections/ProjectGallery/ProjectGallery";
 import { projectsData } from "@/content/projects";
@@ -304,7 +305,7 @@ export default async function ProjectDetailPage({
                     {project.metrics.map((m, idx) => (
                       <div key={idx} style={{ textAlign: "center", backgroundColor: "var(--color-surface-0)", padding: "12px", borderRadius: "var(--radius-sm)" }}>
                         <div style={{ fontFamily: "var(--font-heading)", fontSize: "var(--text-2xl)", fontWeight: 700, color: "var(--color-brand-green-700)" }}>
-                          {m.value}
+                          <CountUp value={m.value} />
                         </div>
                         <div style={{ fontSize: "11px", color: "var(--color-ink-500)", marginTop: "2px" }}>
                           {m.label}

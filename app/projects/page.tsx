@@ -10,6 +10,7 @@ import { Container } from "@/components/layout/Container/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";
 import { Badge } from "@/components/ui/Badge/Badge";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
+import { CountUp } from "@/components/ui/CountUp/CountUp";
 import { PageHero } from "@/components/sections/PageHero/PageHero";
 import { CTASection } from "@/components/sections/CTASection/CTASection";
 import { projectsData } from "@/content/projects";
@@ -235,7 +236,7 @@ export default function ProjectsPage() {
                                   color: "var(--color-brand-green-600)",
                                 }}
                               >
-                                {m.value}
+                                <CountUp value={m.value} />
                               </div>
                               <div style={{ fontSize: "11px", color: "var(--color-ink-500)" }}>
                                 {m.label}

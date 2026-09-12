@@ -9,6 +9,7 @@ import {
   MapPin,
 } from "lucide-react";
 import { Badge } from "@/components/ui/Badge/Badge";
+import { CountUp } from "@/components/ui/CountUp/CountUp";
 import styles from "./HeroCarousel.module.css";
 
 interface SlideData {
@@ -251,7 +252,9 @@ export const HeroCarousel: React.FC = () => {
             </div>
 
             <div className={styles.statHighlightBox}>
-              <span className={styles.statBigNumber}>{slide.statValue}</span>
+              <span className={styles.statBigNumber}>
+                <CountUp key={`${slide.id}-${slide.statValue}`} value={slide.statValue} />
+              </span>
               <div className={styles.statBigDetails}>
                 <span className={styles.statBigTitle}>{slide.statTitle}</span>
                 <span className={styles.statBigSubtitle}>

@@ -7,6 +7,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";
 import { Badge } from "@/components/ui/Badge/Badge";
 import { Button } from "@/components/ui/Button/Button";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
+import { CountUp } from "@/components/ui/CountUp/CountUp";
 import { projectsData } from "@/content/projects";
 import styles from "./FeaturedProjects.module.css";
 
@@ -76,7 +77,7 @@ export const FeaturedProjects: React.FC = () => {
                   <div className={styles.metricsBox}>
                     {project.metrics.slice(0, 2).map((m, mIdx) => (
                       <div key={mIdx}>
-                        <div className={styles.metricValue}>{m.value}</div>
+                        <div className={styles.metricValue}><CountUp value={m.value} /></div>
                         <div className={styles.metricLabel}>{m.label}</div>
                       </div>
                     ))}
