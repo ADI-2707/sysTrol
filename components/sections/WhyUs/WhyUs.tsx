@@ -18,14 +18,14 @@ const valueProps = [
     title: "C# & Python Math Models",
     description:
       "High-performance C# services and deterministic Python mathematical models. Rigorous calculation matrices and grade-based calculation rules (pure physics, non-AI/ML) replacing brittle legacy code.",
-    tag: "Deterministic Calculation Matrices",
+    tag: "Deterministic Math Matrices",
   },
   {
     icon: <Globe2 size={22} />,
     title: "Domestic & Global Delivery",
     description:
       "Proven on-site and remote execution for Tier-1 integrated steel manufacturers in India, alongside international commissioning across the Middle East.",
-    tag: "India & International Footprint",
+    tag: "India & Global Footprint",
   },
   {
     icon: <ShieldCheck size={22} />,
