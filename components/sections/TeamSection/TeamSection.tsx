@@ -18,7 +18,7 @@ interface TeamMember {
 const teamDisciplines: TeamMember[] = [
   {
     id: "software-simulation",
-    role: "Level-2 Software & Simulation Engineering",
+    role: "Level-2 Software Engineering",
     discipline: "Process Modeling Core",
     description:
       "Mathematical modelers and C# software engineers designing stand-by-stand speed cascades, hydraulic AGC algorithms, and real-time physics-based pass schedule engines.",
