@@ -254,7 +254,7 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  <div className={styles.infoBox} style={{ padding: "var(--space-6)" }}>
+                  <div className={styles.infoBox} style={{ padding: "var(--space-6)", flex: 1, display: "flex", flexDirection: "column" }}>
                     <div className={styles.mapContainer}>
                       <Image
                         src="/images/contact/bengaluru-tech-map.jpg"
