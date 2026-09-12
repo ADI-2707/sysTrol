@@ -149,7 +149,7 @@ export default function AboutPage() {
                 </div>
               </Reveal>
 
-              <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-6)" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-6)", height: "100%" }}>
                 <Reveal delay={150}>
                   <div className={styles.missionCard}>
                     <div className={styles.missionItem}>
@@ -196,24 +196,26 @@ export default function AboutPage() {
                   </div>
                 </Reveal>
 
-                <Reveal delay={250}>
-                  <div className={styles.locationCard}>
-                    <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
-                      <MapPin size={18} color="var(--color-accent-teal-500)" />
-                      <span style={{ fontSize: "var(--text-sm)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em" }}>
-                        Strategic Hub: Bengaluru
-                      </span>
+                <div style={{ flex: 1, display: "flex", flexDirection: "column" }}>
+                  <Reveal delay={250}>
+                    <div className={styles.locationCard} style={{ height: "100%" }}>
+                      <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
+                        <MapPin size={18} color="var(--color-accent-teal-500)" />
+                        <span style={{ fontSize: "var(--text-sm)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em" }}>
+                          Strategic Hub: Bengaluru
+                        </span>
+                      </div>
+                      <h4 style={{ fontSize: "var(--text-xl)", fontWeight: 700, marginBottom: "8px" }}>
+                        Technology Capital of India
+                      </h4>
+                      <p style={{ fontSize: "var(--text-sm)", color: "#CBD5E1", lineHeight: 1.6 }}>
+                        Operating from Bengaluru provides sysTROL with unmatched software talent,
+                        low-latency cloud infrastructure, and central logistics connectivity to
+                        steel manufacturing corridors across eastern, western, and southern India.
+                      </p>
                     </div>
-                    <h4 style={{ fontSize: "var(--text-xl)", fontWeight: 700, marginBottom: "8px" }}>
-                      Technology Capital of India
-                    </h4>
-                    <p style={{ fontSize: "var(--text-sm)", color: "#CBD5E1", lineHeight: 1.6 }}>
-                      Operating from Bengaluru provides sysTROL with unmatched software talent,
-                      low-latency cloud infrastructure, and central logistics connectivity to
-                      steel manufacturing corridors across eastern, western, and southern India.
-                    </p>
-                  </div>
-                </Reveal>
+                  </Reveal>
+                </div>
               </div>
             </div>
           </Container>

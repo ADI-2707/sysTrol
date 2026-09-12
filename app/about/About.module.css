@@ -65,6 +65,7 @@
   font-size: var(--text-base);
   color: var(--color-ink-700);
   line-height: var(--leading-relaxed);
+  justify-content: space-between;
 }
 .storyContent p strong {
   color: var(--color-ink-900);
