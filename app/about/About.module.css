@@ -36,14 +36,21 @@
   }
 }
 .storySection {
-  padding-top: var(--space-16);
-  padding-bottom: var(--space-16);
+  padding-top: var(--space-12);
+  padding-bottom: var(--space-12);
   background-color: var(--color-surface-50);
+}
+@media (min-width: 1024px) {
+  .storySection {
+    padding-top: var(--space-20);
+    padding-bottom: var(--space-20);
+  }
 }
 .storyGrid {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-10);
+  align-items: stretch;
 }
 @media (min-width: 1024px) {
   .storyGrid {
@@ -107,10 +114,17 @@
 }
 
 .facilitySection {
-  padding-top: var(--space-16);
-  padding-bottom: var(--space-16);
+  padding-top: var(--space-12);
+  padding-bottom: var(--space-12);
   background-color: var(--color-surface-0);
   border-bottom: 1px solid var(--color-border);
+}
+
+@media (min-width: 1024px) {
+  .facilitySection {
+    padding-top: var(--space-20);
+    padding-bottom: var(--space-20);
+  }
 }
 
 .facilityGrid {

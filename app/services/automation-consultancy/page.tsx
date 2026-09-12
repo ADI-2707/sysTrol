@@ -4,6 +4,7 @@ import { Navbar } from "@/components/layout/Navbar/Navbar";
 import { Footer } from "@/components/layout/Footer/Footer";
 import { FloatingContact } from "@/components/layout/FloatingContact/FloatingContact";
 import { Container } from "@/components/layout/Container/Container";
+import { Section } from "@/components/layout/Section/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";
 import { Stepper } from "@/components/ui/Stepper/Stepper";
 import { Badge } from "@/components/ui/Badge/Badge";
@@ -87,13 +88,7 @@ export default function AutomationConsultancyPage() {
           </Reveal>
         </PageHero>
 
-        <section
-          style={{
-            paddingTop: "var(--space-16)",
-            paddingBottom: "var(--space-16)",
-            backgroundColor: "var(--color-surface-0)",
-          }}
-        >
+        <Section variant="light">
           <Container size="wide">
             <Reveal>
               <SectionHeading
@@ -201,7 +196,7 @@ export default function AutomationConsultancyPage() {
               </Reveal>
             )}
           </Container>
-        </section>
+        </Section>
 
         <CTASection />
       </main>

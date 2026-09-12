@@ -1,12 +1,12 @@
 .section {
-  padding-top: var(--space-20);
-  padding-bottom: var(--space-20);
+  padding-top: var(--space-12);
+  padding-bottom: var(--space-12);
   background-color: transparent;
 }
 @media (min-width: 1024px) {
   .section {
-    padding-top: var(--space-32);
-    padding-bottom: var(--space-32);
+    padding-top: var(--space-20);
+    padding-bottom: var(--space-20);
   }
 }
 .grid {
@@ -116,13 +116,14 @@
   line-height: var(--leading-snug);
   position: relative;
   z-index: 1;
+  min-height: 64px;
 }
 .cardDescription {
   font-size: var(--text-base);
   color: var(--color-ink-700);
   line-height: var(--leading-relaxed);
   margin-bottom: var(--space-6);
-  flex: 1 0 auto;
+  flex: 1;
   position: relative;
   z-index: 1;
 }
@@ -133,6 +134,7 @@
   margin-bottom: var(--space-6);
   padding-top: var(--space-4);
   border-top: 1px solid var(--color-border);
+  min-height: 72px;
 }
 .cardFooter {
   display: flex;

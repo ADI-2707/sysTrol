@@ -12,9 +12,15 @@
   }
 }
 .overviewSection {
-  padding-top: var(--space-16);
-  padding-bottom: var(--space-16);
+  padding-top: var(--space-12);
+  padding-bottom: var(--space-12);
   background-color: var(--color-surface-50);
+}
+@media (min-width: 1024px) {
+  .overviewSection {
+    padding-top: var(--space-20);
+    padding-bottom: var(--space-20);
+  }
 }
 .divisionCard {
   background-color: var(--color-surface-0);
@@ -46,7 +52,7 @@
   .divisionCard {
     grid-template-columns: 1fr 1fr;
     padding: var(--space-10);
-    align-items: start;
+    align-items: stretch;
   }
 }
 .divisionCard:hover {
@@ -57,6 +63,7 @@
 .divisionLeft {
   display: flex;
   flex-direction: column;
+  height: 100%;
   gap: var(--space-4);
 }
 .divisionTitle {

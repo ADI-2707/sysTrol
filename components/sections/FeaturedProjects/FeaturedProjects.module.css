@@ -1,12 +1,12 @@
 .section {
-  padding-top: var(--space-20);
-  padding-bottom: var(--space-20);
+  padding-top: var(--space-12);
+  padding-bottom: var(--space-12);
   background-color: transparent;
 }
 @media (min-width: 1024px) {
   .section {
-    padding-top: var(--space-32);
-    padding-bottom: var(--space-32);
+    padding-top: var(--space-20);
+    padding-bottom: var(--space-20);
   }
 }
 .topBar {
@@ -92,6 +92,7 @@
   color: var(--color-ink-900);
   margin-bottom: var(--space-3);
   line-height: var(--leading-snug);
+  min-height: 54px;
 }
 .blurb {
   font-size: var(--text-sm);
@@ -124,6 +125,7 @@
   flex-wrap: wrap;
   gap: var(--space-2);
   margin-bottom: var(--space-4);
+  min-height: 28px;
 }
 .cardFooter {
   padding-top: var(--space-4);

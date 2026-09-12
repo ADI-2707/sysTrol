@@ -1,6 +1,6 @@
 .section {
-  padding-top: var(--space-20);
-  padding-bottom: var(--space-20);
+  padding-top: var(--space-12);
+  padding-bottom: var(--space-12);
   background-color: var(--color-surface-50);
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
@@ -8,8 +8,8 @@
 
 @media (min-width: 1024px) {
   .section {
-    padding-top: var(--space-32);
-    padding-bottom: var(--space-32);
+    padding-top: var(--space-20);
+    padding-bottom: var(--space-20);
   }
 }
 

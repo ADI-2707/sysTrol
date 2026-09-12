@@ -12,9 +12,15 @@
   }
 }
 .mainSection {
-  padding-top: var(--space-16);
-  padding-bottom: var(--space-24);
+  padding-top: var(--space-12);
+  padding-bottom: var(--space-16);
   background-color: var(--color-surface-50);
+}
+@media (min-width: 1024px) {
+  .mainSection {
+    padding-top: var(--space-20);
+    padding-bottom: var(--space-20);
+  }
 }
 .splitGrid {
   display: grid;
