@@ -13,7 +13,7 @@ import { PageHero } from "@/components/sections/PageHero/PageHero";
 import { CTASection } from "@/components/sections/CTASection/CTASection";
 import { CapabilitiesTimeline } from "@/components/sections/CapabilitiesTimeline/CapabilitiesTimeline";
 import { servicesData } from "@/content/services";
-import { ArrowRight, Cpu, Truck } from "lucide-react";
+import { ArrowRight, Cpu, Truck, CheckCircle2 } from "lucide-react";
 import styles from "./Services.module.css";
 
 export const metadata: Metadata = {
@@ -114,6 +114,27 @@ export default function ServicesPage() {
                     ))}
                   </div>
 
+                  <div style={{
+                    marginTop: "var(--space-2)",
+                    padding: "var(--space-4)",
+                    backgroundColor: "var(--color-brand-green-100)",
+                    borderRadius: "var(--radius-md)",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "var(--space-2)",
+                  }}>
+                    {[
+                      "Microsecond-deterministic C#/.NET execution — no black-box AI",
+                      "HIL simulation tested before any live hot-metal deployment",
+                      "Direct PLC integration: Siemens, ABB, Rockwell — no middleware",
+                    ].map((point, i) => (
+                      <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: "8px" }}>
+                        <CheckCircle2 size={15} style={{ color: "var(--color-brand-green-700)", flexShrink: 0, marginTop: "2px" }} />
+                        <span style={{ fontSize: "var(--text-sm)", color: "var(--color-brand-green-800)", lineHeight: 1.5 }}>{point}</span>
+                      </div>
+                    ))}
+                  </div>
+
                   <div style={{ marginTop: "auto", paddingTop: "var(--space-4)" }}>
                     <Button
                       href={`/services/${automation.slug}`}
@@ -174,6 +195,27 @@ export default function ServicesPage() {
                       <Badge key={idx} variant="mono" size="sm">
                         {tag}
                       </Badge>
+                    ))}
+                  </div>
+
+                  <div style={{
+                    marginTop: "var(--space-2)",
+                    padding: "var(--space-4)",
+                    backgroundColor: "var(--color-accent-teal-100)",
+                    borderRadius: "var(--radius-md)",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "var(--space-2)",
+                  }}>
+                    {[
+                      "OEM-certified parts from Europe & Japan — EN 10204 3.1 on every batch",
+                      "Pre-shipment dimensional inspection & protective export packaging",
+                      "Emergency air-freight capability for zero-downtime mill restarts",
+                    ].map((point, i) => (
+                      <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: "8px" }}>
+                        <CheckCircle2 size={15} style={{ color: "var(--color-accent-teal-600)", flexShrink: 0, marginTop: "2px" }} />
+                        <span style={{ fontSize: "var(--text-sm)", color: "var(--color-accent-teal-600)", lineHeight: 1.5 }}>{point}</span>
+                      </div>
                     ))}
                   </div>
 
