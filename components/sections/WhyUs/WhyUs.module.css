@@ -17,6 +17,11 @@
   gap: var(--space-6);
   align-items: stretch;
 }
+.grid > * {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 @media (min-width: 640px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
@@ -28,21 +33,59 @@
   }
 }
 .card {
+  position: relative;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   height: 100%;
+  min-height: 330px;
   flex: 1;
   background-color: var(--color-surface-0);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   padding: var(--space-6);
   box-shadow: var(--shadow-sm);
-  transition: all var(--duration-fast) var(--ease-in-out);
+  transition: transform var(--duration-fast) var(--ease-in-out), box-shadow var(--duration-fast) var(--ease-in-out);
+}
+.card::before,
+.card::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  box-sizing: border-box;
+  z-index: 2;
+}
+.card::before {
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 2px solid var(--color-brand-green-600);
+  border-top: 2px solid var(--color-brand-green-600);
+  transition: width 0.08s ease-in 0.16s, height 0.08s ease-in 0.24s;
+}
+.card::after {
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-right: 2px solid var(--color-brand-green-600);
+  border-bottom: 2px solid var(--color-brand-green-600);
+  transition: width 0.08s ease-in 0s, height 0.08s ease-in 0.08s;
 }
 .card:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
-  border-color: var(--color-brand-green-600);
+}
+.card:hover::before {
+  width: 100%;
+  height: 100%;
+  transition: height 0.14s ease-out 0s, width 0.14s ease-out 0.14s;
+}
+.card:hover::after {
+  width: 100%;
+  height: 100%;
+  transition: height 0.14s ease-out 0.28s, width 0.14s ease-out 0.42s;
 }
 .iconBox {
   width: 44px;
@@ -55,25 +98,285 @@
   justify-content: center;
   margin-bottom: var(--space-4);
   flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+.iconBoxRollingMill {
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+.iconBoxRollingMill svg {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.card:hover .iconBoxRollingMill {
+  background-color: #fff7ed;
+  color: #ea580c;
+  box-shadow: 0 0 16px rgba(234, 88, 12, 0.25);
+}
+.card:hover .iconBoxRollingMill svg {
+  filter: drop-shadow(0 0 4px rgba(249, 115, 22, 0.5));
+  transform: scale(1.08);
+}
+.rollMillWatermark,
+.codeScrollBox,
+.plantLineWatermark,
+.blueprintWatermark {
+  position: absolute;
+  top: var(--space-6);
+  right: var(--space-6);
+  height: 44px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+.rollMillWatermark {
+  width: 80px;
+  color: var(--color-ink-900);
+  transition: opacity 0.3s ease, color 0.3s ease;
+}
+.card:hover .rollMillWatermark {
+  opacity: 0.16;
+  color: #ea580c;
+}
+.card:hover .rollerLeft {
+  animation: rollRotate 1.2s linear infinite;
+  transform-origin: 19px 16px;
+}
+.card:hover .rollerRight {
+  animation: rollRotate 1.2s linear infinite;
+  transform-origin: 61px 16px;
+}
+.rollingBelt {
+  stroke-dasharray: 10 4;
+  stroke-dashoffset: 0;
+}
+.card:hover .rollingBelt {
+  animation: beltFlow 1.2s linear infinite;
+}
+@keyframes rollRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes beltFlow {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -28;
+  }
+}
+.iconBoxMathModels {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid transparent;
+}
+.iconBoxMathModels svg {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.card:hover .iconBoxMathModels {
+  background-color: #09131f;
+  color: #14b8a6;
+  border-color: rgba(20, 184, 166, 0.4);
+  box-shadow: 0 0 16px rgba(20, 184, 166, 0.35);
+}
+.card:hover .iconBoxMathModels svg {
+  filter: drop-shadow(0 0 6px rgba(20, 184, 166, 0.6));
+  transform: scale(1.08);
+}
+.iconBoxGlobal {
+  position: relative;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+.iconBoxGlobal > svg {
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), color 0.3s ease;
+}
+.card:hover .iconBoxGlobal {
+  background-color: #f0fdf4;
+  color: var(--color-brand-green-600);
+  box-shadow: 0 0 16px rgba(22, 163, 74, 0.2);
+}
+.card:hover .iconBoxGlobal > svg {
+  transform: rotate(25deg) scale(1.05);
+}
+.orbitalContainer {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 64px;
+  height: 64px;
+  pointer-events: none;
+  z-index: 2;
+}
+.orbitalPathSvg {
+  width: 100%;
+  height: 100%;
+  color: var(--color-brand-green-600);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.card:hover .orbitalPathSvg {
+  opacity: 0.75;
+  transition: opacity 0.25s ease 0s;
+}
+.flightPlane {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  color: var(--color-brand-green-700);
+  offset-path: path("M 6 48 C 6 20 26 8 50 14 C 60 18 56 36 42 46 C 28 54 12 54 6 48");
+  offset-distance: 0%;
+  offset-rotate: auto 90deg;
+  opacity: 0;
+  transition: opacity 0.2s ease, offset-distance 0.3s ease;
+  pointer-events: none;
+}
+.card:hover .flightPlane {
+  opacity: 1;
+  offset-distance: 100%;
+  transition: offset-distance 1.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s, opacity 0.25s ease 0.2s;
+}
+.iconBoxTurnkey {
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover .iconBoxTurnkey {
+  background-color: #f0fdf4;
+  color: var(--color-brand-green-600);
+  box-shadow: 0 0 16px rgba(22, 163, 74, 0.25);
+}
+.shieldLockSvg {
+  width: 22px;
+  height: 22px;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.card:hover .shieldLockSvg {
+  transform: scale(1.12);
+}
+.shieldCheckmark {
+  stroke-dasharray: 12;
+  stroke-dashoffset: 12;
+  transition: stroke-dashoffset 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.12s;
+}
+.card:hover .shieldCheckmark {
+  stroke-dashoffset: 0;
+}
+.codeScrollBox {
+  width: 58px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card:hover .codeScrollBox {
+  opacity: 1;
+}
+.monitorScreen {
+  width: 58px;
+  height: 36px;
+  border: 1px solid var(--color-accent-teal-600);
+  border-radius: var(--radius-sm);
+  background-color: rgba(20, 184, 166, 0.05);
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+}
+.monitorStand {
+  width: 8px;
+  height: 5px;
+  background-color: var(--color-accent-teal-600);
+  opacity: 0.6;
+}
+.monitorBase {
+  width: 22px;
+  height: 2px;
+  background-color: var(--color-accent-teal-600);
+  border-radius: 1px;
+  opacity: 0.6;
+}
+.codeScrollTrack {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-mono), monospace;
+  font-size: 7px;
+  line-height: 10px;
+  color: var(--color-accent-teal-600);
+  opacity: 0.35;
+  white-space: nowrap;
+  animation: codeScrollAnim 7s linear infinite;
+  padding: 1px 2px;
+}
+@keyframes codeScrollAnim {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+.plantLineWatermark {
+  width: 80px;
+  color: var(--color-brand-green-600);
+}
+.plantLinePath {
+  stroke-dasharray: 250;
+  stroke-dashoffset: 250;
+  transition: stroke-dashoffset 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card:hover .plantLineWatermark {
+  opacity: 0.2;
+}
+.card:hover .plantLinePath {
+  stroke-dashoffset: 0;
+}
+.blueprintWatermark {
+  width: 64px;
+  color: var(--color-brand-green-700);
+  transform: scale(0.96);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.card:hover .blueprintWatermark {
+  opacity: 0.2;
+  transform: scale(1);
+}
+.mathCurveLine {
+  stroke-dasharray: 80;
+  stroke-dashoffset: 80;
+  transition: stroke-dashoffset 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card:hover .mathCurveLine {
+  stroke-dashoffset: 0;
 }
 .title {
   font-size: var(--text-lg);
   font-weight: var(--font-bold);
   color: var(--color-ink-900);
   margin-bottom: var(--space-2);
-  min-height: 52px;
+  min-height: 56px;
 }
 .description {
   font-size: var(--text-sm);
   color: var(--color-ink-700);
   line-height: var(--leading-normal);
   flex: 1;
+  margin-bottom: var(--space-4);
 }
 .footerTag {
   margin-top: auto;
   padding-top: var(--space-3);
   border-top: 1px solid var(--color-border);
-  font-size: var(--text-xs);
+  font-size: 0.72rem;
   font-family: var(--font-mono), monospace;
   color: var(--color-accent-teal-600);
+  height: 38px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
 }
