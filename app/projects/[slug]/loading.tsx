@@ -9,7 +9,7 @@ export default function CaseStudyLoading() {
         <Skeleton width={150} height={20} style={{ marginBottom: "24px" }} />
 
         <div style={{ display: "flex", flexDirection: "column", gap: "16px", marginBottom: "36px" }}>
-          <Skeleton width={130} height={26} borderRadius="9999px" />
+          <Skeleton width={130} height={26} borderRadius="var(--radius-sm)" />
           <Skeleton width="85%" height={44} />
           <div style={{ display: "flex", gap: "16px" }}>
             <Skeleton width={160} height={16} />
@@ -30,9 +30,9 @@ export default function CaseStudyLoading() {
         </div>
 
         <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
-          <Skeleton width={90} height={28} borderRadius="9999px" />
-          <Skeleton width={110} height={28} borderRadius="9999px" />
-          <Skeleton width={130} height={28} borderRadius="9999px" />
+          <Skeleton width={90} height={28} borderRadius="var(--radius-sm)" />
+          <Skeleton width={110} height={28} borderRadius="var(--radius-sm)" />
+          <Skeleton width={130} height={28} borderRadius="var(--radius-sm)" />
         </div>
       </Container>
     </div>

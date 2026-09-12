@@ -10,8 +10,8 @@ export default function JobDetailsLoading() {
 
         <div style={{ display: "flex", flexDirection: "column", gap: "16px", marginBottom: "36px" }}>
           <div style={{ display: "flex", gap: "8px" }}>
-            <Skeleton width={120} height={26} borderRadius="9999px" />
-            <Skeleton width={90} height={26} borderRadius="9999px" />
+            <Skeleton width={120} height={26} borderRadius="var(--radius-sm)" />
+            <Skeleton width={90} height={26} borderRadius="var(--radius-sm)" />
           </div>
           <Skeleton width="75%" height={44} />
           <Skeleton width="60%" height={20} />
