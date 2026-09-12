@@ -59,6 +59,12 @@ export const Hero: React.FC = () => {
                 of critical mill machinery, sensors, and wear parts.
               </p>
 
+              <p className={styles.subheadline}>
+                Backed by Python mathematical models for physics-based pass schedule
+                computation, thermal tracking, and real-time grade calculation —
+                deterministic process logic built for live hot metal, not AI inference.
+              </p>
+
               <div className={styles.ctaGroup}>
                 <Button
                   href="/contact"
