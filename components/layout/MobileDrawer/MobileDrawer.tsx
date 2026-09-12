@@ -20,9 +20,9 @@ const navLinks = [
   { href: "/services/automation-consultancy", label: "Level-2 Automation" },
   { href: "/services/trading", label: "Machinery & Spares" },
   { href: "/projects", label: "Projects & Case Studies" },
-  { href: "/gallery", label: "Gallery & Showcase" },
   { href: "/clients", label: "Clients & Industries" },
   { href: "/careers", label: "Careers" },
+  { href: "/gallery", label: "Gallery & Showcase" },
   { href: "/contact", label: "Contact Us" },
 ];
 
