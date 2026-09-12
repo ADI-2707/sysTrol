@@ -70,11 +70,12 @@ export default function AboutPage() {
                     Purpose-Built Simulation & Automation Testing Labs
                   </h2>
                   <p style={{ fontSize: "var(--text-base)", color: "var(--color-ink-700)", lineHeight: "var(--leading-relaxed)" }}>
-                    Before any Level-2 code touches live hot metal, our mathematical models undergo rigorous hardware-in-the-loop (HIL) simulation at our Bengaluru technical center. Stand-by-stand speed cascades, hydraulic AGC null adjustments, and OPC UA telemetry gateways are tested against simulated high-tonnage rolling environments.
+                    Before any Level-2 code touches live hot metal, our mathematical models undergo rigorous hardware-in-the-loop (HIL) simulation at our Bengaluru technical center. Stand-by-stand speed cascades, hydraulic AGC null adjustments, and OPC UA/DA telemetry gateways are tested against simulated high-tonnage rolling environments.
                   </p>
                   <p style={{ fontSize: "var(--text-base)", color: "var(--color-ink-700)", lineHeight: "var(--leading-relaxed)" }}>
-                    This deterministic verification protocol guarantees seamless shadow commissioning and zero unplanned downtime during plant changeovers.
+                    Our engineers replicate plant-specific roll bite geometry, motor drive dynamics, and thermal rundown curves across multi-stand configurations, validating every pass schedule under extreme friction and tension anomalies.
                   </p>
+
                 </div>
               </Reveal>
 
