@@ -92,6 +92,41 @@
   justify-content: center;
   margin-bottom: var(--space-4);
   flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+.iconBoxRollingMill {
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+.iconBoxRollingMill svg {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.card:hover .iconBoxRollingMill {
+  background-color: #fff7ed;
+  color: #ea580c;
+  box-shadow: 0 0 16px rgba(234, 88, 12, 0.25);
+}
+.card:hover .iconBoxRollingMill svg {
+  filter: drop-shadow(0 0 4px rgba(249, 115, 22, 0.5));
+  transform: scale(1.08);
+}
+.rollStandWatermark {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  width: 90px;
+  height: 90px;
+  color: var(--color-ink-900);
+  opacity: 0.03;
+  transform: scale(0.95);
+  transition: opacity 0.3s ease, transform 0.3s ease, color 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+.card:hover .rollStandWatermark {
+  opacity: 0.12;
+  transform: scale(1);
+  color: #ea580c;
 }
 .title {
   font-size: var(--text-lg);

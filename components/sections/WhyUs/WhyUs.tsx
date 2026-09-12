@@ -54,7 +54,30 @@ export const WhyUs: React.FC = () => {
           {valueProps.map((prop, idx) => (
             <Reveal key={idx} delay={idx * 80}>
               <div className={styles.card}>
-                <div className={styles.iconBox}>{prop.icon}</div>
+                {idx === 0 && (
+                  <svg
+                    className={styles.rollStandWatermark}
+                    viewBox="0 0 120 120"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <rect x="20" y="8" width="80" height="104" rx="4" stroke="currentColor" strokeWidth="1.5" strokeDasharray="3 3" />
+                    <circle cx="60" cy="28" r="16" stroke="currentColor" strokeWidth="1.5" />
+                    <circle cx="60" cy="53" r="8" stroke="currentColor" strokeWidth="1.5" />
+                    <circle cx="60" cy="67" r="8" stroke="currentColor" strokeWidth="1.5" />
+                    <circle cx="60" cy="92" r="16" stroke="currentColor" strokeWidth="1.5" />
+                    <path d="M10 60h100" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+                    <path d="M60 4v112" stroke="currentColor" strokeWidth="1" strokeDasharray="2 2" />
+                  </svg>
+                )}
+                <div
+                  className={`${styles.iconBox} ${
+                    idx === 0 ? styles.iconBoxRollingMill : ""
+                  }`.trim()}
+                >
+                  {prop.icon}
+                </div>
                 <h3 className={styles.title}>{prop.title}</h3>
                 <p className={styles.description}>{prop.description}</p>
                 <div className={styles.footerTag}>[ {prop.tag} ]</div>
