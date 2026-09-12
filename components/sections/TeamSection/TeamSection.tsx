@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Container } from "@/components/layout/Container/Container";
 import { Badge } from "@/components/ui/Badge/Badge";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
-import { Cpu, ShieldCheck, Wrench, Quote } from "lucide-react";
+import { Cpu, ShieldCheck, Wrench, Quote, Linkedin, ExternalLink } from "lucide-react";
 import styles from "./TeamSection.module.css";
 
 interface TeamMember {
@@ -70,7 +70,7 @@ export const TeamSection: React.FC = () => {
             <div className={styles.directorImageWrap}>
               <Image
                 src="/images/about/team/preet-tripathi.jpg"
-                alt="Preet Tripathi - Director, sysTROL Engineering & Consultancy"
+                alt="Preet Tripathi - Founder, Managing Director & CEO, sysTROL Engineering & Consultancy"
                 fill
                 sizes="(max-width: 900px) 100vw, 360px"
                 className={styles.directorImage}
@@ -81,22 +81,46 @@ export const TeamSection: React.FC = () => {
               <div className={styles.directorHeader}>
                 <div className={styles.directorBadgeRow}>
                   <Badge variant="brand" size="sm" icon={<Cpu size={12} />}>
-                    Executive Leadership
+                    Founder & Managing Director
                   </Badge>
                   <Badge variant="accent" size="sm" icon={<ShieldCheck size={12} />}>
-                    Principal Consultant
+                    21+ Years Industry Experience
                   </Badge>
                 </div>
-                <h3 className={styles.directorName}>Preet Tripathi</h3>
-                <div className={styles.directorRole}>Director, sysTROL Engineering & Consultancy</div>
+                <div className={styles.nameRow}>
+                  <h3 className={styles.directorName}>Preet Tripathi</h3>
+                  <a
+                    href="https://www.linkedin.com/in/preet-tripathi-25972921/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Preet Tripathi on LinkedIn"
+                    className={styles.linkedinProfileBtn}
+                  >
+                    <Linkedin size={14} fill="currentColor" stroke="none" />
+                    <span>LinkedIn Profile</span>
+                    <ExternalLink size={11} />
+                  </a>
+                </div>
+                <div className={styles.directorRole}>
+                  Founder, Managing Director & CEO | B.E. Electrical (SVNIT)
+                </div>
+                <div className={styles.pedigreeRow}>
+                  <span className={styles.pedigreeChip}>NIT Surat (SVNIT) Alum</span>
+                  <span className={styles.pedigreeChip}>Ex-ABB Metals Lead Engineer</span>
+                  <span className={styles.pedigreeChip}>Ex-Alstom Domain Leader (7+ Yrs)</span>
+                  <span className={styles.pedigreeChip}>Ex-Jindal Stainless</span>
+                </div>
               </div>
 
               <div className={styles.directorBio}>
                 <p>
-                  As Director of sysTROL, Preet Tripathi spearheads the firm's strategic vision, uniting real-time supervisory automation engineering with high-reliability international machinery procurement. Under his stewardship, sysTROL has engineered Level-2 software systems and delivered mission-critical mill equipment across continuous steel rolling plants globally.
+                  Preet Tripathi brings over 21 years of specialized engineering leadership across Industrial Automation & Control Systems, Rolling Stock, and Real-Time Software Design. An Electrical Engineering alumnus of the National Institute of Technology Surat (SVNIT, 1999–2003), he founded sysTROL to bridge deep computational software engineering with rugged steel rolling mill floor operations.
                 </p>
                 <p>
-                  With extensive practical experience in hot metal rolling kinetics, deterministic pass schedule computation, and vendor qualification, he has championed the elimination of proprietary black-box software in favor of open, verifiable C# architectures that grant steelmakers full transparency and continuous operational control.
+                  His technical pedigree spans senior engineering tenures at global industrial automation and engineering leaders. As Lead Engineer at ABB&apos;s Metals Business Unit, Metsys Engineering, and Jindal Stainless, he spearheaded mill drive controls, Level-1/Level-2 automation systems, and hot metal pulpit commissioning. He subsequently spent over seven years at Alstom as Domain Leader for Train Control Systems and Software Development Leader, architecting mission-critical, deterministic software systems under stringent international reliability and safety standards.
+                </p>
+                <p>
+                  Under his direction, sysTROL delivers modern, transparent C# Level-2 process automation systems, advanced physics-based pass schedule modeling, and factory-certified OEM machinery spares—eliminating opaque black-box vendor lock-in and empowering continuous steel rolling mills with complete operational autonomy.
                 </p>
               </div>
 
@@ -104,7 +128,7 @@ export const TeamSection: React.FC = () => {
                 <div style={{ display: "flex", gap: "8px", alignItems: "flex-start" }}>
                   <Quote size={18} color="var(--color-brand-green-700)" style={{ flexShrink: 0, marginTop: "2px" }} />
                   <div>
-                    &quot;Our engineering responsibility extends far beyond code compilation or equipment dispatch. We commit to standing shoulder-to-shoulder with mill operators until the line runs with zero cobbles, strict metallurgical tolerances, and enduring process stability.&quot;
+                    &quot;Steel manufacturing demands zero tolerance for process ambiguity. Having spent over two decades commissioning drives on hot mill floors and architecting mission-critical control software, our guiding principle at sysTROL is absolute transparency: deterministic code, rock-solid metallurgical kinetics, and standing shoulder-to-shoulder with plant operators until every coil and bar rolls to precision.&quot;
                   </div>
                 </div>
               </div>

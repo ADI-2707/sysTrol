@@ -43,18 +43,26 @@
   position: relative;
   min-height: 380px;
   width: 100%;
-  background-color: var(--color-surface-200);
+  background: linear-gradient(180deg, #F8FAFC 0%, #EDF2F7 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6);
+  border-right: 1px solid var(--color-border);
 }
 
 @media (max-width: 899px) {
   .directorImageWrap {
     min-height: 320px;
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
   }
 }
 
 .directorImage {
-  object-fit: cover;
-  object-position: top center;
+  object-fit: contain;
+  object-position: center;
+  border-radius: var(--radius-lg);
 }
 
 .directorContent {
@@ -85,6 +93,14 @@
   margin-bottom: var(--space-2);
 }
 
+.nameRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
 .directorName {
   font-size: clamp(1.75rem, 2.5vw, 2.25rem);
   font-weight: var(--font-bold);
@@ -92,11 +108,55 @@
   line-height: var(--leading-tight);
 }
 
+.linkedinProfileBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: #0A66C2;
+  background-color: rgba(10, 102, 194, 0.08);
+  border: 1px solid rgba(10, 102, 194, 0.25);
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.linkedinProfileBtn:hover {
+  background-color: #0A66C2;
+  color: #ffffff;
+  border-color: #0A66C2;
+  box-shadow: 0 4px 12px rgba(10, 102, 194, 0.35);
+  transform: translateY(-1px);
+}
+
 .directorRole {
   font-size: var(--text-base);
   font-weight: 600;
   color: var(--color-brand-green-700);
 }
+
+.pedigreeRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.pedigreeChip {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--color-ink-700);
+  background-color: var(--color-surface-100);
+  border: 1px solid var(--color-border);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
 
 .directorBio {
   display: flex;
