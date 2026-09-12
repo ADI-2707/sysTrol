@@ -116,17 +116,23 @@
   filter: drop-shadow(0 0 4px rgba(249, 115, 22, 0.5));
   transform: scale(1.08);
 }
-.rollMillWatermark {
+.rollMillWatermark,
+.codeScrollBox,
+.plantLineWatermark,
+.blueprintWatermark {
   position: absolute;
   top: var(--space-6);
   right: var(--space-6);
-  width: 80px;
   height: 44px;
-  color: var(--color-ink-900);
   opacity: 0;
-  transition: opacity 0.3s ease, color 0.3s ease;
+  transition: opacity 0.3s ease;
   pointer-events: none;
   z-index: 1;
+}
+.rollMillWatermark {
+  width: 80px;
+  color: var(--color-ink-900);
+  transition: opacity 0.3s ease, color 0.3s ease;
 }
 .card:hover .rollMillWatermark {
   opacity: 0.16;
@@ -267,18 +273,10 @@
   stroke-dashoffset: 0;
 }
 .codeScrollBox {
-  position: absolute;
-  top: var(--space-6);
-  right: var(--space-6);
   width: 58px;
-  height: 44px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 1;
 }
 .card:hover .codeScrollBox {
   opacity: 1;
@@ -329,16 +327,8 @@
   }
 }
 .plantLineWatermark {
-  position: absolute;
-  top: var(--space-6);
-  right: var(--space-6);
   width: 80px;
-  height: 44px;
   color: var(--color-brand-green-600);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-  z-index: 1;
 }
 .plantLinePath {
   stroke-dasharray: 250;
@@ -352,17 +342,10 @@
   stroke-dashoffset: 0;
 }
 .blueprintWatermark {
-  position: absolute;
-  top: var(--space-6);
-  right: var(--space-6);
   width: 64px;
-  height: 44px;
   color: var(--color-brand-green-700);
-  opacity: 0;
   transform: scale(0.96);
   transition: opacity 0.3s ease, transform 0.3s ease;
-  pointer-events: none;
-  z-index: 1;
 }
 .card:hover .blueprintWatermark {
   opacity: 0.2;
