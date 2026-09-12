@@ -128,6 +128,47 @@
   transform: scale(1);
   color: #ea580c;
 }
+.iconBoxMathModels {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid transparent;
+}
+.iconBoxMathModels svg {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.card:hover .iconBoxMathModels {
+  background-color: #09131f;
+  color: #14b8a6;
+  border-color: rgba(20, 184, 166, 0.4);
+  box-shadow: 0 0 16px rgba(20, 184, 166, 0.35);
+}
+.card:hover .iconBoxMathModels svg {
+  filter: drop-shadow(0 0 6px rgba(20, 184, 166, 0.6));
+  transform: scale(1.08);
+}
+.mathCurveWatermark {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  width: 130px;
+  height: 80px;
+  color: var(--color-ink-900);
+  opacity: 0.04;
+  transition: opacity 0.3s ease, color 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+.mathCurveLine {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  transition: stroke-dashoffset 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card:hover .mathCurveWatermark {
+  opacity: 0.16;
+  color: var(--color-accent-teal-600);
+}
+.card:hover .mathCurveLine {
+  stroke-dashoffset: 0;
+}
 .title {
   font-size: var(--text-lg);
   font-weight: var(--font-bold);

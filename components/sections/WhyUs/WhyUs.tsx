@@ -71,9 +71,35 @@ export const WhyUs: React.FC = () => {
                     <path d="M60 4v112" stroke="currentColor" strokeWidth="1" strokeDasharray="2 2" />
                   </svg>
                 )}
+                {idx === 1 && (
+                  <svg
+                    className={styles.mathCurveWatermark}
+                    viewBox="0 0 160 100"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path d="M10 90h140" stroke="currentColor" strokeWidth="1" strokeDasharray="3 3" opacity="0.4" />
+                    <path d="M20 10v80" stroke="currentColor" strokeWidth="1" strokeDasharray="3 3" opacity="0.4" />
+                    <path
+                      className={styles.mathCurveLine}
+                      d="M20 85 C 40 85, 60 75, 80 50 C 100 25, 120 15, 150 15"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                    />
+                    <circle cx="80" cy="50" r="3" fill="currentColor" opacity="0.8" />
+                    <circle cx="150" cy="15" r="3" fill="currentColor" opacity="0.8" />
+                    <path d="M80 50v35" stroke="currentColor" strokeWidth="1" strokeDasharray="2 2" opacity="0.5" />
+                  </svg>
+                )}
                 <div
                   className={`${styles.iconBox} ${
-                    idx === 0 ? styles.iconBoxRollingMill : ""
+                    idx === 0
+                      ? styles.iconBoxRollingMill
+                      : idx === 1
+                      ? styles.iconBoxMathModels
+                      : ""
                   }`.trim()}
                 >
                   {prop.icon}
