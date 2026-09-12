@@ -10,6 +10,7 @@ import { Badge } from "@/components/ui/Badge/Badge";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
 import { PageHero } from "@/components/sections/PageHero/PageHero";
 import { CTASection } from "@/components/sections/CTASection/CTASection";
+import { TeamSection } from "@/components/sections/TeamSection/TeamSection";
 import { companyStats } from "@/content/clients";
 import { Target, Compass, MapPin, ShieldCheck } from "lucide-react";
 import styles from "./About.module.css";
@@ -221,6 +222,8 @@ export default function AboutPage() {
             </div>
           </Container>
         </section>
+
+        <TeamSection />
 
         <CTASection />
       </main>
