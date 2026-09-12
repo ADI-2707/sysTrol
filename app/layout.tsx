@@ -99,7 +99,7 @@ export default function RootLayout({
       availableLanguage: ["English", "Hindi"],
     },
     sameAs: [
-      "https://www.linkedin.com/company/systrol-engineering-consultancy",
+      "https://www.linkedin.com/company/systrol-engineering-consultancy-pvt-ltd/",
     ],
   };
 

@@ -36,7 +36,7 @@ export const Footer: React.FC = () => {
             </p>
             <div className={styles.socialLinks}>
               <a
-                href="https://www.linkedin.com/company/systrol-engineering-consultancy"
+                href="https://www.linkedin.com/company/systrol-engineering-consultancy-pvt-ltd/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="sysTROL on LinkedIn"
