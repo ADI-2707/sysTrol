@@ -34,25 +34,15 @@ export const Footer: React.FC = () => {
               and OEM-grade imported machinery spares trading for steel rolling
               mills and continuous process plants.
             </p>
-            <div style={{ display: "flex", gap: "12px", marginTop: "4px" }}>
+            <div className={styles.socialLinks}>
               <a
                 href="https://www.linkedin.com/company/systrol-engineering-consultancy"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="sysTROL on LinkedIn"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  width: "32px",
-                  height: "32px",
-                  borderRadius: "var(--radius-sm)",
-                  backgroundColor: "rgba(255,255,255,0.08)",
-                  color: "var(--color-surface-0)",
-                  transition: "background-color var(--duration-fast)",
-                }}
+                className={styles.linkedinBtn}
               >
-                <Linkedin size={16} />
+                <Linkedin size={18} fill="currentColor" stroke="none" />
               </a>
             </div>
           </div>

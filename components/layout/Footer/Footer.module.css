@@ -270,3 +270,38 @@
 .legalLink:hover {
   color: var(--color-surface-0);
 }
+
+.socialLinks {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+
+.linkedinBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(10, 102, 194, 0.12);
+  border: 1px solid rgba(10, 102, 194, 0.3);
+  color: #0A66C2;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+}
+
+.linkedinBtn:hover {
+  background-color: #0A66C2;
+  border-color: #0A66C2;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(10, 102, 194, 0.4);
+  transform: translateY(-2px);
+}
+
+.linkedinBtn:focus-visible {
+  outline: 2px solid #0A66C2;
+  outline-offset: 2px;
+}
+
