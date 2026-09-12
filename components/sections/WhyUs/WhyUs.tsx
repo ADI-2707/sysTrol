@@ -103,25 +103,45 @@ export const WhyUs: React.FC = () => {
                   </svg>
                 )}
                 {idx === 3 && (
-                  <svg
-                    className={styles.blueprintWatermark}
-                    viewBox="0 0 140 100"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <defs>
-                      <pattern id="cadGrid" width="14" height="14" patternUnits="userSpaceOnUse">
-                        <path d="M 14 0 L 0 0 0 14" fill="none" stroke="currentColor" strokeWidth="0.8" opacity="0.3" />
-                        <circle cx="14" cy="14" r="1" fill="currentColor" opacity="0.4" />
-                      </pattern>
-                    </defs>
-                    <rect width="140" height="100" fill="url(#cadGrid)" />
-                    <path d="M 20 20 L 50 20 L 50 50" stroke="currentColor" strokeWidth="1.2" strokeDasharray="2 2" />
-                    <circle cx="50" cy="50" r="16" stroke="currentColor" strokeWidth="1.2" />
-                    <circle cx="50" cy="50" r="4" fill="currentColor" opacity="0.6" />
-                    <path d="M 50 30 L 50 70 M 30 50 L 70 50" stroke="currentColor" strokeWidth="0.8" strokeDasharray="1 2" />
-                  </svg>
+                  <div className={styles.card4BackgroundGroup}>
+                    <div className={styles.codeScrollBox}>
+                      <div className={styles.codeScrollTrack}>
+                        <span>public void CalibrateRollGap(Stand s) &#123;</span>
+                        <span>&nbsp;&nbsp;var delta = s.TorqueMatrix.Compute();</span>
+                        <span>&nbsp;&nbsp;if (delta &gt; Tolerances.MaxSlip) &#123;</span>
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;s.Actuator.StepMicro(delta);</span>
+                        <span>&nbsp;&nbsp;&#125;</span>
+                        <span>&nbsp;&nbsp;return s.SyncVelocity();</span>
+                        <span>&#125;</span>
+                        <span>public void CalibrateRollGap(Stand s) &#123;</span>
+                        <span>&nbsp;&nbsp;var delta = s.TorqueMatrix.Compute();</span>
+                        <span>&nbsp;&nbsp;if (delta &gt; Tolerances.MaxSlip) &#123;</span>
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;s.Actuator.StepMicro(delta);</span>
+                        <span>&nbsp;&nbsp;&#125;</span>
+                        <span>&nbsp;&nbsp;return s.SyncVelocity();</span>
+                        <span>&#125;</span>
+                      </div>
+                    </div>
+                    <svg
+                      className={styles.blueprintWatermark}
+                      viewBox="0 0 100 100"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                    >
+                      <defs>
+                        <pattern id="cadGrid" width="14" height="14" patternUnits="userSpaceOnUse">
+                          <path d="M 14 0 L 0 0 0 14" fill="none" stroke="currentColor" strokeWidth="0.8" opacity="0.3" />
+                          <circle cx="14" cy="14" r="1" fill="currentColor" opacity="0.4" />
+                        </pattern>
+                      </defs>
+                      <rect width="100" height="100" fill="url(#cadGrid)" />
+                      <path d="M 15 15 L 45 15 L 45 45" stroke="currentColor" strokeWidth="1.2" strokeDasharray="2 2" />
+                      <circle cx="45" cy="45" r="16" stroke="currentColor" strokeWidth="1.2" />
+                      <circle cx="45" cy="45" r="4" fill="currentColor" opacity="0.6" />
+                      <path d="M 45 25 L 45 65 M 25 45 L 65 45" stroke="currentColor" strokeWidth="0.8" strokeDasharray="1 2" />
+                    </svg>
+                  </div>
                 )}
                 <div
                   className={`${styles.iconBox} ${

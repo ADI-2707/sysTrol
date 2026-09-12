@@ -276,18 +276,58 @@
 .card:hover .shieldCheckmark {
   stroke-dashoffset: 0;
 }
-.blueprintWatermark {
+.card4BackgroundGroup {
   position: absolute;
   top: var(--space-3);
   right: var(--space-3);
+  height: 80px;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  pointer-events: none;
+  z-index: 1;
+}
+.codeScrollBox {
+  height: 80px;
   width: 120px;
-  height: 85px;
+  overflow: hidden;
+  position: relative;
+  mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+}
+.codeScrollTrack {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-mono), monospace;
+  font-size: 8px;
+  line-height: 13px;
+  color: var(--color-ink-900);
+  opacity: 0.04;
+  white-space: nowrap;
+  animation: codeScrollAnim 8s linear infinite;
+  transition: opacity 0.3s ease, color 0.3s ease;
+}
+.card:hover .codeScrollTrack {
+  opacity: 0.18;
+  color: var(--color-brand-green-700);
+}
+@keyframes codeScrollAnim {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+.blueprintWatermark {
+  width: 80px;
+  height: 80px;
   color: var(--color-ink-900);
   opacity: 0.04;
   transform: scale(0.96);
   transition: opacity 0.3s ease, transform 0.3s ease, color 0.3s ease;
   pointer-events: none;
-  z-index: 1;
+  flex-shrink: 0;
 }
 .card:hover .blueprintWatermark {
   opacity: 0.14;
