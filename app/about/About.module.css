@@ -50,6 +50,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-10);
+  align-items: stretch;
 }
 @media (min-width: 1024px) {
   .storyGrid {
