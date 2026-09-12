@@ -172,6 +172,7 @@
   align-items: center;
   gap: 4px;
   padding: 6px 0;
+  text-decoration: none;
   transition: color var(--duration-fast) ease;
 }
 
