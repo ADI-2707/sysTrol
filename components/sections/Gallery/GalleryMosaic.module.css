@@ -86,30 +86,65 @@
 
 .mosaicWorkplace {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-5);
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 200px 145px 175px;
+  grid-template-areas:
+    "feat-workplace  feat-workplace"
+    "sub-workstation sub-electronics"
+    "wide-hydraulic  wide-hydraulic";
+  gap: var(--space-3);
   width: 100%;
 }
 
 .mosaicTeam {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-5);
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 200px 155px;
+  grid-template-areas:
+    "feat-team      feat-team"
+    "sub-inspection wide-operations";
+  gap: var(--space-3);
   width: 100%;
 }
 
 .mosaicDeployments {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-5);
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 200px 155px;
+  grid-template-areas:
+    "feat-deployment feat-deployment"
+    "tall-pulpit     sub-tooling";
+  gap: var(--space-3);
   width: 100%;
 }
 
 @media (min-width: 640px) and (max-width: 1023px) {
-  .mosaicWorkplace,
-  .mosaicTeam,
+  .mosaicWorkplace {
+    grid-template-columns: 1.3fr 1fr;
+    grid-template-rows: 240px 240px 220px;
+    grid-template-areas:
+      "feat-workplace sub-workstation"
+      "feat-workplace sub-electronics"
+      "wide-hydraulic wide-hydraulic";
+    gap: var(--space-4);
+  }
+
+  .mosaicTeam {
+    grid-template-columns: 1.3fr 1fr;
+    grid-template-rows: 240px 240px;
+    grid-template-areas:
+      "feat-team sub-inspection"
+      "feat-team wide-operations";
+    gap: var(--space-4);
+  }
+
   .mosaicDeployments {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1.4fr 1fr;
+    grid-template-rows: 240px 240px;
+    grid-template-areas:
+      "feat-deployment tall-pulpit"
+      "sub-tooling     tall-pulpit";
+    gap: var(--space-4);
   }
 }
 
@@ -120,6 +155,7 @@
     grid-template-areas:
       "feat-workplace sub-workstation sub-electronics"
       "feat-workplace wide-hydraulic  wide-hydraulic";
+    gap: var(--space-5);
   }
 
   .mosaicTeam {
@@ -128,6 +164,7 @@
     grid-template-areas:
       "feat-team sub-inspection"
       "feat-team wide-operations";
+    gap: var(--space-5);
   }
 
   .mosaicDeployments {
@@ -136,31 +173,23 @@
     grid-template-areas:
       "feat-deployment tall-pulpit"
       "sub-tooling     tall-pulpit";
+    gap: var(--space-5);
   }
 }
 
 .galleryCard {
   position: relative;
   width: 100%;
+  height: 100%;
   border-radius: var(--radius-lg);
   overflow: hidden;
   background-color: var(--color-brand-navy-900);
   box-shadow: var(--shadow-sm);
   cursor: pointer;
   border: 1px solid var(--color-border);
-  min-height: 260px;
-  aspect-ratio: 16 / 10;
   transition: transform var(--duration-fast) var(--ease-in-out),
               box-shadow var(--duration-fast) var(--ease-in-out),
               border-color var(--duration-fast) var(--ease-in-out);
-}
-
-@media (min-width: 1024px) {
-  .galleryCard {
-    aspect-ratio: auto;
-    min-height: 100%;
-    height: 100%;
-  }
 }
 
 .galleryCard:hover {
@@ -169,46 +198,44 @@
   border-color: var(--color-brand-green-500);
 }
 
-@media (min-width: 1024px) {
-  .areaFeatWorkplace {
-    grid-area: feat-workplace;
-  }
+.areaFeatWorkplace {
+  grid-area: feat-workplace;
+}
 
-  .areaSubWorkstation {
-    grid-area: sub-workstation;
-  }
+.areaSubWorkstation {
+  grid-area: sub-workstation;
+}
 
-  .areaWideHydraulic {
-    grid-area: wide-hydraulic;
-  }
+.areaWideHydraulic {
+  grid-area: wide-hydraulic;
+}
 
-  .areaSubElectronics {
-    grid-area: sub-electronics;
-  }
+.areaSubElectronics {
+  grid-area: sub-electronics;
+}
 
-  .areaFeatTeam {
-    grid-area: feat-team;
-  }
+.areaFeatTeam {
+  grid-area: feat-team;
+}
 
-  .areaSubInspection {
-    grid-area: sub-inspection;
-  }
+.areaSubInspection {
+  grid-area: sub-inspection;
+}
 
-  .areaWideOperations {
-    grid-area: wide-operations;
-  }
+.areaWideOperations {
+  grid-area: wide-operations;
+}
 
-  .areaFeatDeployment {
-    grid-area: feat-deployment;
-  }
+.areaFeatDeployment {
+  grid-area: feat-deployment;
+}
 
-  .areaTallPulpit {
-    grid-area: tall-pulpit;
-  }
+.areaTallPulpit {
+  grid-area: tall-pulpit;
+}
 
-  .areaSubTooling {
-    grid-area: sub-tooling;
-  }
+.areaSubTooling {
+  grid-area: sub-tooling;
 }
 
 .cardImage {
@@ -327,4 +354,33 @@
   padding: 2px 8px;
   border-radius: var(--radius-sm);
   border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 639px) {
+  .cardOverlay {
+    padding: var(--space-3);
+  }
+
+  .cardTitle {
+    font-size: 0.82rem;
+    line-height: 1.2;
+  }
+
+  .cardDesc {
+    display: none;
+  }
+
+  .locationBadge {
+    font-size: 0.65rem;
+    padding: 2px 6px;
+  }
+
+  .zoomBtn {
+    width: 24px;
+    height: 24px;
+  }
+
+  .cardTagRow {
+    display: none;
+  }
 }
