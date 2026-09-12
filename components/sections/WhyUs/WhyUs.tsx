@@ -93,6 +93,27 @@ export const WhyUs: React.FC = () => {
                     <path d="M80 50v35" stroke="currentColor" strokeWidth="1" strokeDasharray="2 2" opacity="0.5" />
                   </svg>
                 )}
+                {idx === 3 && (
+                  <svg
+                    className={styles.blueprintWatermark}
+                    viewBox="0 0 140 100"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <defs>
+                      <pattern id="cadGrid" width="14" height="14" patternUnits="userSpaceOnUse">
+                        <path d="M 14 0 L 0 0 0 14" fill="none" stroke="currentColor" strokeWidth="0.8" opacity="0.3" />
+                        <circle cx="14" cy="14" r="1" fill="currentColor" opacity="0.4" />
+                      </pattern>
+                    </defs>
+                    <rect width="140" height="100" fill="url(#cadGrid)" />
+                    <path d="M 20 20 L 50 20 L 50 50" stroke="currentColor" strokeWidth="1.2" strokeDasharray="2 2" />
+                    <circle cx="50" cy="50" r="16" stroke="currentColor" strokeWidth="1.2" />
+                    <circle cx="50" cy="50" r="4" fill="currentColor" opacity="0.6" />
+                    <path d="M 50 30 L 50 70 M 30 50 L 70 50" stroke="currentColor" strokeWidth="0.8" strokeDasharray="1 2" />
+                  </svg>
+                )}
                 <div
                   className={`${styles.iconBox} ${
                     idx === 0
@@ -101,6 +122,8 @@ export const WhyUs: React.FC = () => {
                       ? styles.iconBoxMathModels
                       : idx === 2
                       ? styles.iconBoxGlobal
+                      : idx === 3
+                      ? styles.iconBoxTurnkey
                       : ""
                   }`.trim()}
                 >
@@ -131,7 +154,29 @@ export const WhyUs: React.FC = () => {
                       </svg>
                     </div>
                   )}
-                  {prop.icon}
+                  {idx === 3 ? (
+                    <svg
+                      className={styles.shieldLockSvg}
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path
+                        className={styles.shieldBody}
+                        d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+                      />
+                      <path
+                        className={styles.shieldCheckmark}
+                        d="M9 12l2 2 4-4"
+                      />
+                    </svg>
+                  ) : (
+                    prop.icon
+                  )}
                 </div>
                 <h3 className={styles.title}>{prop.title}</h3>
                 <p className={styles.description}>{prop.description}</p>
