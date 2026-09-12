@@ -186,14 +186,6 @@
   filter: drop-shadow(0 0 6px rgba(20, 184, 166, 0.6));
   transform: scale(1.08);
 }
-.mathCurveLine {
-  stroke-dasharray: 200;
-  stroke-dashoffset: 200;
-  transition: stroke-dashoffset 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.card:hover .mathCurveLine {
-  stroke-dashoffset: 0;
-}
 .iconBoxGlobal {
   position: relative;
   transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
@@ -350,6 +342,14 @@
 .card:hover .blueprintWatermark {
   opacity: 0.2;
   transform: scale(1);
+}
+.mathCurveLine {
+  stroke-dasharray: 80;
+  stroke-dashoffset: 80;
+  transition: stroke-dashoffset 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card:hover .mathCurveLine {
+  stroke-dashoffset: 0;
 }
 .title {
   font-size: var(--text-lg);
