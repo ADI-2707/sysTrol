@@ -58,6 +58,23 @@
 .highlightText {
   color: var(--color-brand-green-600);
   display: inline;
+  white-space: nowrap;
+}
+
+.cursor {
+  display: inline-block;
+  width: 3px;
+  height: 0.85em;
+  background-color: var(--color-brand-green-600);
+  margin-left: 3px;
+  vertical-align: text-bottom;
+  border-radius: 1px;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
 }
 
 .subheadline {
