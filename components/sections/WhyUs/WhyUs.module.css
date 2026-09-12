@@ -117,7 +117,7 @@
   width: 100px;
   height: 34px;
   color: var(--color-ink-900);
-  opacity: 0.04;
+  opacity: 0;
   transition: opacity 0.3s ease, color 0.3s ease;
   pointer-events: none;
   z-index: 1;
@@ -270,7 +270,12 @@
   mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
   -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
   pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
   z-index: 1;
+}
+.card:hover .codeScrollBox {
+  opacity: 1;
 }
 .codeScrollTrack {
   display: flex;
@@ -278,15 +283,10 @@
   font-family: var(--font-mono), monospace;
   font-size: 8px;
   line-height: 13px;
-  color: var(--color-ink-900);
-  opacity: 0.04;
+  color: var(--color-accent-teal-600);
+  opacity: 0.2;
   white-space: nowrap;
   animation: codeScrollAnim 8s linear infinite;
-  transition: opacity 0.3s ease, color 0.3s ease;
-}
-.card:hover .codeScrollTrack {
-  opacity: 0.18;
-  color: var(--color-accent-teal-600);
 }
 @keyframes codeScrollAnim {
   0% {
@@ -296,6 +296,29 @@
     transform: translateY(-50%);
   }
 }
+.plantLineWatermark {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  width: 135px;
+  height: 65px;
+  color: var(--color-brand-green-600);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+.plantLinePath {
+  stroke-dasharray: 360;
+  stroke-dashoffset: 360;
+  transition: stroke-dashoffset 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card:hover .plantLineWatermark {
+  opacity: 0.16;
+}
+.card:hover .plantLinePath {
+  stroke-dashoffset: 0;
+}
 .blueprintWatermark {
   position: absolute;
   top: var(--space-3);
@@ -303,7 +326,7 @@
   width: 140px;
   height: 80px;
   color: var(--color-ink-900);
-  opacity: 0.04;
+  opacity: 0;
   transform: scale(0.96);
   transition: opacity 0.3s ease, transform 0.3s ease, color 0.3s ease;
   pointer-events: none;

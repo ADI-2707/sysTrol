@@ -98,6 +98,24 @@ export const WhyUs: React.FC = () => {
                     </div>
                   </div>
                 )}
+                {idx === 2 && (
+                  <svg
+                    className={styles.plantLineWatermark}
+                    viewBox="0 0 160 80"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      className={styles.plantLinePath}
+                      d="M 10 70 L 30 70 L 30 45 L 45 35 L 45 45 L 60 35 L 60 45 L 75 35 L 75 70 L 90 70 L 90 20 L 115 20 L 115 70 L 125 70 L 128 12 L 138 12 L 141 70 L 155 70"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                )}
                 {idx === 3 && (
                   <svg
                     className={styles.blueprintWatermark}
