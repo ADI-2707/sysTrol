@@ -99,9 +99,38 @@ export const WhyUs: React.FC = () => {
                       ? styles.iconBoxRollingMill
                       : idx === 1
                       ? styles.iconBoxMathModels
+                      : idx === 2
+                      ? styles.iconBoxGlobal
                       : ""
                   }`.trim()}
                 >
+                  {idx === 2 && (
+                    <div className={styles.orbitalContainer}>
+                      <svg
+                        className={styles.orbitalPathSvg}
+                        viewBox="0 0 64 64"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M 6 48 C 6 20 26 8 50 14 C 60 18 56 36 42 46 C 28 54 12 54 6 48"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                          strokeDasharray="3 3"
+                        />
+                      </svg>
+                      <svg
+                        className={styles.flightPlane}
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
+                      >
+                        <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
+                      </svg>
+                    </div>
+                  )}
                   {prop.icon}
                 </div>
                 <h3 className={styles.title}>{prop.title}</h3>

@@ -169,6 +169,58 @@
 .card:hover .mathCurveLine {
   stroke-dashoffset: 0;
 }
+.iconBoxGlobal {
+  position: relative;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+.iconBoxGlobal svg:not(.flightPlane):not(.orbitalPathSvg) {
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), color 0.3s ease;
+}
+.card:hover .iconBoxGlobal {
+  background-color: #f0fdf4;
+  color: var(--color-brand-green-600);
+  box-shadow: 0 0 16px rgba(22, 163, 74, 0.2);
+}
+.card:hover .iconBoxGlobal svg:not(.flightPlane):not(.orbitalPathSvg) {
+  transform: rotate(25deg) scale(1.05);
+}
+.orbitalContainer {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 64px;
+  height: 64px;
+  pointer-events: none;
+  z-index: 2;
+}
+.orbitalPathSvg {
+  width: 100%;
+  height: 100%;
+  color: var(--color-brand-green-600);
+  opacity: 0.15;
+  transition: opacity 0.3s ease;
+}
+.card:hover .orbitalPathSvg {
+  opacity: 0.7;
+}
+.flightPlane {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  color: var(--color-brand-green-700);
+  offset-path: path("M 6 48 C 6 20 26 8 50 14 C 60 18 56 36 42 46 C 28 54 12 54 6 48");
+  offset-distance: 0%;
+  offset-rotate: auto 90deg;
+  opacity: 0;
+  transition: offset-distance 1.6s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.25s ease;
+  pointer-events: none;
+}
+.card:hover .flightPlane {
+  opacity: 1;
+  offset-distance: 100%;
+}
 .title {
   font-size: var(--text-lg);
   font-weight: var(--font-bold);
