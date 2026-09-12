@@ -12,9 +12,15 @@
   }
 }
 .overviewSection {
-  padding-top: var(--space-16);
-  padding-bottom: var(--space-16);
+  padding-top: var(--space-12);
+  padding-bottom: var(--space-12);
   background-color: var(--color-surface-50);
+}
+@media (min-width: 1024px) {
+  .overviewSection {
+    padding-top: var(--space-20);
+    padding-bottom: var(--space-20);
+  }
 }
 .divisionCard {
   background-color: var(--color-surface-0);
