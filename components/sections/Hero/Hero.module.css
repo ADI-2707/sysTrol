@@ -42,23 +42,40 @@
 }
 
 .headline {
-  font-size: var(--text-4xl);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.titleLead {
+  display: block;
+  font-size: clamp(1.65rem, 2.8vw, 2.25rem);
   font-weight: var(--font-bold);
-  line-height: 1.12;
-  letter-spacing: -0.03em;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
   color: var(--color-ink-900);
 }
 
-@media (min-width: 768px) {
-  .headline {
-    font-size: var(--text-5xl);
-  }
+.highlightText {
+  display: block;
+  min-height: 1.22em;
+  color: var(--color-brand-green-600);
+  font-size: clamp(2.3rem, 4.4vw, 3.38rem);
+  font-weight: var(--font-bold);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
 }
 
-.highlightText {
-  color: var(--color-brand-green-600);
-  display: block;
-  white-space: nowrap;
+@media (max-width: 480px) {
+  .titleLead {
+    font-size: clamp(1.35rem, 6vw, 1.75rem);
+  }
+
+  .highlightText {
+    font-size: clamp(1.65rem, 7.2vw, 2.15rem);
+  }
 }
 
 .cursor {
@@ -66,27 +83,40 @@
   width: 3px;
   height: 0.85em;
   background-color: var(--color-brand-green-600);
-  margin-left: 3px;
-  vertical-align: text-bottom;
+  margin-left: 4px;
+  vertical-align: -0.04em;
   border-radius: 1px;
   animation: blink 1s step-end infinite;
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+.subheadlineGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-width: 620px;
 }
 
 .subheadline {
   font-size: var(--text-base);
   color: var(--color-ink-700);
-  line-height: var(--leading-relaxed);
-  max-width: 580px;
+  line-height: 1.68;
 }
 
 @media (min-width: 768px) {
   .subheadline {
-    font-size: var(--text-lg);
+    font-size: 1.125rem;
   }
 }
 
@@ -146,8 +176,8 @@
   gap: var(--space-2);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
   transition: transform var(--duration-fast) var(--ease-in-out),
-              box-shadow var(--duration-fast) var(--ease-in-out),
-              border-color var(--duration-fast) var(--ease-in-out);
+    box-shadow var(--duration-fast) var(--ease-in-out),
+    border-color var(--duration-fast) var(--ease-in-out);
 }
 
 .metricCard:hover {

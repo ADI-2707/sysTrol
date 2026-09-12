@@ -21,6 +21,8 @@ export function useTypewriter(
   }: UseTypewriterOptions = {}
 ) {
   const [displayText, setDisplayText] = useState("");
+  const wordsRef = useRef(words);
+  wordsRef.current = words;
   const wordIndexRef = useRef(0);
   const charIndexRef = useRef(0);
   const isDeletingRef = useRef(false);
@@ -35,7 +37,8 @@ export function useTypewriter(
         return;
       }
 
-      const currentWord = words[wordIndexRef.current];
+      const currentWords = wordsRef.current;
+      const currentWord = currentWords[wordIndexRef.current % currentWords.length];
 
       if (isDeletingRef.current) {
         charIndexRef.current -= 1;

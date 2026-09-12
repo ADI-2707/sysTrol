@@ -84,8 +84,8 @@ const slides: SlideData[] = [
     statSubtitle: "Direct manufacturer procurement from Germany, Italy, Sweden, and Japan.",
     proofPoints: [
       "Tungsten Carbide composite roll rings & high-speed finishing tooling",
-      "Ultrasonic defect inspection and chemical composition guarantee",
-      "Consignment inventory & emergency buffer stocking in India",
+      "Ultrasonic defect inspection and chemical composition guarantee with grade maintainance",
+      "Consignment inventory & emergency buffer stocking in India backed by trusting logistics",
     ],
     footerLocation: "DE • IT • SE • JP Sourcing Pipeline",
     footerStandard: "Batch Verified Metallurgy",
@@ -222,9 +222,8 @@ export const HeroCarousel: React.FC = () => {
                 key={slide.id}
                 type="button"
                 onClick={() => goToSlide(idx)}
-                className={`${styles.dotButton} ${
-                  idx === currentIndex ? styles.dotButtonActive : ""
-                }`}
+                className={`${styles.dotButton} ${idx === currentIndex ? styles.dotButtonActive : ""
+                  }`}
                 aria-label={`Go to slide ${idx + 1}`}
                 aria-current={idx === currentIndex ? "true" : undefined}
               />

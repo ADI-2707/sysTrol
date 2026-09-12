@@ -10,7 +10,11 @@ import { HeroCarousel } from "./HeroCarousel";
 import { useTypewriter } from "./useTypewriter";
 import styles from "./Hero.module.css";
 
-const TYPEWRITER_WORDS = ["Supervisory", "Industrial Spare", "Automation"];
+const TYPEWRITER_WORDS = [
+  "Process Automation",
+  "Industrial Spares",
+  "Level-2 Automation",
+];
 
 export const Hero: React.FC = () => {
   const [isInView, setIsInView] = useState(true);
@@ -46,20 +50,27 @@ export const Hero: React.FC = () => {
               </div>
 
               <h1 className={styles.headline}>
-                Engineering Redefined.
+                <span className={styles.titleLead}>Engineering Redefined.</span>
                 <span className={styles.highlightText}>
                   {displayText}
                   <span className={styles.cursor} aria-hidden="true" />
                 </span>
               </h1>
 
-              <p className={styles.subheadline}>
-                High-performance Level-2 (L2) process automation software engineered in
-                C# for steel rolling mills, coupled with verified international trading
-                of critical mill machinery, sensors, and wear parts.
-                Backed by Python mathematical models for physics-based pass schedule
-                computation, thermal tracking, and real-time grade calculation.
-              </p>
+              <div className={styles.subheadlineGroup}>
+                <p className={styles.subheadline}>
+                  High-performance Level-2 (L2) process automation software engineered in
+                  C# for steel rolling mills, coupled with verified international trading
+                  of critical mill machinery, sensors, and wear parts.
+                  Backed by Python mathematical models for physics-based pass schedule
+                  computation, thermal tracking, and real-time tracking and grade calculation.
+                </p>
+                <p className={styles.subheadline}>
+                  Delivering microsecond mill synchronization using message queue protocols, reduced cobble rates, and
+                  turnkey commissioning alongside verified global procurement from certified
+                  European, Middle-Eastern and Asian manufacturers.
+                </p>
+              </div>
 
               <div className={styles.ctaGroup}>
                 <Button
