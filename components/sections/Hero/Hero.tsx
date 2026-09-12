@@ -57,12 +57,8 @@ export const Hero: React.FC = () => {
                 High-performance Level-2 (L2) process automation software engineered in
                 C# for steel rolling mills, coupled with verified international trading
                 of critical mill machinery, sensors, and wear parts.
-              </p>
-
-              <p className={styles.subheadline}>
                 Backed by Python mathematical models for physics-based pass schedule
-                computation, thermal tracking, and real-time grade calculation —
-                deterministic process logic built for live hot metal, not AI inference.
+                computation, thermal tracking, and real-time grade calculation.
               </p>
 
               <div className={styles.ctaGroup}>
