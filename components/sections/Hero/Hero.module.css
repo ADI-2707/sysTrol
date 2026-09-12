@@ -165,7 +165,7 @@
   color: var(--color-brand-green-600);
   background-color: rgba(31, 122, 77, 0.2);
   padding: 2px 8px;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-xs);
 }
 
 .metricCardValue {
