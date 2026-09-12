@@ -112,10 +112,10 @@
 }
 .rollMillWatermark {
   position: absolute;
-  top: var(--space-5);
-  right: var(--space-5);
-  width: 100px;
-  height: 34px;
+  top: var(--space-6);
+  right: var(--space-6);
+  width: 80px;
+  height: 44px;
   color: var(--color-ink-900);
   opacity: 0;
   transition: opacity 0.3s ease, color 0.3s ease;
@@ -123,19 +123,19 @@
   z-index: 1;
 }
 .card:hover .rollMillWatermark {
-  opacity: 0.14;
+  opacity: 0.16;
   color: #ea580c;
 }
 .card:hover .rollerLeft {
   animation: rollRotate 1.2s linear infinite;
-  transform-origin: 18px 18px;
+  transform-origin: 19px 16px;
 }
 .card:hover .rollerRight {
   animation: rollRotate 1.2s linear infinite;
-  transform-origin: 92px 18px;
+  transform-origin: 61px 16px;
 }
 .rollingBelt {
-  stroke-dasharray: 12 5;
+  stroke-dasharray: 10 4;
   stroke-dashoffset: 0;
 }
 .card:hover .rollingBelt {
@@ -154,7 +154,7 @@
     stroke-dashoffset: 0;
   }
   to {
-    stroke-dashoffset: -34;
+    stroke-dashoffset: -28;
   }
 }
 .iconBoxMathModels {
@@ -262,13 +262,13 @@
 }
 .codeScrollBox {
   position: absolute;
-  top: var(--space-4);
-  right: var(--space-4);
-  height: 75px;
-  width: 140px;
-  overflow: hidden;
-  mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
-  -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+  top: var(--space-6);
+  right: var(--space-6);
+  width: 58px;
+  height: 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -277,16 +277,42 @@
 .card:hover .codeScrollBox {
   opacity: 1;
 }
+.monitorScreen {
+  width: 58px;
+  height: 36px;
+  border: 1px solid var(--color-accent-teal-600);
+  border-radius: var(--radius-sm);
+  background-color: rgba(20, 184, 166, 0.05);
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+}
+.monitorStand {
+  width: 8px;
+  height: 5px;
+  background-color: var(--color-accent-teal-600);
+  opacity: 0.6;
+}
+.monitorBase {
+  width: 22px;
+  height: 2px;
+  background-color: var(--color-accent-teal-600);
+  border-radius: 1px;
+  opacity: 0.6;
+}
 .codeScrollTrack {
   display: flex;
   flex-direction: column;
   font-family: var(--font-mono), monospace;
-  font-size: 8px;
-  line-height: 13px;
+  font-size: 7px;
+  line-height: 10px;
   color: var(--color-accent-teal-600);
-  opacity: 0.2;
+  opacity: 0.35;
   white-space: nowrap;
-  animation: codeScrollAnim 8s linear infinite;
+  animation: codeScrollAnim 7s linear infinite;
+  padding: 1px 2px;
 }
 @keyframes codeScrollAnim {
   0% {
@@ -298,10 +324,10 @@
 }
 .plantLineWatermark {
   position: absolute;
-  top: var(--space-4);
-  right: var(--space-4);
-  width: 135px;
-  height: 65px;
+  top: var(--space-6);
+  right: var(--space-6);
+  width: 80px;
+  height: 44px;
   color: var(--color-brand-green-600);
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -309,33 +335,32 @@
   z-index: 1;
 }
 .plantLinePath {
-  stroke-dasharray: 360;
-  stroke-dashoffset: 360;
-  transition: stroke-dashoffset 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  stroke-dasharray: 250;
+  stroke-dashoffset: 250;
+  transition: stroke-dashoffset 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .card:hover .plantLineWatermark {
-  opacity: 0.16;
+  opacity: 0.2;
 }
 .card:hover .plantLinePath {
   stroke-dashoffset: 0;
 }
 .blueprintWatermark {
   position: absolute;
-  top: var(--space-3);
-  right: var(--space-3);
-  width: 140px;
-  height: 80px;
-  color: var(--color-ink-900);
+  top: var(--space-6);
+  right: var(--space-6);
+  width: 64px;
+  height: 44px;
+  color: var(--color-brand-green-700);
   opacity: 0;
   transform: scale(0.96);
-  transition: opacity 0.3s ease, transform 0.3s ease, color 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
   pointer-events: none;
   z-index: 1;
 }
 .card:hover .blueprintWatermark {
-  opacity: 0.14;
+  opacity: 0.2;
   transform: scale(1);
-  color: var(--color-brand-green-700);
 }
 .title {
   font-size: var(--text-lg);

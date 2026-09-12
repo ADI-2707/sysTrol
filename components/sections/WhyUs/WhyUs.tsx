@@ -57,58 +57,63 @@ export const WhyUs: React.FC = () => {
                 {idx === 0 && (
                   <svg
                     className={styles.rollMillWatermark}
-                    viewBox="0 0 110 36"
+                    viewBox="0 0 80 44"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                     aria-hidden="true"
                   >
+                    <path d="M 4 41 L 76 41" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                    <path d="M 14 26 L 10 41 M 24 26 L 28 41" stroke="currentColor" strokeWidth="1.5" />
+                    <path d="M 56 26 L 52 41 M 66 26 L 70 41" stroke="currentColor" strokeWidth="1.5" />
                     <path
                       className={styles.rollingBelt}
-                      d="M 18 8 L 92 8 A 10 10 0 0 1 92 28 L 18 28 A 10 10 0 0 1 18 8 Z"
+                      d="M 19 8 L 61 8 A 8 8 0 0 1 61 24 L 19 24 A 8 8 0 0 1 19 8 Z"
                       stroke="currentColor"
                       strokeWidth="2"
                     />
                     <g className={styles.rollerLeft}>
-                      <circle cx="18" cy="18" r="9" stroke="currentColor" strokeWidth="1.5" />
-                      <circle cx="18" cy="18" r="2.5" fill="currentColor" />
-                      <path d="M 18 9 v 18 M 9 18 h 18" stroke="currentColor" strokeWidth="1" strokeDasharray="2 2" />
+                      <circle cx="19" cy="16" r="7" stroke="currentColor" strokeWidth="1.5" />
+                      <circle cx="19" cy="16" r="2" fill="currentColor" />
+                      <path d="M 19 9 v 14 M 12 16 h 14" stroke="currentColor" strokeWidth="1" strokeDasharray="2 2" />
                     </g>
                     <g className={styles.rollerRight}>
-                      <circle cx="92" cy="18" r="9" stroke="currentColor" strokeWidth="1.5" />
-                      <circle cx="92" cy="18" r="2.5" fill="currentColor" />
-                      <path d="M 92 9 v 18 M 83 18 h 18" stroke="currentColor" strokeWidth="1" strokeDasharray="2 2" />
+                      <circle cx="61" cy="16" r="7" stroke="currentColor" strokeWidth="1.5" />
+                      <circle cx="61" cy="16" r="2" fill="currentColor" />
+                      <path d="M 61 9 v 14 M 54 16 h 14" stroke="currentColor" strokeWidth="1" strokeDasharray="2 2" />
                     </g>
                   </svg>
                 )}
                 {idx === 1 && (
                   <div className={styles.codeScrollBox}>
-                    <div className={styles.codeScrollTrack}>
-                      <span>def calculate_roll_bite(h0, h1, R, mu):</span>
-                      <span>&nbsp;&nbsp;delta_h = h0 - h1</span>
-                      <span>&nbsp;&nbsp;L = math.sqrt(R * delta_h)</span>
-                      <span>&nbsp;&nbsp;alpha = math.acos(1.0 - delta_h / (2 * R))</span>
-                      <span>&nbsp;&nbsp;P_mean = yield_stress * (1.0 + (mu * L) / (4 * h_avg))</span>
-                      <span>&nbsp;&nbsp;return P_mean * L * width</span>
-                      <span>def calculate_roll_bite(h0, h1, R, mu):</span>
-                      <span>&nbsp;&nbsp;delta_h = h0 - h1</span>
-                      <span>&nbsp;&nbsp;L = math.sqrt(R * delta_h)</span>
-                      <span>&nbsp;&nbsp;alpha = math.acos(1.0 - delta_h / (2 * R))</span>
-                      <span>&nbsp;&nbsp;P_mean = yield_stress * (1.0 + (mu * L) / (4 * h_avg))</span>
-                      <span>&nbsp;&nbsp;return P_mean * L * width</span>
+                    <div className={styles.monitorScreen}>
+                      <div className={styles.codeScrollTrack}>
+                        <span>def roll_bite(h0, h1):</span>
+                        <span>&nbsp;&nbsp;dh = h0 - h1</span>
+                        <span>&nbsp;&nbsp;L = sqrt(R*dh)</span>
+                        <span>&nbsp;&nbsp;P = σ*(1+μ*L/4h)</span>
+                        <span>&nbsp;&nbsp;return P * width</span>
+                        <span>def roll_bite(h0, h1):</span>
+                        <span>&nbsp;&nbsp;dh = h0 - h1</span>
+                        <span>&nbsp;&nbsp;L = sqrt(R*dh)</span>
+                        <span>&nbsp;&nbsp;P = σ*(1+μ*L/4h)</span>
+                        <span>&nbsp;&nbsp;return P * width</span>
+                      </div>
                     </div>
+                    <div className={styles.monitorStand} />
+                    <div className={styles.monitorBase} />
                   </div>
                 )}
                 {idx === 2 && (
                   <svg
                     className={styles.plantLineWatermark}
-                    viewBox="0 0 160 80"
+                    viewBox="0 0 80 44"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                     aria-hidden="true"
                   >
                     <path
                       className={styles.plantLinePath}
-                      d="M 10 70 L 30 70 L 30 45 L 45 35 L 45 45 L 60 35 L 60 45 L 75 35 L 75 70 L 90 70 L 90 20 L 115 20 L 115 70 L 125 70 L 128 12 L 138 12 L 141 70 L 155 70"
+                      d="M 4 41 L 18 41 L 18 26 L 26 19 L 26 26 L 34 19 L 34 26 L 42 19 L 42 41 L 49 41 L 49 12 L 62 12 L 62 41 L 67 41 L 69 5 L 75 5 L 77 41 L 79 41"
                       stroke="currentColor"
                       strokeWidth="1.8"
                       strokeLinecap="round"
@@ -119,30 +124,28 @@ export const WhyUs: React.FC = () => {
                 {idx === 3 && (
                   <svg
                     className={styles.blueprintWatermark}
-                    viewBox="0 0 160 90"
+                    viewBox="0 0 64 44"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                     aria-hidden="true"
                   >
                     <defs>
-                      <pattern id="cadGrid" width="14" height="14" patternUnits="userSpaceOnUse">
-                        <path d="M 14 0 L 0 0 0 14" fill="none" stroke="currentColor" strokeWidth="0.8" opacity="0.35" />
-                        <circle cx="14" cy="14" r="0.8" fill="currentColor" opacity="0.4" />
+                      <pattern id="cadGrid" width="10" height="10" patternUnits="userSpaceOnUse">
+                        <path d="M 10 0 L 0 0 0 10" fill="none" stroke="currentColor" strokeWidth="0.8" opacity="0.3" />
                       </pattern>
                     </defs>
-                    <rect width="160" height="90" fill="url(#cadGrid)" />
-                    <path d="M 15 80 h 135" stroke="currentColor" strokeWidth="1" strokeDasharray="3 3" opacity="0.4" />
-                    <path d="M 20 10 v 70" stroke="currentColor" strokeWidth="1" strokeDasharray="3 3" opacity="0.4" />
+                    <rect x="0.5" y="0.5" width="63" height="43" rx="3" fill="url(#cadGrid)" stroke="currentColor" strokeWidth="1" strokeDasharray="2 2" opacity="0.4" />
+                    <path d="M 8 36 h 50" stroke="currentColor" strokeWidth="1" strokeDasharray="2 2" opacity="0.4" />
+                    <path d="M 12 8 v 28" stroke="currentColor" strokeWidth="1" strokeDasharray="2 2" opacity="0.4" />
                     <path
                       className={styles.mathCurveLine}
-                      d="M 20 75 C 40 75, 60 65, 80 40 C 100 20, 120 15, 150 15"
+                      d="M 12 34 C 22 34, 32 28, 42 18 C 50 10, 56 8, 60 8"
                       stroke="currentColor"
-                      strokeWidth="2"
+                      strokeWidth="1.8"
                       strokeLinecap="round"
                     />
-                    <circle cx="80" cy="40" r="3" fill="currentColor" opacity="0.8" />
-                    <circle cx="150" cy="15" r="3" fill="currentColor" opacity="0.8" />
-                    <path d="M 80 40 v 40" stroke="currentColor" strokeWidth="1" strokeDasharray="2 2" opacity="0.5" />
+                    <circle cx="42" cy="18" r="2" fill="currentColor" />
+                    <circle cx="60" cy="8" r="2" fill="currentColor" />
                   </svg>
                 )}
                 <div
