@@ -142,45 +142,35 @@ export const Footer: React.FC = () => {
 
           <div className={styles.contactCol}>
             <h4 className={styles.colTitle}>Corporate Office</h4>
-            <div className={styles.contactInfoList}>
-              <div className={styles.contactItem}>
-                <MapPin size={16} className={styles.contactIcon} />
-                <span>
-                  Bengaluru, Karnataka, India
-                  <br />
-                  <span style={{ fontSize: "11px", color: "var(--color-ink-500)" }}>
-                    Serving clients across India & GCC
+            <div className={styles.contactGrid}>
+              <div className={styles.contactSubCol}>
+                <div className={styles.contactItem}>
+                  <MapPin size={16} className={styles.contactIcon} />
+                  <span>
+                    Bengaluru, Karnataka, India
+                    <br />
+                    <span style={{ fontSize: "11px", color: "var(--color-ink-500)" }}>
+                      Serving clients across India & GCC
+                    </span>
                   </span>
-                </span>
+                </div>
+
+                <div className={styles.registeredBadge}>
+                  <ShieldCheck size={14} color="var(--color-success-500)" />
+                  <span>Registered Engineering Firm</span>
+                </div>
               </div>
 
-              <a href="tel:+919845012345" className={styles.contactItem}>
-                <Phone size={16} className={styles.contactIcon} />
-                <span>+91 (80) 2845-XXXX / Direct</span>
-              </a>
+              <div className={styles.contactSubCol}>
+                <a href="tel:+919845012345" className={styles.contactItem}>
+                  <Phone size={16} className={styles.contactIcon} />
+                  <span>+91 (80) 2845-XXXX / Direct</span>
+                </a>
 
-              <a href="mailto:info@sys-trol.com" className={styles.contactItem}>
-                <Mail size={16} className={styles.contactIcon} />
-                <span>info@sys-trol.com</span>
-              </a>
-
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "8px",
-                  marginTop: "4px",
-                  padding: "6px 10px",
-                  borderRadius: "var(--radius-sm)",
-                  backgroundColor: "rgba(31, 122, 77, 0.15)",
-                  border: "1px solid rgba(31, 122, 77, 0.3)",
-                  width: "fit-content",
-                }}
-              >
-                <ShieldCheck size={14} color="var(--color-success-500)" />
-                <span style={{ fontSize: "11px", color: "var(--color-surface-0)" }}>
-                  Registered Engineering Firm
-                </span>
+                <a href="mailto:info@sys-trol.com" className={styles.contactItem}>
+                  <Mail size={16} className={styles.contactIcon} />
+                  <span>info@sys-trol.com</span>
+                </a>
               </div>
             </div>
           </div>

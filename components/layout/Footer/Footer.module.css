@@ -163,15 +163,40 @@
   color: var(--color-accent-teal-500);
   transform: translateX(2px);
 }
-.contactInfoList {
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3) var(--space-4);
+}
+@media (min-width: 1024px) {
+  .contactGrid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+}
+.contactSubCol {
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
 }
 @media (min-width: 768px) {
-  .contactInfoList {
+  .contactSubCol {
     gap: var(--space-3);
   }
+}
+.registeredBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  background-color: rgba(31, 122, 77, 0.15);
+  border: 1px solid rgba(31, 122, 77, 0.3);
+  width: fit-content;
+  font-size: 11px;
+  color: var(--color-surface-0);
 }
 .contactItem {
   display: flex;
