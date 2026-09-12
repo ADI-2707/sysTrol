@@ -75,7 +75,9 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) =
             const isActive =
               item.href === "/"
                 ? pathname === "/"
-                : pathname.startsWith(item.href);
+                : item.href === "/services"
+                ? pathname === "/services"
+                : pathname === item.href || pathname.startsWith(`${item.href}/`);
 
             return (
               <Link
