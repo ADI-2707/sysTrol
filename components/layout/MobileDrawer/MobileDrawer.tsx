@@ -22,6 +22,7 @@ const navLinks = [
   { href: "/projects", label: "Projects & Case Studies" },
   { href: "/clients", label: "Clients & Industries" },
   { href: "/careers", label: "Careers" },
+  { href: "/gallery", label: "Gallery & Showcase" },
   { href: "/contact", label: "Contact Us" },
 ];
 
