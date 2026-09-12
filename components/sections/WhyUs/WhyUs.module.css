@@ -226,11 +226,12 @@
   width: 100%;
   height: 100%;
   color: var(--color-brand-green-600);
-  opacity: 0.15;
-  transition: opacity 0.3s ease;
+  opacity: 0;
+  transition: opacity 0.2s ease;
 }
 .card:hover .orbitalPathSvg {
-  opacity: 0.7;
+  opacity: 0.75;
+  transition: opacity 0.25s ease 0s;
 }
 .flightPlane {
   position: absolute;
@@ -243,12 +244,13 @@
   offset-distance: 0%;
   offset-rotate: auto 90deg;
   opacity: 0;
-  transition: offset-distance 1.6s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.25s ease;
+  transition: opacity 0.2s ease, offset-distance 0.3s ease;
   pointer-events: none;
 }
 .card:hover .flightPlane {
   opacity: 1;
   offset-distance: 100%;
+  transition: offset-distance 1.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s, opacity 0.25s ease 0.2s;
 }
 .iconBoxTurnkey {
   transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
