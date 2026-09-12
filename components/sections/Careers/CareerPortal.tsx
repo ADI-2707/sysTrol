@@ -386,21 +386,6 @@ export const CareerPortal: React.FC = () => {
                 </div>
               </div>
 
-              <p className={styles.jobDesc}>{vacancy.description}</p>
-
-              <div className={styles.skillsRow}>
-                {vacancy.skills.slice(0, 3).map((skill, sIdx) => (
-                  <Badge key={sIdx} variant="mono" size="sm">
-                    {skill}
-                  </Badge>
-                ))}
-                {vacancy.skills.length > 3 && (
-                  <Badge variant="default" size="sm">
-                    +{vacancy.skills.length - 3}
-                  </Badge>
-                )}
-              </div>
-
               <div className={styles.cardFooter}>
                 <Link
                   href={`/careers/${vacancy.id}`}
