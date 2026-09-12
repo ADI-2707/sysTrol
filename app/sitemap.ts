@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { projectsData } from "@/content/projects";
+import { vacanciesData } from "@/content/careers";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://sys-trol.com";
@@ -28,5 +29,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...projectRoutes];
+  const careerRoutes = vacanciesData.map((vacancy) => ({
+    url: `${baseUrl}/careers/${vacancy.id}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly" as const,
+    priority: 0.7,
+  }));
+
+  return [...staticRoutes, ...projectRoutes, ...careerRoutes];
 }
