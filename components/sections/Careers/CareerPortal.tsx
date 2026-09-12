@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
 import { Badge } from "@/components/ui/Badge/Badge";
 import { Button } from "@/components/ui/Button/Button";
@@ -20,6 +21,7 @@ export const CareerPortal: React.FC = () => {
   const [activeApplyRole, setActiveApplyRole] = useState<Vacancy | null>(null);
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -29,6 +31,10 @@ export const CareerPortal: React.FC = () => {
     linkedin: "",
     message: "",
   });
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const filteredVacancies =
     selectedDept === "All Roles"
@@ -61,6 +67,142 @@ export const CareerPortal: React.FC = () => {
       setSubmitted(true);
     }, 600);
   };
+
+  const modalMarkup = activeApplyRole ? (
+    <div
+      className={styles.modalOverlay}
+      onClick={closeApplyModal}
+      role="dialog"
+      aria-modal="true"
+    >
+      <div className={styles.modalContainer} onClick={(e) => e.stopPropagation()}>
+        <div className={styles.modalHeader}>
+          <div>
+            <h3 className={styles.modalTitle}>Apply: {activeApplyRole.title}</h3>
+            <p className={styles.modalSubtitle}>
+              {activeApplyRole.department} • {activeApplyRole.location}
+            </p>
+          </div>
+          <button
+            type="button"
+            className={styles.closeBtn}
+            onClick={closeApplyModal}
+            aria-label="Close modal"
+          >
+            <X size={20} />
+          </button>
+        </div>
+
+        {submitted ? (
+          <div className={styles.successBox}>
+            <div className={styles.successIcon}>
+              <Sparkles size={28} />
+            </div>
+            <h4 style={{ fontSize: "var(--text-xl)", fontWeight: 700, color: "var(--color-ink-900)" }}>
+              Application Received
+            </h4>
+            <p style={{ fontSize: "var(--text-sm)", color: "var(--color-ink-700)", maxWidth: "440px" }}>
+              Thank you for applying for the <strong>{activeApplyRole.title}</strong> role. Our engineering recruitment team will review your profile and contact you within 3 business days.
+            </p>
+            <Button variant="primary" size="md" onClick={closeApplyModal}>
+              Close Window
+            </Button>
+          </div>
+        ) : (
+          <form onSubmit={handleSubmit}>
+            <div className={styles.modalBody}>
+              <div className={styles.formRow}>
+                <div className={styles.formGroup}>
+                  <label className={styles.label}>Full Name *</label>
+                  <input
+                    type="text"
+                    required
+                    className={styles.input}
+                    placeholder="John Doe"
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  />
+                </div>
+                <div className={styles.formGroup}>
+                  <label className={styles.label}>Email Address *</label>
+                  <input
+                    type="email"
+                    required
+                    className={styles.input}
+                    placeholder="john@example.com"
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  />
+                </div>
+              </div>
+
+              <div className={styles.formRow}>
+                <div className={styles.formGroup}>
+                  <label className={styles.label}>Phone Number *</label>
+                  <input
+                    type="tel"
+                    required
+                    className={styles.input}
+                    placeholder="+91 98765 43210"
+                    value={formData.phone}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  />
+                </div>
+                <div className={styles.formGroup}>
+                  <label className={styles.label}>Years of Experience *</label>
+                  <input
+                    type="text"
+                    required
+                    className={styles.input}
+                    placeholder="e.g. 5 Years"
+                    value={formData.experience}
+                    onChange={(e) => setFormData({ ...formData, experience: e.target.value })}
+                  />
+                </div>
+              </div>
+
+              <div className={styles.formGroup}>
+                <label className={styles.label}>LinkedIn Profile or Online Portfolio</label>
+                <input
+                  type="url"
+                  className={styles.input}
+                  placeholder="https://linkedin.com/in/username"
+                  value={formData.linkedin}
+                  onChange={(e) => setFormData({ ...formData, linkedin: e.target.value })}
+                />
+              </div>
+
+              <div className={styles.formGroup}>
+                <label className={styles.label}>Introduction or Key Industrial Projects *</label>
+                <textarea
+                  required
+                  className={styles.textarea}
+                  placeholder="Briefly describe your experience with rolling mills, automation software, C# programming, or industrial machinery..."
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                />
+              </div>
+            </div>
+
+            <div className={styles.modalFooter}>
+              <Button variant="ghost" size="md" type="button" onClick={closeApplyModal}>
+                Cancel
+              </Button>
+              <Button
+                variant="primary"
+                size="md"
+                type="submit"
+                isLoading={submitting}
+                leftIcon={<Send size={15} />}
+              >
+                Submit Application
+              </Button>
+            </div>
+          </form>
+        )}
+      </div>
+    </div>
+  ) : null;
 
   return (
     <div>
@@ -148,141 +290,7 @@ export const CareerPortal: React.FC = () => {
         ))}
       </div>
 
-      {activeApplyRole && (
-        <div
-          className={styles.modalOverlay}
-          onClick={closeApplyModal}
-          role="dialog"
-          aria-modal="true"
-        >
-          <div className={styles.modalContainer} onClick={(e) => e.stopPropagation()}>
-            <div className={styles.modalHeader}>
-              <div>
-                <h3 className={styles.modalTitle}>Apply: {activeApplyRole.title}</h3>
-                <p className={styles.modalSubtitle}>
-                  {activeApplyRole.department} • {activeApplyRole.location}
-                </p>
-              </div>
-              <button
-                type="button"
-                className={styles.closeBtn}
-                onClick={closeApplyModal}
-                aria-label="Close modal"
-              >
-                <X size={20} />
-              </button>
-            </div>
-
-            {submitted ? (
-              <div className={styles.successBox}>
-                <div className={styles.successIcon}>
-                  <Sparkles size={28} />
-                </div>
-                <h4 style={{ fontSize: "var(--text-xl)", fontWeight: 700, color: "var(--color-ink-900)" }}>
-                  Application Received
-                </h4>
-                <p style={{ fontSize: "var(--text-sm)", color: "var(--color-ink-700)", maxWidth: "440px" }}>
-                  Thank you for applying for the <strong>{activeApplyRole.title}</strong> role. Our engineering recruitment team will review your profile and contact you within 3 business days.
-                </p>
-                <Button variant="primary" size="md" onClick={closeApplyModal}>
-                  Close Window
-                </Button>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit}>
-                <div className={styles.modalBody}>
-                  <div className={styles.formRow}>
-                    <div className={styles.formGroup}>
-                      <label className={styles.label}>Full Name *</label>
-                      <input
-                        type="text"
-                        required
-                        className={styles.input}
-                        placeholder="John Doe"
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      />
-                    </div>
-                    <div className={styles.formGroup}>
-                      <label className={styles.label}>Email Address *</label>
-                      <input
-                        type="email"
-                        required
-                        className={styles.input}
-                        placeholder="john@example.com"
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      />
-                    </div>
-                  </div>
-
-                  <div className={styles.formRow}>
-                    <div className={styles.formGroup}>
-                      <label className={styles.label}>Phone Number *</label>
-                      <input
-                        type="tel"
-                        required
-                        className={styles.input}
-                        placeholder="+91 98765 43210"
-                        value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      />
-                    </div>
-                    <div className={styles.formGroup}>
-                      <label className={styles.label}>Years of Experience *</label>
-                      <input
-                        type="text"
-                        required
-                        className={styles.input}
-                        placeholder="e.g. 5 Years"
-                        value={formData.experience}
-                        onChange={(e) => setFormData({ ...formData, experience: e.target.value })}
-                      />
-                    </div>
-                  </div>
-
-                  <div className={styles.formGroup}>
-                    <label className={styles.label}>LinkedIn Profile or Online Portfolio</label>
-                    <input
-                      type="url"
-                      className={styles.input}
-                      placeholder="https://linkedin.com/in/username"
-                      value={formData.linkedin}
-                      onChange={(e) => setFormData({ ...formData, linkedin: e.target.value })}
-                    />
-                  </div>
-
-                  <div className={styles.formGroup}>
-                    <label className={styles.label}>Introduction or Key Industrial Projects *</label>
-                    <textarea
-                      required
-                      className={styles.textarea}
-                      placeholder="Briefly describe your experience with rolling mills, automation software, C# programming, or industrial machinery..."
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    />
-                  </div>
-                </div>
-
-                <div className={styles.modalFooter}>
-                  <Button variant="ghost" size="md" type="button" onClick={closeApplyModal}>
-                    Cancel
-                  </Button>
-                  <Button
-                    variant="primary"
-                    size="md"
-                    type="submit"
-                    isLoading={submitting}
-                    leftIcon={<Send size={15} />}
-                  >
-                    Submit Application
-                  </Button>
-                </div>
-              </form>
-            )}
-          </div>
-        </div>
-      )}
+      {mounted && modalMarkup ? createPortal(modalMarkup, document.body) : null}
     </div>
   );
 };
