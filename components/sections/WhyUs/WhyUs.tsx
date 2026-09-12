@@ -81,67 +81,51 @@ export const WhyUs: React.FC = () => {
                   </svg>
                 )}
                 {idx === 1 && (
+                  <div className={styles.codeScrollBox}>
+                    <div className={styles.codeScrollTrack}>
+                      <span>def calculate_roll_bite(h0, h1, R, mu):</span>
+                      <span>&nbsp;&nbsp;delta_h = h0 - h1</span>
+                      <span>&nbsp;&nbsp;L = math.sqrt(R * delta_h)</span>
+                      <span>&nbsp;&nbsp;alpha = math.acos(1.0 - delta_h / (2 * R))</span>
+                      <span>&nbsp;&nbsp;P_mean = yield_stress * (1.0 + (mu * L) / (4 * h_avg))</span>
+                      <span>&nbsp;&nbsp;return P_mean * L * width</span>
+                      <span>def calculate_roll_bite(h0, h1, R, mu):</span>
+                      <span>&nbsp;&nbsp;delta_h = h0 - h1</span>
+                      <span>&nbsp;&nbsp;L = math.sqrt(R * delta_h)</span>
+                      <span>&nbsp;&nbsp;alpha = math.acos(1.0 - delta_h / (2 * R))</span>
+                      <span>&nbsp;&nbsp;P_mean = yield_stress * (1.0 + (mu * L) / (4 * h_avg))</span>
+                      <span>&nbsp;&nbsp;return P_mean * L * width</span>
+                    </div>
+                  </div>
+                )}
+                {idx === 3 && (
                   <svg
-                    className={styles.mathCurveWatermark}
-                    viewBox="0 0 160 100"
+                    className={styles.blueprintWatermark}
+                    viewBox="0 0 160 90"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                     aria-hidden="true"
                   >
-                    <path d="M10 90h140" stroke="currentColor" strokeWidth="1" strokeDasharray="3 3" opacity="0.4" />
-                    <path d="M20 10v80" stroke="currentColor" strokeWidth="1" strokeDasharray="3 3" opacity="0.4" />
+                    <defs>
+                      <pattern id="cadGrid" width="14" height="14" patternUnits="userSpaceOnUse">
+                        <path d="M 14 0 L 0 0 0 14" fill="none" stroke="currentColor" strokeWidth="0.8" opacity="0.35" />
+                        <circle cx="14" cy="14" r="0.8" fill="currentColor" opacity="0.4" />
+                      </pattern>
+                    </defs>
+                    <rect width="160" height="90" fill="url(#cadGrid)" />
+                    <path d="M 15 80 h 135" stroke="currentColor" strokeWidth="1" strokeDasharray="3 3" opacity="0.4" />
+                    <path d="M 20 10 v 70" stroke="currentColor" strokeWidth="1" strokeDasharray="3 3" opacity="0.4" />
                     <path
                       className={styles.mathCurveLine}
-                      d="M20 85 C 40 85, 60 75, 80 50 C 100 25, 120 15, 150 15"
+                      d="M 20 75 C 40 75, 60 65, 80 40 C 100 20, 120 15, 150 15"
                       stroke="currentColor"
                       strokeWidth="2"
                       strokeLinecap="round"
                     />
-                    <circle cx="80" cy="50" r="3" fill="currentColor" opacity="0.8" />
+                    <circle cx="80" cy="40" r="3" fill="currentColor" opacity="0.8" />
                     <circle cx="150" cy="15" r="3" fill="currentColor" opacity="0.8" />
-                    <path d="M80 50v35" stroke="currentColor" strokeWidth="1" strokeDasharray="2 2" opacity="0.5" />
+                    <path d="M 80 40 v 40" stroke="currentColor" strokeWidth="1" strokeDasharray="2 2" opacity="0.5" />
                   </svg>
-                )}
-                {idx === 3 && (
-                  <div className={styles.card4BackgroundGroup}>
-                    <div className={styles.codeScrollBox}>
-                      <div className={styles.codeScrollTrack}>
-                        <span>public void CalibrateRollGap(Stand s) &#123;</span>
-                        <span>&nbsp;&nbsp;var delta = s.TorqueMatrix.Compute();</span>
-                        <span>&nbsp;&nbsp;if (delta &gt; Tolerances.MaxSlip) &#123;</span>
-                        <span>&nbsp;&nbsp;&nbsp;&nbsp;s.Actuator.StepMicro(delta);</span>
-                        <span>&nbsp;&nbsp;&#125;</span>
-                        <span>&nbsp;&nbsp;return s.SyncVelocity();</span>
-                        <span>&#125;</span>
-                        <span>public void CalibrateRollGap(Stand s) &#123;</span>
-                        <span>&nbsp;&nbsp;var delta = s.TorqueMatrix.Compute();</span>
-                        <span>&nbsp;&nbsp;if (delta &gt; Tolerances.MaxSlip) &#123;</span>
-                        <span>&nbsp;&nbsp;&nbsp;&nbsp;s.Actuator.StepMicro(delta);</span>
-                        <span>&nbsp;&nbsp;&#125;</span>
-                        <span>&nbsp;&nbsp;return s.SyncVelocity();</span>
-                        <span>&#125;</span>
-                      </div>
-                    </div>
-                    <svg
-                      className={styles.blueprintWatermark}
-                      viewBox="0 0 100 100"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      aria-hidden="true"
-                    >
-                      <defs>
-                        <pattern id="cadGrid" width="14" height="14" patternUnits="userSpaceOnUse">
-                          <path d="M 14 0 L 0 0 0 14" fill="none" stroke="currentColor" strokeWidth="0.8" opacity="0.3" />
-                          <circle cx="14" cy="14" r="1" fill="currentColor" opacity="0.4" />
-                        </pattern>
-                      </defs>
-                      <rect width="100" height="100" fill="url(#cadGrid)" />
-                      <path d="M 15 15 L 45 15 L 45 45" stroke="currentColor" strokeWidth="1.2" strokeDasharray="2 2" />
-                      <circle cx="45" cy="45" r="16" stroke="currentColor" strokeWidth="1.2" />
-                      <circle cx="45" cy="45" r="4" fill="currentColor" opacity="0.6" />
-                      <path d="M 45 25 L 45 65 M 25 45 L 65 45" stroke="currentColor" strokeWidth="0.8" strokeDasharray="1 2" />
-                    </svg>
-                  </div>
                 )}
                 <div
                   className={`${styles.iconBox} ${

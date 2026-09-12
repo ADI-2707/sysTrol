@@ -174,26 +174,10 @@
   filter: drop-shadow(0 0 6px rgba(20, 184, 166, 0.6));
   transform: scale(1.08);
 }
-.mathCurveWatermark {
-  position: absolute;
-  top: var(--space-3);
-  right: var(--space-3);
-  width: 130px;
-  height: 80px;
-  color: var(--color-ink-900);
-  opacity: 0.04;
-  transition: opacity 0.3s ease, color 0.3s ease;
-  pointer-events: none;
-  z-index: 1;
-}
 .mathCurveLine {
   stroke-dasharray: 200;
   stroke-dashoffset: 200;
   transition: stroke-dashoffset 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.card:hover .mathCurveWatermark {
-  opacity: 0.16;
-  color: var(--color-accent-teal-600);
 }
 .card:hover .mathCurveLine {
   stroke-dashoffset: 0;
@@ -276,24 +260,17 @@
 .card:hover .shieldCheckmark {
   stroke-dashoffset: 0;
 }
-.card4BackgroundGroup {
-  position: absolute;
-  top: var(--space-3);
-  right: var(--space-3);
-  height: 80px;
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-  pointer-events: none;
-  z-index: 1;
-}
 .codeScrollBox {
-  height: 80px;
-  width: 120px;
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  height: 75px;
+  width: 140px;
   overflow: hidden;
-  position: relative;
   mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
   -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+  pointer-events: none;
+  z-index: 1;
 }
 .codeScrollTrack {
   display: flex;
@@ -309,7 +286,7 @@
 }
 .card:hover .codeScrollTrack {
   opacity: 0.18;
-  color: var(--color-brand-green-700);
+  color: var(--color-accent-teal-600);
 }
 @keyframes codeScrollAnim {
   0% {
@@ -320,14 +297,17 @@
   }
 }
 .blueprintWatermark {
-  width: 80px;
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  width: 140px;
   height: 80px;
   color: var(--color-ink-900);
   opacity: 0.04;
   transform: scale(0.96);
   transition: opacity 0.3s ease, transform 0.3s ease, color 0.3s ease;
   pointer-events: none;
-  flex-shrink: 0;
+  z-index: 1;
 }
 .card:hover .blueprintWatermark {
   opacity: 0.14;
