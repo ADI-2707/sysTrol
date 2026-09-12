@@ -28,6 +28,8 @@
   }
 }
 .card {
+  position: relative;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -37,12 +39,47 @@
   border-radius: var(--radius-md);
   padding: var(--space-6);
   box-shadow: var(--shadow-sm);
-  transition: all var(--duration-fast) var(--ease-in-out);
+  transition: transform var(--duration-fast) var(--ease-in-out), box-shadow var(--duration-fast) var(--ease-in-out);
+}
+.card::before,
+.card::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  box-sizing: border-box;
+  z-index: 2;
+}
+.card::before {
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 2px solid var(--color-brand-green-600);
+  border-top: 2px solid var(--color-brand-green-600);
+  transition: width 0.08s ease-in 0.16s, height 0.08s ease-in 0.24s;
+}
+.card::after {
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-right: 2px solid var(--color-brand-green-600);
+  border-bottom: 2px solid var(--color-brand-green-600);
+  transition: width 0.08s ease-in 0s, height 0.08s ease-in 0.08s;
 }
 .card:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
-  border-color: var(--color-brand-green-600);
+}
+.card:hover::before {
+  width: 100%;
+  height: 100%;
+  transition: height 0.14s ease-out 0s, width 0.14s ease-out 0.14s;
+}
+.card:hover::after {
+  width: 100%;
+  height: 100%;
+  transition: height 0.14s ease-out 0.28s, width 0.14s ease-out 0.42s;
 }
 .iconBox {
   width: 44px;
