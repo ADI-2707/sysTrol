@@ -52,7 +52,14 @@ vi.mock("next/navigation", () => ({
 }));
 
 vi.mock("next/image", () => ({
-  default: (props: React.ImgHTMLAttributes<HTMLImageElement>) => {
+  default: ({
+    priority,
+    fill,
+    ...props
+  }: React.ImgHTMLAttributes<HTMLImageElement> & {
+    priority?: boolean;
+    fill?: boolean;
+  }) => {
     return React.createElement("img", { ...props });
   },
 }));
