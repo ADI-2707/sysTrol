@@ -52,7 +52,7 @@
   .divisionCard {
     grid-template-columns: 1fr 1fr;
     padding: var(--space-10);
-    align-items: start;
+    align-items: stretch;
   }
 }
 .divisionCard:hover {
@@ -63,6 +63,7 @@
 .divisionLeft {
   display: flex;
   flex-direction: column;
+  height: 100%;
   gap: var(--space-4);
 }
 .divisionTitle {

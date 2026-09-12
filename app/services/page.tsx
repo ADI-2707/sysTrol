@@ -114,7 +114,7 @@ export default function ServicesPage() {
                     ))}
                   </div>
 
-                  <div style={{ marginTop: "16px" }}>
+                  <div style={{ marginTop: "auto", paddingTop: "var(--space-4)" }}>
                     <Button
                       href={`/services/${automation.slug}`}
                       variant="primary"
@@ -177,7 +177,7 @@ export default function ServicesPage() {
                     ))}
                   </div>
 
-                  <div style={{ marginTop: "16px" }}>
+                  <div style={{ marginTop: "auto", paddingTop: "var(--space-4)" }}>
                     <Button
                       href={`/services/${trading.slug}`}
                       variant="teal"
