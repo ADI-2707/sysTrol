@@ -46,7 +46,7 @@ export const Hero: React.FC = () => {
               </div>
 
               <h1 className={styles.headline}>
-                Engineering Redefined.{" "}
+                Engineering Redefined.
                 <span className={styles.highlightText}>
                   {displayText}
                   <span className={styles.cursor} aria-hidden="true" />

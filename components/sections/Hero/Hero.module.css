@@ -57,7 +57,7 @@
 
 .highlightText {
   color: var(--color-brand-green-600);
-  display: inline;
+  display: block;
   white-space: nowrap;
 }
 
