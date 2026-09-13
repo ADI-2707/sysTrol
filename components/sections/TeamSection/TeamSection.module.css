@@ -104,7 +104,7 @@
 .directorName {
   font-size: clamp(1.75rem, 2.5vw, 2.25rem);
   font-weight: var(--font-bold);
-  color: var(--color-ink-900);
+  color: var(--color-brand-sys-navy);
   line-height: var(--leading-tight);
 }
 
@@ -250,7 +250,7 @@
 .teamTitle {
   font-size: var(--text-lg);
   font-weight: var(--font-bold);
-  color: var(--color-ink-900);
+  color: var(--color-brand-sys-navy);
   line-height: var(--leading-tight);
 }
 

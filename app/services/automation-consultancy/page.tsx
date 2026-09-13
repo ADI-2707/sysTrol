@@ -94,7 +94,7 @@ export default function AutomationConsultancyPage() {
               <SectionHeading
                 eyebrow="Core Scope of Work"
                 eyebrowVariant="brand"
-                title="End-to-End Supervisory Control Engineering"
+                title={<>End-to-End Supervisory <span>Control Engineering</span></>}
                 subtitle="Every mill layout is unique. We tailor mathematical coefficients, communications protocols, and operator ergonomics to your plant's specific kinematics."
                 align="left"
               />
@@ -142,7 +142,7 @@ export default function AutomationConsultancyPage() {
                       style={{
                         fontSize: "var(--text-xl)",
                         fontWeight: 700,
-                        color: "var(--color-ink-900)",
+                        color: "var(--color-brand-sys-navy)",
                         marginBottom: "var(--space-2)",
                       }}
                     >
@@ -187,7 +187,7 @@ export default function AutomationConsultancyPage() {
                   <SectionHeading
                     eyebrow="Engagement Methodology"
                     eyebrowVariant="accent"
-                    title="5-Stage Engineering Commissioning Lifecycle"
+                    title={<>5-Stage Engineering <span>Commissioning Lifecycle</span></>}
                     subtitle="How sysTROL guarantees a smooth, low-risk transition from audit through factory acceptance and live hot-metal cutover."
                     align="left"
                   />

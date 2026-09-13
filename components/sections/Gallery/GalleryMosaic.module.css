@@ -73,8 +73,11 @@
 .sectionTitle {
   font-size: var(--text-2xl);
   font-weight: var(--font-bold);
-  color: var(--color-ink-900);
+  color: var(--color-brand-sys-navy);
   line-height: var(--leading-tight);
+}
+.sectionTitle span {
+  color: var(--color-brand-green-600);
 }
 
 .sectionSubtitle {

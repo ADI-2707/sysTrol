@@ -23,7 +23,7 @@ export const TrustStrip: React.FC = () => {
               title={`${client.name} — ${client.engagement}`}
             >
               <div className={styles.cardTopRow}>
-                <Badge variant={client.sector === "International" ? "dark" : "brand"} size="sm">
+                <Badge variant={client.sector === "International" ? "accent" : "brand"} size="sm">
                   {client.statusBadge || "Verified Client"}
                 </Badge>
                 <span className={styles.cardLocation}>{client.location}</span>

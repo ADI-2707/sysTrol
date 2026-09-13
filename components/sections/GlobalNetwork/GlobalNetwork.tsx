@@ -15,7 +15,7 @@ export const GlobalNetwork: React.FC = () => {
           <SectionHeading
             eyebrow="International Operations & Sourcing"
             eyebrowVariant="brand"
-            title="Global Sourcing Corridors & Quality Assurance"
+            title={<>Global Sourcing Corridors & <span>Quality Assurance</span></>}
             subtitle="Direct OEM procurement partnerships across Europe and Japan delivering certified mill spares, backed by full-lifecycle domestic engineering commissioning."
             align="center"
           />

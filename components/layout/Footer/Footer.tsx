@@ -177,9 +177,6 @@ export const Footer: React.FC = () => {
             reserved.
           </div>
           <div className={styles.legalLinks}>
-            <span style={{ color: "var(--color-ink-500)" }}>
-              Phase 1 Digital Card & Architectural Preview
-            </span>
             <Link href="/contact" className={styles.legalLink}>
               Enquiry
             </Link>

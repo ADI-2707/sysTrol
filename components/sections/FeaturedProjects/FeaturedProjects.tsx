@@ -28,7 +28,7 @@ export const FeaturedProjects: React.FC = () => {
             <SectionHeading
               eyebrow="Case Studies & Track Record"
               eyebrowVariant="brand"
-              title="Recent Industrial Implementations"
+              title={<>Recent Industrial <span>Implementations</span></>}
               subtitle="Representative project summaries demonstrating Level-2 model accuracy, mill speed synchronization, and rapid spare parts turnaround."
               align="left"
               style={{ marginBottom: 0 }}

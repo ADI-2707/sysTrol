@@ -111,7 +111,7 @@
   font-family: var(--font-heading), sans-serif;
   font-size: 13px;
   font-weight: 700;
-  color: var(--color-ink-900);
+  color: var(--color-brand-sys-navy);
   letter-spacing: 0.02em;
   line-height: var(--leading-snug);
   margin-bottom: var(--space-1);

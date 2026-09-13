@@ -93,7 +93,7 @@ export default function TradingPage() {
               <SectionHeading
                 eyebrow="Product Portfolios"
                 eyebrowVariant="accent"
-                title="Specialized Import Sourcing Categories"
+                title={<>Specialized Import <span>Sourcing Categories</span></>}
                 subtitle="Direct partnerships with premier manufacturers in Germany, Italy, Sweden, and Japan to guarantee authentic OEM metallurgy and rapid turnaround."
                 align="left"
               />
@@ -133,7 +133,7 @@ export default function TradingPage() {
                         borderBottom: "1px solid var(--color-border)",
                       }}
                     >
-                      <h3 style={{ fontSize: "var(--text-lg)", fontWeight: 700, color: "var(--color-ink-900)" }}>
+                      <h3 style={{ fontSize: "var(--text-lg)", fontWeight: 700, color: "var(--color-brand-sys-navy)" }}>
                         {cat.category}
                       </h3>
                     </div>
@@ -198,7 +198,7 @@ export default function TradingPage() {
                   >
                     <ShieldCheck size={24} />
                   </div>
-                  <h4 style={{ fontSize: "var(--text-lg)", fontWeight: 700, marginBottom: "8px" }}>
+                  <h4 style={{ fontSize: "var(--text-lg)", fontWeight: 700, color: "var(--color-brand-sys-navy)", marginBottom: "8px" }}>
                     EN 10204 3.1 Certification
                   </h4>
                   <p style={{ fontSize: "var(--text-sm)", color: "var(--color-ink-700)", lineHeight: 1.6 }}>
@@ -224,7 +224,7 @@ export default function TradingPage() {
                   >
                     <Globe size={24} />
                   </div>
-                  <h4 style={{ fontSize: "var(--text-lg)", fontWeight: 700, marginBottom: "8px" }}>
+                  <h4 style={{ fontSize: "var(--text-lg)", fontWeight: 700, color: "var(--color-brand-sys-navy)", marginBottom: "8px" }}>
                     Emergency Air-Freight Logistics
                   </h4>
                   <p style={{ fontSize: "var(--text-sm)", color: "var(--color-ink-700)", lineHeight: 1.6 }}>

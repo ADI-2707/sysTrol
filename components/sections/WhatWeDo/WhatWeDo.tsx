@@ -16,7 +16,7 @@ export const WhatWeDo: React.FC = () => {
           <SectionHeading
             eyebrow="Two Synergistic Divisions"
             eyebrowVariant="brand"
-            title="Engineered Solutions for Steel & Process Plants"
+            title={<>Engineered Solutions for <span>Steel & Process Plants</span></>}
             subtitle="Combining high-level software engineering with verified international hardware sourcing to eliminate plant downtime and maximize rolling mill yield."
             align="center"
           />

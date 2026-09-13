@@ -58,7 +58,7 @@ export const WhyUs: React.FC = () => {
           <SectionHeading
             eyebrow="Why Choose sysTROL"
             eyebrowVariant="accent"
-            title="Engineering Credibility Built on Field Results"
+            title={<>Engineering Credibility Built on <span>Field Results</span></>}
             subtitle="We bridge the gap between heavy mechanical process realities and modern high-speed software automation."
             align="left"
           />
