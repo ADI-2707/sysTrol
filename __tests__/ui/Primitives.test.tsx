@@ -79,4 +79,20 @@ describe("SectionHeading Component", () => {
     expect(screen.getByRole("heading", { name: "Industrial Automation Systems" })).toBeInTheDocument();
     expect(screen.getByText("Turnkey commissioning and L2 mathematical mill control.")).toBeInTheDocument();
   });
+
+  it("renders two-tone heading with emphasized span accent", () => {
+    render(
+      <SectionHeading
+        eyebrow="Specialized Division"
+        title={<>Engineered Solutions for <span>Steel Plants</span></>}
+        subtitle="Precision L2 supervisory automation."
+      />
+    );
+
+    const heading = screen.getByRole("heading", { name: "Engineered Solutions for Steel Plants" });
+    expect(heading).toBeInTheDocument();
+    const accentSpan = screen.getByText("Steel Plants");
+    expect(accentSpan).toBeInTheDocument();
+    expect(accentSpan.tagName).toBe("SPAN");
+  });
 });
