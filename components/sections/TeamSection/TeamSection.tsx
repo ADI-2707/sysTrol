@@ -55,8 +55,8 @@ export const TeamSection: React.FC = () => {
               <Badge variant="brand" size="md" style={{ width: "fit-content" }}>
                 Leadership & Engineering Team
               </Badge>
-              <h2 style={{ fontSize: "var(--text-3xl)", fontWeight: 700, color: "var(--color-ink-900)", lineHeight: "var(--leading-tight)" }}>
-                Guided by Mill Automation Pioneers & Metallurgical Practitioners
+              <h2 style={{ fontSize: "var(--text-3xl)", fontWeight: 700, color: "var(--color-brand-sys-navy)", lineHeight: "var(--leading-tight)" }}>
+                Guided by Mill Automation Pioneers & <span style={{ color: "var(--color-brand-green-600)" }}>Metallurgical Practitioners</span>
               </h2>
               <p style={{ fontSize: "var(--text-base)", color: "var(--color-ink-700)", lineHeight: "var(--leading-relaxed)" }}>
                 sysTROL is powered by senior engineers, mathematical modelers, and industrial supply specialists who combine deep computational capability with hands-on steel rolling mill floor experience.

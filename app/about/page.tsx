@@ -67,8 +67,8 @@ export default function AboutPage() {
                   <Badge variant="brand" size="md" style={{ width: "fit-content" }}>
                     Engineering Excellence
                   </Badge>
-                  <h2 style={{ fontSize: "var(--text-3xl)", fontWeight: 700, color: "var(--color-ink-900)", lineHeight: "var(--leading-tight)" }}>
-                    Purpose-Built Simulation & Automation Testing Labs
+                  <h2 style={{ fontSize: "var(--text-3xl)", fontWeight: 700, color: "var(--color-brand-sys-navy)", lineHeight: "var(--leading-tight)" }}>
+                    Purpose-Built Simulation & <span style={{ color: "var(--color-brand-green-600)" }}>Automation Testing Labs</span>
                   </h2>
                   <p style={{ fontSize: "var(--text-base)", color: "var(--color-ink-700)", lineHeight: "var(--leading-relaxed)" }}>
                     Before any Level-2 code touches live hot metal, our mathematical models undergo rigorous hardware-in-the-loop (HIL) simulation at our Bengaluru technical center. Stand-by-stand speed cascades, hydraulic AGC null adjustments, and OPC UA/DA telemetry gateways are tested against simulated high-tonnage rolling environments.
@@ -103,8 +103,8 @@ export default function AboutPage() {
                   <Badge variant="brand" size="md" style={{ width: "fit-content" }}>
                     Our Founding Story
                   </Badge>
-                  <h3 style={{ fontSize: "var(--text-3xl)", color: "var(--color-ink-900)" }}>
-                    Bridging Heavy Metallurgy with Deterministic Modern Software
+                  <h3 style={{ fontSize: "var(--text-3xl)", color: "var(--color-brand-sys-navy)" }}>
+                    Bridging Heavy Metallurgy with <span style={{ color: "var(--color-brand-green-600)" }}>Deterministic Modern Software</span>
                   </h3>
                   <p>
                     In continuous steel rolling mills and heavy process plants, seconds of
@@ -139,7 +139,7 @@ export default function AboutPage() {
                       borderLeft: "4px solid var(--color-brand-green-600)",
                     }}
                   >
-                    <div style={{ fontWeight: 600, color: "var(--color-ink-900)" }}>
+                    <div style={{ fontWeight: 600, color: "var(--color-brand-sys-navy)" }}>
                       Corporate Leadership Philosophy
                     </div>
                     <p style={{ fontSize: "var(--text-sm)", marginTop: "4px" }}>

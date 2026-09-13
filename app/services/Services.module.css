@@ -69,7 +69,7 @@
 .divisionTitle {
   font-size: var(--text-3xl);
   font-weight: var(--font-bold);
-  color: var(--color-ink-900);
+  color: var(--color-brand-sys-navy);
   line-height: var(--leading-tight);
 }
 .divisionText {
