@@ -192,7 +192,7 @@ export default function ProjectsPage() {
                         style={{
                           fontSize: "var(--text-lg)",
                           fontWeight: 700,
-                          color: "var(--color-ink-900)",
+                          color: "var(--color-brand-sys-navy)",
                           lineHeight: 1.3,
                           marginBottom: "10px",
                         }}

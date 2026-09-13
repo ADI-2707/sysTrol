@@ -116,7 +116,7 @@ export default function ClientsPage() {
                         style={{
                           fontSize: "var(--text-2xl)",
                           fontWeight: 700,
-                          color: "var(--color-ink-900)",
+                          color: "var(--color-brand-sys-navy)",
                         }}
                       >
                         {sector}
@@ -201,7 +201,7 @@ export default function ClientsPage() {
                               style={{
                                 fontSize: "var(--text-xl)",
                                 fontWeight: 700,
-                                color: "var(--color-ink-900)",
+                                color: "var(--color-brand-sys-navy)",
                                 marginBottom: "8px",
                               }}
                             >

@@ -127,7 +127,7 @@ export const GalleryMosaic: React.FC<GalleryMosaicProps> = ({ onSelectItem }) =>
                 <Badge variant="brand" size="sm" icon={<Cpu size={12} />} style={{ width: "fit-content" }}>
                   Engineering Infrastructure
                 </Badge>
-                <h2 className={styles.sectionTitle}>Our Workplace & Simulation Labs</h2>
+                <h2 className={styles.sectionTitle}>Our Workplace & <span>Simulation Labs</span></h2>
                 <p className={styles.sectionSubtitle}>
                   Hardware-in-the-loop testing bays, digital twin modeling racks, and precision hydraulic AGC calibration rigs at our Bengaluru technical headquarters.
                 </p>
@@ -149,7 +149,7 @@ export const GalleryMosaic: React.FC<GalleryMosaicProps> = ({ onSelectItem }) =>
                 <Badge variant="brand" size="sm" icon={<Users size={12} />} style={{ width: "fit-content" }}>
                   Engineering Culture
                 </Badge>
-                <h2 className={styles.sectionTitle}>Our Team in Action</h2>
+                <h2 className={styles.sectionTitle}>Our Team <span>in Action</span></h2>
                 <p className={styles.sectionSubtitle}>
                   Collaborative code sprints, metallurgical spare part inspections, and telemetry diagnostics driven by senior domain engineers.
                 </p>
@@ -171,7 +171,7 @@ export const GalleryMosaic: React.FC<GalleryMosaicProps> = ({ onSelectItem }) =>
                 <Badge variant="brand" size="sm" icon={<Factory size={12} />} style={{ width: "fit-content" }}>
                   Operational Verification
                 </Badge>
-                <h2 className={styles.sectionTitle}>Onsite Deployments & Commissioning</h2>
+                <h2 className={styles.sectionTitle}>Onsite Deployments & <span>Commissioning</span></h2>
                 <p className={styles.sectionSubtitle}>
                   Continuous rolling mill stands, central operator pulpits, and high-velocity rebar finishing lines operating live under sysTROL supervisory control.
                 </p>

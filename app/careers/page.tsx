@@ -112,7 +112,7 @@ export default function CareersPage() {
           <Container size="wide">
             <SectionHeading
               eyebrow="Why sysTROL"
-              title="Where Code Meets Heavy Industrial Reality"
+              title={<>Where Code Meets <span>Heavy Industrial Reality</span></>}
               subtitle="We blend real-time software elegance with heavy metallurgical engineering. You will collaborate directly with plant chief engineers and automation architects."
               align="center"
             />
@@ -134,7 +134,7 @@ export default function CareersPage() {
             <div className={styles.sectionHeadingWrapper}>
               <SectionHeading
                 eyebrow="Open Vacancies"
-                title="Current Career Opportunities"
+                title={<>Current Career <span>Opportunities</span></>}
                 subtitle="Explore current full-time openings at our Bengaluru headquarters and on-site commissioning engineering teams."
                 align="left"
               />
