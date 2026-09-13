@@ -36,13 +36,21 @@
   margin: 0;
 }
 .light .title {
-  color: var(--color-ink-900);
+  color: var(--color-brand-sys-navy);
+}
+.light .title span,
+.light .title strong {
+  color: var(--color-brand-green-600);
 }
 .light .subtitle {
   color: var(--color-ink-500);
 }
 .dark .title {
   color: var(--color-surface-0);
+}
+.dark .title span,
+.dark .title strong {
+  color: var(--color-accent-teal-500);
 }
 .dark .subtitle {
   color: var(--color-ink-400);
