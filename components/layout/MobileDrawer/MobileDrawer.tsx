@@ -58,7 +58,7 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) =
               alt="sysTROL Logo"
               width={140}
               height={40}
-              style={{ objectFit: "contain", height: "100%", width: "auto" }}
+              style={{ objectFit: "contain", height: "100%", width: "auto", borderRadius: "4px", backgroundColor: "#ffffff", padding: "2px 6px" }}
             />
           </div>
           <button
