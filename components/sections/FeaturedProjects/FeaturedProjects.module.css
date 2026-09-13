@@ -89,7 +89,7 @@
 .title {
   font-size: var(--text-xl);
   font-weight: var(--font-bold);
-  color: var(--color-ink-900);
+  color: var(--color-brand-sys-navy);
   margin-bottom: var(--space-3);
   line-height: var(--leading-snug);
   min-height: 54px;
